@@ -2,7 +2,7 @@
 const height = window.prompt('what is your favorite number? (1-100)')
 const width = window.prompt('what is your least favorite number? (1-100)')
 function setup() {
-  createCanvas(400,400);
+  createCanvas(800,800);
 }
 
 function draw() {
