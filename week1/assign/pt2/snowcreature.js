@@ -23,31 +23,51 @@ function draw() {
     background(grid);    
     // snowman legs
     fill("f1f1f1");
-    // stroke(stroke1);
-    strokeWeight(20);
+    stroke('black');
+    strokeWeight(5);
     // left leg
-    ellipse(350, 650, 200, 100);
+    ellipse(550, 650, 75, 50);
     // right leg
-    ellipse(650, 650, 200, 100);
-    // body
-    ellipse(500, 400, 600, 400);
+    ellipse(750, 650, 75, 50);
+    // armLeft 
+    triangle(450, 400, 550, 425, 550, 430);
+    line(450, 400, 460, 325);
+    line(460, 325, 450, 310);
+    line(460, 325, 462, 300);
+    // body1
+    ellipse(650, 550, 300, 200);
+    // body2
+    ellipse(650, 435, 225, 150);
     // head
-    ellipse(500, 150, 200, 200);
+    ellipse(650, 335, 150, 150);
     // hat brim
-    // stroke(stroke2);
-    strokeWeight(41);
-    line(375,100,625,100);
+    stroke('black');
+    fill('brown')
+    strokeWeight(8);
+    line(575,285,725,285);
     // hatbody
-    quad(450, 50, 550, 50, 575, 100, 425, 100);
+    quad(600, 240, 700, 240, 710, 285, 590, 285);
+    // armRight
+    stroke('black');
+    strokeWeight(5);
+    triangle(850, 400, 750, 425, 750, 430);
+    line(850, 400, 830, 325);
+    line(830, 325, 825, 310);
+    line(830, 325, 862, 300);
     // eyes
-    stroke(0);
-    strokeWeight(50);
-    point(425,150);
-    point(575,150);
+    stroke('black');
+    strokeWeight(30);
+    point(600,330);
+    point(700,345);
     // mouth
-    noFill();
-    strokeWeight(15);
-    arc(500, 190, 80, 40, 10, HALF_PI);
+    fill('purple');
+    strokeWeight(10);
+    arc(650, 380, 50, 30, 10, HALF_PI);
+    // nose
+    strokeWeight(5);
+    stroke('orange');
+    fill('orange');
+    triangle(560, 350, 645, 347, 652, 351)
     // treeTrunk
     fill('#72531E');
     strokeWeight(0)
