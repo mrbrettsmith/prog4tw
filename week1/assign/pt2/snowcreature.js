@@ -2,22 +2,25 @@ let grid;
 // let stroke1 = prompt('enter a basic color name in lowercase', 'pink')
 // let stroke2 = prompt('enter a basic color name in lowercase', 'grey')
 
+// input color change
 let time = prompt('Enter the time of day in lowercase (day, evening, night', 'day');
 if (time === 'day') {
-    sky = 'blue';
+    sky = 'hsl(194, 100%, 75%)';
+    bright = 'rgba(37, 85, 100, .0)';
 } else if (time === 'night') {
-    sky = ('black');
+    sky = ('hsl(194, 100%, 15%)');
+    bright = 'rgba(37, 85, 100, .9)';
 } else if (time === 'evening') {
-    sky = ('orange');
+    sky = ('hsl(194, 100%, 30%)');
+    bright = 'rgba(180, 107, 111, .5)';
 }
-
 function setup(){
     createCanvas(1000, 800);
     background(sky);
     grid = loadImage("image/100px_grid.png");
 }
 function draw() {
-    background(grid);
+    background(grid);    
     // snowman legs
     fill("f1f1f1");
     // stroke(stroke1);
@@ -65,5 +68,8 @@ function draw() {
     fill('#4CBB17');
     strokeWeight(0);
     triangle(100, 50, 70, 150, 130, 165);
+    // duskFilter 
+    fill(bright);
+    quad(0, 0, 1000, 0, 1000, 800, 0, 800);
     
 }
