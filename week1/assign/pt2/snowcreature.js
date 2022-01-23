@@ -1,16 +1,19 @@
 let grid;
 // let stroke1 = prompt('enter a basic color name in lowercase', 'pink')
 // let stroke2 = prompt('enter a basic color name in lowercase', 'grey')
-const sky = prompt('Enter the time of day in lowercase (day, evening, night', 'day');
-if (sky === 'day') {
 
+let time = prompt('Enter the time of day in lowercase (day, evening, night', 'day');
+if (time === 'day') {
+    sky = 'blue';
+} else if (time === 'night') {
+    sky = ('black');
+} else if (time === 'evening') {
+    sky = ('orange');
 }
-const day = ('blue');
-
 
 function setup(){
     createCanvas(1000, 800);
-    background(day);
+    background(sky);
     grid = loadImage("image/100px_grid.png");
 }
 function draw() {
