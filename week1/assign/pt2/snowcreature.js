@@ -1,9 +1,16 @@
 let grid;
 // let stroke1 = prompt('enter a basic color name in lowercase', 'pink')
 // let stroke2 = prompt('enter a basic color name in lowercase', 'grey')
+const sky = prompt('Enter the time of day in lowercase (day, evening, night', 'day');
+if (sky === 'day') {
+
+}
+const day = ('blue');
+
+
 function setup(){
     createCanvas(1000, 800);
-    background('#ccc');
+    background(day);
     grid = loadImage("image/100px_grid.png");
 }
 function draw() {
@@ -55,4 +62,5 @@ function draw() {
     fill('#4CBB17');
     strokeWeight(0);
     triangle(100, 50, 70, 150, 130, 165);
+    
 }
