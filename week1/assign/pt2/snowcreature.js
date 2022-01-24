@@ -10,21 +10,30 @@ if (time === 'day') {
 } else if (time === 'night') {
     sky = ('hsl(194, 100%, 15%)');
     bright = 'rgba(37, 85, 100, .9)';
+    moonOn = 'rgb(235, 213, 7)';
 } else if (time === 'evening') {
     sky = ('hsl(194, 100%, 30%)');
     bright = 'rgba(180, 107, 111, .5)';
+    lightsOn = 'rgb(235, 213, 7)';
 }
-
 function setup(){
     createCanvas(1000, 800);
     background(sky);
     grid = loadImage("image/100px_grid.png");
 }
 function draw() {
-    background(grid);    
+    // background(grid);    
     // ground2
     fill('rgb(151, 170, 36)');
     arc(700, 750, 2000, 800, 90 , 0, HALF_PI);
+    // cabin
+    fill('orange')
+    quad(125, 400, 345, 400, 345, 550, 120, 550)
+    fill('rgb(213, 134, 7)');
+    triangle(250, 300, 375, 400, 100, 400);
+    // window 
+    fill('black');
+    quad(290, 410, 310, 410, 310, 460, 290, 460);
     // ground1
     fill('rgb(124, 139, 29)');
     arc(50, 900, 2000, 800, 90 , 0, HALF_PI);
@@ -117,9 +126,15 @@ function draw() {
     fill('#4CBB17');
     strokeWeight(0);
     triangle(200, 60, 170, 175, 230, 185);
-
     // duskFilter 
     fill(bright);
     quad(0, 0, 1000, 0, 1000, 800, 0, 800);
-    
+    // special effects 
+    // (I can only get one of these to work?)
+    // moon 
+    fill(moonOn);
+    ellipse(800, 75, 50, 50);
+    // window 
+    fill(lightsOn);
+    quad(290, 410, 310, 410, 310, 460, 290, 460);    
 }
