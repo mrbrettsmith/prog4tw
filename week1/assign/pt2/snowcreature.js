@@ -3,7 +3,7 @@ let grid;
 // let stroke2 = prompt('enter a basic color name in lowercase', 'grey')
 
 // input color change
-let time = prompt('Enter the time of day in lowercase (day, evening, night', 'day');
+let time = prompt('Enter the time of day in lowercase (day, evening, night)', 'day');
 if (time === 'day') {
     sky = 'hsl(194, 100%, 75%)';
     bright = 'rgba(37, 85, 100, .0)';
@@ -131,10 +131,10 @@ function draw() {
     quad(0, 0, 1000, 0, 1000, 800, 0, 800);
     // special effects 
     // (I can only get one of these to work?)
-    // moon 
+    // moon at night
     fill(moonOn);
     ellipse(800, 75, 50, 50);
-    // window 
+    // window in evening
     fill(lightsOn);
     quad(290, 410, 310, 410, 310, 460, 290, 460);    
 }
