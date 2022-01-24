@@ -14,6 +14,7 @@ if (time === 'day') {
     sky = ('hsl(194, 100%, 30%)');
     bright = 'rgba(180, 107, 111, .5)';
 }
+
 function setup(){
     createCanvas(1000, 800);
     background(sky);
@@ -21,6 +22,12 @@ function setup(){
 }
 function draw() {
     background(grid);    
+    // ground2
+    fill('rgb(151, 170, 36)');
+    arc(700, 750, 2000, 800, 90 , 0, HALF_PI);
+    // ground1
+    fill('rgb(124, 139, 29)');
+    arc(50, 900, 2000, 800, 90 , 0, HALF_PI);
     // snowman legs
     fill("f1f1f1");
     stroke('black');
@@ -68,6 +75,7 @@ function draw() {
     stroke('orange');
     fill('orange');
     triangle(560, 350, 645, 347, 652, 351)
+    // tree1 
     // treeTrunk
     fill('#72531E');
     strokeWeight(0)
@@ -88,6 +96,28 @@ function draw() {
     fill('#4CBB17');
     strokeWeight(0);
     triangle(100, 50, 70, 150, 130, 165);
+    // tree2
+    // treeTrunk
+    fill('#72531E');
+    strokeWeight(0)
+    quad(190, 440, 210, 440, 215, 600, 185, 600)
+    // treeBottom
+    fill('#1A4008');
+    strokeWeight(0);
+    triangle(200, 250, 140, 500, 260, 490);
+    // treeMidBottom
+    fill('#2B690D');
+    strokeWeight(0);
+    triangle(200, 150, 150, 390, 250, 370);
+    // treeTopMid
+    fill('#3B9212');
+    strokeWeight(0);
+    triangle(200, 100, 160, 279, 240, 270);
+    // treeTop
+    fill('#4CBB17');
+    strokeWeight(0);
+    triangle(200, 60, 170, 175, 230, 185);
+
     // duskFilter 
     fill(bright);
     quad(0, 0, 1000, 0, 1000, 800, 0, 800);
