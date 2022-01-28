@@ -1,5 +1,5 @@
-// const favGames = ['Settlers', 'Wingspan', 'Cave Evil', 'Talisman', 'Lords of Waterdeep']
-const yourGame = window.prompt('There are 5 games in my collection. pick a number to learn about a game');
+// const favGames = [gameOne,gameTwo,gameThree,gameFour,gameFive];
+// const yourGame = window.prompt('There are 5 games in my collection. pick a number to learn about a game');
 
 const gameOne = {
     name: 'Settlers of Catan',
@@ -31,9 +31,12 @@ const gameFour = {
 };
 const gameFive = {
     name: 'Lords of Waterdeep',
-    theme: 'Fantasy Cang Managment',
+    theme: 'Fantasy Gang Managment',
     numberOfplayers: '1-5',
     funRating: 1,
     agravationRating: 2
 };
+console.log('You selected '+ gameOne.name, 'which is a game about ' + gameOne.theme + ".", gameOne.numberOfplayers + ' people can play, and though it ranks '+gameOne.funRating, 'in fun, it has difficulty ranking of '+ gameOne.agravationRating);
+
+// console.log('You selected' favGames[yourGame-1].name,'which is a game about' +theme[yourgame-1].theme);
 
