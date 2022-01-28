@@ -1,6 +1,5 @@
-// const favGames = [gameOne,gameTwo,gameThree,gameFour,gameFive];
-// const yourGame = window.prompt('There are 5 games in my collection. pick a number to learn about a game');
-
+const yourChoice = window.prompt('There are 5 games in my collection. pick a number to learn about a game');
+// Game List 
 const gameOne = {
     name: 'Settlers of Catan',
     theme: 'Agrarian Monopoly',
@@ -36,7 +35,14 @@ const gameFive = {
     funRating: 1,
     agravationRating: 2
 };
-console.log('You selected '+ gameOne.name, 'which is a game about ' + gameOne.theme + ".", gameOne.numberOfplayers + ' people can play, and though it ranks '+gameOne.funRating, 'in fun, it has difficulty ranking of '+ gameOne.agravationRating);
+// selector
+const gameArr = [gameOne,gameTwo,gameThree,gameFour,gameFive];
+const yourGame = (gameArr[yourChoice -1])
+
+// Disply 
+console.log('You selected '+ yourGame.name, 'which is a game about ' + yourGame.theme + ".", yourGame.numberOfplayers + ' people can play, and though it ranks '+yourGame.funRating, 'in fun, it has difficulty ranking of '+ yourGame.agravationRating);
+
+// console.log('You selected '+ gameOne.name, 'which is a game about ' + gameOne.theme + ".", gameOne.numberOfplayers + ' people can play, and though it ranks '+gameOne.funRating, 'in fun, it has difficulty ranking of '+ gameOne.agravationRating);
 
 // console.log('You selected' favGames[yourGame-1].name,'which is a game about' +theme[yourgame-1].theme);
 
