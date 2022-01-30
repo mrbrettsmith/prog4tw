@@ -47,6 +47,8 @@
 // const riddles = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight, questNine, questTen, questEleven];
 // const randomQuest = math.round(math.random() * riddles.length - 1);
 
+
+
 // Questions Index
 const quest = [
     {    question: 'What did the egg say to the frying pan?',
@@ -93,9 +95,9 @@ const quest = [
     answer: "It was toad."
 },]
 // Randomizer index
-const randomQuest = math.round(math.random() * quest.length - 1);
+const randomQuest = Math.round(Math.random() * quest.length - 1);
 
-console.log(randomQuest)
+// Prompt
+const userAns = window.prompt(quest[randomQuest].question)
 
-
-// console.log ('The riddle:', quest[].question, 'You answered' userResponse, 'The punchline:' quest[].answer);
+console.log ('The riddle: ' + quest[randomQuest].question, 'You answered: ' + userAns, 'The punchline: ' + quest[randomQuest].answer);
