@@ -1,4 +1,4 @@
-// Questions String
+// // Questions String
 // const questOne = {
 //     question: 'What did the egg say to the frying pan?',
 //     answer: 'You crack me up.'
@@ -43,9 +43,16 @@
 //     question: "Who took the frog's car?",
 //     answer: "It was toad."
 // };
-// Randomizer v1
-// const riddles = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight, questNine, questTen, questEleven];
-// const randomQuest = math.round(math.random() * riddles.length - 1);
+// // Randomizer string
+// const quest = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight, questNine, questTen, questEleven];
+
+// const randomQuest = Math.round(Math.random() * quest.length - 1);
+
+// // Prompt
+// const userAns = window.prompt(quest[randomQuest].question)
+
+// console.log ('The riddle: ' + quest[randomQuest].question, 'You answered: ' + userAns, 'The punchline: ' + quest[randomQuest].answer);
+
 
 
 
