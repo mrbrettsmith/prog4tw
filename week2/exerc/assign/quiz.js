@@ -1,3 +1,4 @@
+// Questions
 const questOne = {
     question: 'What did the egg say to the frying pan?',
     answer: 'You crack me up.'
@@ -18,10 +19,6 @@ const questFive = {
     question: "Why dont lobster's share?",
     answer: "Because they are shellfish."
 };
-const questFive = {
-    question: "Who took the frog's car?",
-    answer: "It was toad."
-};
 const questSix = {
     question: "How do you communicate with a fish?",
     answer: "You drop it a line."
@@ -38,7 +35,15 @@ const questNine = {
     question: "What did 0 say to 8?",
     answer: "Nice belt!"
 };
-const questNine = {
+const questTen = {
     question: "Whats the vest way to carve wood?",
     answer: "Whittle by whittle."
 };
+const questEleven = {
+    question: "Who took the frog's car?",
+    answer: "It was toad."
+};
+// Randomizer
+const riddles = [questOne, questTwo, questThree, questFour, questFive, questSix, questSeven, questEight, questNine, questTen, questEleven];
+// const randomQuest =
+console.log (riddles);
