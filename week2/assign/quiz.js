@@ -94,7 +94,7 @@ const quest = [
     answer: "Nice belt!"
 },
 {
-    question: "Whats the vest way to carve wood?",
+    question: "Whats the best way to carve wood?",
     answer: "Whittle by whittle."
 },
 {
@@ -107,4 +107,7 @@ const randomQuest = Math.round(Math.random() * quest.length - 1);
 // Prompt
 const userAns = window.prompt(quest[randomQuest].question)
 
-console.log ('The riddle: ' + quest[randomQuest].question, 'You answered: ' + userAns, 'The punchline: ' + quest[randomQuest].answer);
+window.alert ('The riddle: ' + quest[randomQuest].question + ' You answered: ' + userAns + '  The punchline: ' + quest[randomQuest].answer);
+
+
+// console.log ('The riddle: ' + quest[randomQuest].question, 'You answered: ' + userAns, 'The punchline: ' + quest[randomQuest].answer);
