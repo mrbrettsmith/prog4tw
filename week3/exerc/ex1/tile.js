@@ -1,9 +1,9 @@
 function setup() {
-    createCanvas(200, 200);
+    createCanvas(200, 200,);
 }
 function createTile() {
     translate(0, 0);
-    fill('blue');
+    fill('orange');
     rect(0, 0, 200, 200);
 }
 function draw() {
