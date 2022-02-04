@@ -1,6 +1,5 @@
 function setup() {
     createCanvas(800, 800);
-    noLoop();
 }
 function createTile(oraginX, oraginY, background, frontline, backline) {
     translate(oraginX, oraginY);
