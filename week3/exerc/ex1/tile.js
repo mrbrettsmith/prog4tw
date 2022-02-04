@@ -6,19 +6,25 @@ function createTile() {
     fill('orange');
     rect(0, 0, 200, 200);
     stroke('pink');
-    strokeWeight(10);
+    strokeWeight(13);
     line(0, 0, 200, 200);
     line(200, 0, 0, 200);
     noStroke();
     fill('yellow');
-    circle(100, 40, 30);
-    circle(160, 100, 30);
-    circle(100, 160, 30);
-    circle(40, 100, 30);
-    fill('green');
-    circle(100, 100, 80);
-    fill('blue');
-    circle(100, 100, 60);
+    circle(100, 35, 30);
+    circle(165, 100, 30);
+    circle(100, 165, 30);
+    circle(35, 100, 30);
+    noFill();
+    strokeWeight(4);
+    stroke('beige');
+    circle(100, 100, 70);
+    stroke('purple');
+    triangle(100, 35, 85, 10, 115, 10)
+    triangle(165, 100, 190, 85, 190, 115)
+    triangle(100, 165, 85, 190, 115, 190)
+    triangle(35, 100, 10, 85, 10, 115)
+    noStroke();
 }
 function draw() {
     createTile();
