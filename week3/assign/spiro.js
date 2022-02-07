@@ -1,14 +1,26 @@
 let rotateBy = 5;
+// function setup() {
+//     createCanvas(800, 800)
+//     background(0);
+//     angleMode(DEGREES);
+// }
+
 function setup() {
-    createCanvas(800, 800)
-    background(0);
+    createCanvas(windowWidth, windowHeight);
     angleMode(DEGREES);
-}
+    background(255, 0, 200);
+  }
+  
+  function windowResized() {
+    resizeCanvas(windowWidth, windowHeight);
+    background(255, 0, 200);
+  }
+
 function makeArm(rotateBy) {
     let alt = Math.round(rotateBy / 360); //why does math.round work?
     console.log(alt);
     noFill();
-    stroke("red");
+    stroke(randomColor);
     strokeWeight(5);
     ellipse(150 + alt, 150 , 100);
 }
@@ -19,11 +31,10 @@ function draw() {
     makeArm(rotateBy);
     rotateBy += 5;
 }
-
 function mousePressed() {
     noLoop();
+    randomColor = color(random(255),random(255),random(255));
   }
 function mouseReleased() {
     loop();
-    stroke("blue");
 }
