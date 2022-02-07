@@ -1,9 +1,5 @@
 let rotateBy = 5;
-// function setup() {
-//     createCanvas(800, 800)
-//     background(0);
-//     angleMode(DEGREES);
-// }
+
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -26,7 +22,7 @@ function makeArm(rotateBy) {
 }
 
 function draw() {
-    translate(300, 300);
+    translate(width /2, 300);
     rotate(rotateBy);
     makeArm(rotateBy);
     rotateBy += 5;
@@ -34,6 +30,7 @@ function draw() {
 function mousePressed() {
     noLoop();
     randomColor = color(random(255),random(255),random(255));
+    let fallBack = -10;
   }
 function mouseReleased() {
     loop();
