@@ -3,15 +3,18 @@ let rectY;
 const rectWitdth = 50;
 const rectHeight = 50;
 let clickCount = 0;
+let speed;
+
 function setup() {
     createCanvas(500, 500);
     background('orange');
     rectY = random(0, height - rectHeight);
+    speed = random(1, 5)
 }
 function draw(){
     background('orange');
     drawShape();
-    rectX += 2;
+    rectX += speed;
     if(rectX > width) {
         noLoop();
         text('You scored ' + clickCount, 250, 100);
