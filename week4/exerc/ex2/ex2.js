@@ -1,9 +1,9 @@
-function setup(){
+function setup() {
     createCanvas(500, 500);
-    color('yellow');
+    background('orange');
 }
 
-function createButton(){
+function bigCirc(){
     fill('rose');
     ellipse(250, 250, 50, 50);
 }
