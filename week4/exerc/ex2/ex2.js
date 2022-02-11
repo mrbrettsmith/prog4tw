@@ -9,12 +9,16 @@ function draw(){
     background('orange');
     drawShape();
     rectX += 2;
+    if(rectX > width) {
+        noLoop();
+        text('You scored ' + clickCount, 250, 100);
+    }
 }
 
 function mousePressed() {
     // if ((mouseX >= 225 && mouseX <= 275) && (mouseY <=225 && mouseY <= 275))
     if((mouseX >= rectX && mouseX <= rectX + rectWitdth) && (mouseY >= 0 && mouseY <= 50))
-    clickCount;
+    clickCount++;
     console.log('gotcha!', clickCount)
 }
 
