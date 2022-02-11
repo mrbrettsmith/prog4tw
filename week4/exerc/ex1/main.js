@@ -5,4 +5,14 @@ const myEmptyDiv = document.querySelector("#myEmptyDiv");
 // create element
 const heading = document.createElement('h1');
 heading.innerHTML = 'Live llamas from the lebanese llama lovers leaugue';
+heading.style.cursor = 'pointer';
+
 myEmptyDiv.appendChild(heading);
+
+// adding Listener
+heading.addEventListener('click', handleHeadingClick);
+function handleHeadingClick() {
+    console.log('heading has been clicked!');
+    document.body.style.backgroundColor = 'purple';
+    document.body.style.color = 'lightblue';
+}
