@@ -13,7 +13,7 @@ function tileFrame(originX,originY,background) {
     rect(0, 0, 100, 100);
 }
 
-function tileImage(originX,originY,background) {
+function tileImage(originX,originY) {
     translate(originX,originY);
     noStroke();
     loadImage('image/gametile.png', img => {
@@ -33,29 +33,29 @@ function tileImage(originX,originY,background) {
 
 function draw() {
     tileFrame(60,60,'#BDD44EFF');
-    tileImage()
-    // tileFrame(0,140,'#BDD44EFF');
-    // tileFrame(0,140,'#BDD44EFF');
-    // tileFrame(0,140,'#BDD44EFF');
-    // tileFrame(0,140,'#BDD44EFF');
-    // tileFrame(140,-560,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#BDD44EFF');
-    // tileFrame(140,-560,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#BDD44EFF');
-    // tileFrame(140,-560,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#BDD44EFF');
-    // tileFrame(140,-560,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#6FD46CFF');
-    // tileFrame(0,140,'#BDD44EFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileFrame(140,-560,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileFrame(140,-560,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileFrame(140,-560,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileFrame(140,-560,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#6FD46CFF');
+    tileFrame(0,140,'#BDD44EFF');
+    tileImage(0,60)
 }
