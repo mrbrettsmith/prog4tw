@@ -6,14 +6,19 @@ function setup() {
     //     img = loadImage('image/gametile.png');
     //   }
 }
-function tileFrame(originX,originY,background,) {
+function tileFrame(originX,originY,background) {
     translate(originX,originY);
     noStroke();
     fill(background);
     rect(0, 0, 100, 100);
 }
 
-l
+function tileImage(originX,originY,background) {
+    translate(originX,originY);
+    noStroke();
+    loadImage('image/gametile.png', img => {
+        image(img,0, 0);});
+}
 
 // // Color Changer - Unsure how alpha channel works
 // let letterGround = color(cardBackColor, 0);
@@ -28,8 +33,7 @@ l
 
 function draw() {
     tileFrame(60,60,'#BDD44EFF');
-    loadImage('image/gametile.png', img => {
-        image(img,0, 0);});
+    tileImage()
     // tileFrame(0,140,'#BDD44EFF');
     // tileFrame(0,140,'#BDD44EFF');
     // tileFrame(0,140,'#BDD44EFF');
