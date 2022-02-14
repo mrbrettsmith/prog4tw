@@ -1,6 +1,6 @@
-// let rectX = 100;
-// let rectY = 100;
-let startingX = 60;
+let rectX = 100;
+let rectY = 100;
+let startingX = 340;
 let startingY = 60;
 const rectWitdth = 100;
 const rectHeight = 100;
@@ -13,45 +13,61 @@ function setup() {
     background('#A19FD4FF');
 }
 
-// function tileFrame(originX,originY,background) {
-//     translate(originX,originY);
-//     noStroke();
-//     fill(background);
-//     rect(0, 0, 100, 100);
-// }
-
 function drawTileFrame() {
-    fill('yellow');
-    for (let c = 0; c < 3; c++) {
-    // const element = 3[c];
-    rect(startingX, startingY, rectWitdth, rectHeight);
-    gameTiles.push({ x: startingX, y: startingY});
-    startingX += 140;
-    }
+    fill('#6FD46CFF');
+    for (let c = 0; c < 4; c++) {        
+        for (let r = 0; r < 4; r++) {
+            rect(startingX, startingY, rectWitdth, rectHeight);
+            gameTiles.push({ x: startingX, y: startingY, id: r});
+            startingX += 140;
+        }
+    startingY =+ 200;
+    startingX = 340;
+    }      
 }
 
 console.log(gameTiles);
 
 function mousePressed() {
     for (let j = 0; j < gameTiles.length; j++) {
-        // const element = gameTiles[j];
         if((mouseX >= gameTiles[j].x && mouseX <= gameTiles[j].x + rectWitdth) && (mouseY >= gameTiles[j].y && mouseY <= gameTiles[j].y+ rectHeight))
         clickCount++;
-        console.log('gotcha!', clickCount) }
+        console.log('this is tile ', gameTiles[j].id)  }
 }
 
 
-function tileImage(originX,originY) {
+// function tileImage(originX,originY) {
+//     translate(originX,originY);
+//     noStroke();
+//     loadImage('image/gametile.png', img => {
+//         image(img,0, 0);});
+// }
+function letterFrame(originX,originY,background) {
     translate(originX,originY);
     noStroke();
-    loadImage('image/gametile.png', img => {
-        image(img,0, 0);});
+    fill(background);
+    rect(0, 0, 100, 100);
 }
 
 function draw() {
     drawTileFrame();
-
+    letterFrame(60,60,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(140,-560,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(0,140,'#BDD44EFF');
+    letterFrame(140,0,'#BDD44EFF');
+    letterFrame(140,0,'#BDD44EFF');
+    letterFrame(140,0,'#BDD44EFF');
+    letterFrame(140,0,'#BDD44EFF');
+    
 }
+
 
 // // Color Changer - Unsure how alpha channel works
 // let letterGround = color(cardBackColor, 0);
@@ -67,30 +83,30 @@ function draw() {
 
 // //Old Tyle Style
 // function draw() {
-//     tileFrame(60,60,'#BDD44EFF');
-//     tileFrame(0,140,'#BDD44EFF');
-//     tileFrame(0,140,'#BDD44EFF');
-//     tileFrame(0,140,'#BDD44EFF');
-//     tileFrame(0,140,'#BDD44EFF');
-//     tileFrame(140,-560,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#BDD44EFF');
-//     tileFrame(140,-560,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#BDD44EFF');
-//     tileFrame(140,-560,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#BDD44EFF');
-//     tileFrame(140,-560,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#6FD46CFF');
-//     tileFrame(0,140,'#BDD44EFF');
+//     letterFrame(60,60,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(140,-560,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(140,-560,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(140,-560,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(140,-560,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#6FD46CFF');
+//     letterFrame(0,140,'#BDD44EFF');
 //     tileImage(0,60)
 // }
