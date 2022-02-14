@@ -7,7 +7,6 @@ const rectHeight = 100;
 let clickCount = 0;
 let gameTiles = []
 
-
 function setup() {
     createCanvas(1000, 1000);
     background('#A19FD4FF');
@@ -15,13 +14,15 @@ function setup() {
 
 function drawTileFrame() {
     fill('#6FD46CFF');
+    noStroke();
     for (let c = 0; c < 4; c++) {        
         for (let r = 0; r < 4; r++) {
             rect(startingX, startingY, rectWitdth, rectHeight);
             gameTiles.push({ x: startingX, y: startingY, id: r});
             startingX += 140;
+            noLoop()
         }
-    startingY =+ 200;
+    startingY += 140;
     startingX = 340;
     }      
 }
@@ -36,12 +37,8 @@ function mousePressed() {
 }
 
 
-// function tileImage(originX,originY) {
-//     translate(originX,originY);
-//     noStroke();
-//     loadImage('image/gametile.png', img => {
-//         image(img,0, 0);});
-// }
+
+
 function letterFrame(originX,originY,background) {
     translate(originX,originY);
     noStroke();
@@ -49,6 +46,12 @@ function letterFrame(originX,originY,background) {
     rect(0, 0, 100, 100);
 }
 
+function tileImage(originX,originY) {
+    translate(originX,originY);
+    noStroke();
+    loadImage('image/gametile.png', img => {
+        image(img,0, 0);});
+}
 function draw() {
     drawTileFrame();
     letterFrame(60,60,'#BDD44EFF');
@@ -65,7 +68,7 @@ function draw() {
     letterFrame(140,0,'#BDD44EFF');
     letterFrame(140,0,'#BDD44EFF');
     letterFrame(140,0,'#BDD44EFF');
-    
+    tileImage(340,340);
 }
 
 
