@@ -27,17 +27,12 @@ function drawTileFrame() {
     }      
 }
 
-console.log(gameTiles);
-
-function mousePressed() {
-    for (let j = 0; j < gameTiles.length; j++) {
-        if((mouseX >= gameTiles[j].x && mouseX <= gameTiles[j].x + rectWitdth) && (mouseY >= gameTiles[j].y && mouseY <= gameTiles[j].y+ rectHeight))
-        clickCount++;
-        console.log('this is tile ', gameTiles[j].id)  }
-}
-
-
-
+// function mousePressed() {
+//     for (let j = 0; j < gameTiles.length; j++) {
+//         if((mouseX >= gameTiles[j].x && mouseX <= gameTiles[j].x + rectWitdth) && (mouseY >= gameTiles[j].y && mouseY <= gameTiles[j].y + rectHeight))
+//         clickCount++;
+//         console.log('this is tile ', gameTiles[j].id)  }
+// }
 
 function letterFrame(originX,originY,background) {
     translate(originX,originY);
