@@ -4,7 +4,7 @@ let startingX = 60;
 let startingY = 60;
 const rectWitdth = 100;
 const rectHeight = 100;
-// let clickCount = 0;
+let clickCount = 0;
 let gameTiles = []
 
 
@@ -20,13 +20,6 @@ function setup() {
 //     rect(0, 0, 100, 100);
 // }
 
-// function mousePressed() {
-//     // if ((mouseX >= 225 && mouseX <= 275) && (mouseY <=225 && mouseY <= 275))
-//     if((mouseX >= rectX && mouseX <= rectX + rectWitdth) && (mouseY >= rectY && mouseY <= rectY + rectHeight))
-//     clickCount++;
-//     console.log('gotcha!', clickCount)
-// }
-
 function drawTileFrame() {
     fill('yellow');
     for (let c = 0; c < 3; c++) {
@@ -34,20 +27,30 @@ function drawTileFrame() {
     rect(startingX, startingY, rectWitdth, rectHeight);
     gameTiles.push({ x: startingX, y: startingY});
     startingX += 140;
-}}
+    }
+}
+
 console.log(gameTiles);
 
-
-function draw() {
-    drawTileFrame();
-
+function mousePressed() {
+    for (let j = 0; j < gameTiles.length; j++) {
+        // const element = gameTiles[j];
+        if((mouseX >= gameTiles[j].x && mouseX <= gameTiles[j].x + rectWitdth) && (mouseY >= gameTiles[j].y && mouseY <= gameTiles[j].y+ rectHeight))
+        clickCount++;
+        console.log('gotcha!', clickCount) }
 }
+
 
 function tileImage(originX,originY) {
     translate(originX,originY);
     noStroke();
     loadImage('image/gametile.png', img => {
         image(img,0, 0);});
+}
+
+function draw() {
+    drawTileFrame();
+
 }
 
 // // Color Changer - Unsure how alpha channel works
