@@ -2,7 +2,7 @@ let blockX = 0;
 let blockY = 0;
 let drawTimer;
 let distance = 10;
-let speed = 50;
+let speed = 30;
 
 function setup() {
     createCanvas(500, 300);
@@ -16,5 +16,15 @@ function drawBlock(x,y, color) {
     
 }
 
-drawTimer = window.setInterval( () => {drawBlock(blockX,blockY,"red"); blockX += distance;
-}, speed); //in milliseconds!
+drawTimer = window.setInterval(() => {
+        if (blockX -50 <= 400) {
+        drawBlock(blockX,blockY,"red"); 
+        blockX += distance;
+    } else {
+        blockX = 0;
+        blockY += 50;
+    }
+    if (blockX - 50 > height && blockx - 50 > width)
+        window.clearInterval(drawTimer);
+        // alert('collison!');
+}, speed); 
