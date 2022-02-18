@@ -24,7 +24,8 @@ drawTimer = window.setInterval(() => {
         blockX = 0;
         blockY += 50;
     }
-    if (blockX - 50 > height && blockx - 50 > width)
+    if (blockX  > width && blockY  > height) {
         window.clearInterval(drawTimer);
-        // alert('collison!');
+        alert('collison!');
+    }
 }, speed); 
