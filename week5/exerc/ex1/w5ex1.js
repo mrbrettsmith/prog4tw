@@ -22,12 +22,10 @@ function keyTyped() {
     keyToNumber = map(keyToNumber, 1, 9, 1, 255);
     BlockColor =keyToNumber;
     console.log('youpressed', keyToNumber);
-   
-
 }
 
 drawTimer = window.setInterval( () => {
-        if (blockX -50 <= 400) {
+        if (blockX -50 <= width) {
         drawBlock( blockX, blockY, BlockColor); 
         blockX += distance;
     } else {
