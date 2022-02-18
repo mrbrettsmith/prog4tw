@@ -16,7 +16,7 @@ function drawBlock(x,y, color) {
     rect(x, y, 50, 50);
 }
 function keyTyped() {
-    let keyToNumber = number(key);
+    let keyToNumber = Number(key);
      if (isNaN(keyToNumber)){
         return;}
     keyToNumber = map(keyToNumber, 1, 9, 1, 255);
@@ -26,9 +26,9 @@ function keyTyped() {
 
 }
 
-drawTimer = window.setInterval(() => {
+drawTimer = window.setInterval( () => {
         if (blockX -50 <= 400) {
-        drawBlock(blockX, blockY, BlockColor); 
+        drawBlock( blockX, blockY, BlockColor); 
         blockX += distance;
     } else {
         blockX = 0;
