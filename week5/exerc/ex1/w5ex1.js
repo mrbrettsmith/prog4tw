@@ -1,16 +1,20 @@
-let greekMythicalCharacters = ["Athena", "Zeus", "Hermes", "Hercules", "Hera", "that one guy"];
+let blockX = 0;
+let blockY = 0;
+let drawTimer;
+let distance = 10;
+let speed = 50;
 
-greekMythicalCharacters.pop();
-greekMythicalCharacters.push("Hades");
+function setup() {
+    createCanvas(500, 300);
+    background("blue");
+    
+}
 
-console.log (greekMythicalCharacters);
+function drawBlock(x,y, color) {
+    fill(color || "pink");
+    rect(x, y, 50, 50);
+    
+}
 
-
-
-// let myDogs = ['lucky', 'Lucy', 'Limda', 'Lacey', 'Carl'];
-
-// for (const d of myDogs) { console.log("My dog, " + (d), "is a really good pupper.");
-// }
-
-// // let dogTag = myDogs;
-
+drawTimer = window.setInterval( () => {drawBlock(blockX,blockY,"red"); blockX += distance;
+}, speed); //in milliseconds!
