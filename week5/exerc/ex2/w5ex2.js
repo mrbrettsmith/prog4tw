@@ -15,7 +15,7 @@ function setup() {
 
 // for (let b = 0, b < 5, b++) {
 //     bubble[b], this.x + 5;
-}
+// }
 
 // other loop tests 
 // for (b = 0, b < 3; b++ ) {
