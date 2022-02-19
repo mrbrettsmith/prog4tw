@@ -8,7 +8,6 @@ let speed = 30;
 function setup() {
     createCanvas(500, 300);
     background("blue");
-    
 }
 
 function drawBlock(x,y, color) {

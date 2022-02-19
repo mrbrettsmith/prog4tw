@@ -13,11 +13,11 @@ function setup() {
 }
 
 
-for (let blow = 0, blow < 5, blow++) {
-    bubble this.x + 5;
+// for (let b = 0, b < 5, b++) {
+//     bubble[b], this.x + 5;
 }
 
-
+// other loop tests 
 // for (b = 0, b < 3; b++ ) {
 //     bubble this.x + 5, this.y +10;
 // }
