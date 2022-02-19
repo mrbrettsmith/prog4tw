@@ -1,11 +1,16 @@
-let bubble;
+let bubbleBlow = [];
 // let bubble1;
 // let bubble2;
 // let bubble3;
 
 function setup() {
     createCanvas(600, 600);
-    bubble = new Bubble();
+    bubbleBlow = new Bubble();
+    for (let b = 0; b < 5; b++) {
+        bubbleBlow[b] = new Bubble(), this.x + 5;
+    }
+
+
     // bubble1 = new Bubble();
     // bubble2 = new Bubble();
     // bubble3 = new Bubble();
@@ -14,7 +19,7 @@ function setup() {
 
 
 // for (let b = 0, b < 5, b++) {
-//     bubble[b], this.x + 5;
+//     bubbleBlow[b], this.x + 5;
 // }
 
 // other loop tests 
@@ -27,8 +32,8 @@ function setup() {
 
 function draw() {
     background('red');
-    bubble.move();
-    bubble.show();
+    bubbleBlow[b].move();
+    bubbleBlow[b].show();
     // bubble1.move();
     // bubble1.show();
     // bubble2.move();
