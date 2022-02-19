@@ -1,15 +1,23 @@
-let bubble;
+let bubble1;
+let bubble2;
+let bubble3;
 
 function setup() {
     createCanvas(600, 600);
-    bubble = new Bubble();
-    print(bubble.x,bubble.y)
+    bubble1 = new Bubble();
+    bubble2 = new Bubble();
+    bubble3 = new Bubble();
+    // print(bubble.x,bubble.y)
 }
 
 function draw() {
     background('red');
-    bubble.move();
-    bubble.show;
+    bubble1.move();
+    bubble1.show();
+    bubble2.move();
+    bubble2.show();
+    bubble3.move();
+    bubble3.show();
 }
 
 class Bubble {
@@ -20,8 +28,8 @@ class Bubble {
         this.height = 80;
     }
     move() {
-        this.x = this.x + random(-5, 10);
-        this.y = this.y + random(-5, 10);
+        this.x = this.x + random(-2, 3); //mis-weighted random makes bubble move off screen! cool!
+        this.y = this.y + random(-2, 3); 
     }
     show() {
         stroke("pink");
