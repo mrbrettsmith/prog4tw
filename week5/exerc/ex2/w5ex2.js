@@ -1,23 +1,40 @@
-let bubble1;
-let bubble2;
-let bubble3;
+let bubble;
+// let bubble1;
+// let bubble2;
+// let bubble3;
 
 function setup() {
     createCanvas(600, 600);
-    bubble1 = new Bubble();
-    bubble2 = new Bubble();
-    bubble3 = new Bubble();
+    bubble = new Bubble();
+    // bubble1 = new Bubble();
+    // bubble2 = new Bubble();
+    // bubble3 = new Bubble();
     // print(bubble.x,bubble.y)
 }
 
+
+for (let blow = 0, blow < 5, blow++) {
+    bubble this.x + 5;
+}
+
+
+// for (b = 0, b < 3; b++ ) {
+//     bubble this.x + 5, this.y +10;
+// }
+// for (let b = 0, b < 3; b++) {
+//     Bubble (this.x + 5, this.y +10);
+// }
+
 function draw() {
     background('red');
-    bubble1.move();
-    bubble1.show();
-    bubble2.move();
-    bubble2.show();
-    bubble3.move();
-    bubble3.show();
+    bubble.move();
+    bubble.show();
+    // bubble1.move();
+    // bubble1.show();
+    // bubble2.move();
+    // bubble2.show();
+    // bubble3.move();
+    // bubble3.show();
 }
 
 class Bubble {
