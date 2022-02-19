@@ -1,45 +1,21 @@
 let bubbleBlow = [];
-// let bubble1;
-// let bubble2;
-// let bubble3;
 
 function setup() {
     createCanvas(600, 600);
     bubbleBlow = new Bubble();
     for (let b = 0; b < 5; b++) {
-        bubbleBlow[b] = new Bubble(), this.x + 5;
+        bubbleBlow[b] = new Bubble();
     }
-
-
-    // bubble1 = new Bubble();
-    // bubble2 = new Bubble();
-    // bubble3 = new Bubble();
-    // print(bubble.x,bubble.y)
 }
 
-
-// for (let b = 0, b < 5, b++) {
-//     bubbleBlow[b], this.x + 5;
-// }
-
-// other loop tests 
-// for (b = 0, b < 3; b++ ) {
-//     bubble this.x + 5, this.y +10;
-// }
-// for (let b = 0, b < 3; b++) {
-//     Bubble (this.x + 5, this.y +10);
-// }
+// [b] identifies each bubble instance. Each instance must be created new via class Bubble - then shown and drawn.
 
 function draw() {
     background('red');
-    bubbleBlow[b].move();
-    bubbleBlow[b].show();
-    // bubble1.move();
-    // bubble1.show();
-    // bubble2.move();
-    // bubble2.show();
-    // bubble3.move();
-    // bubble3.show();
+    for (let b = 0; b < 5; b++) {
+        bubbleBlow[b].move();
+        bubbleBlow[b].show();
+    }
 }
 
 class Bubble {
@@ -60,3 +36,14 @@ class Bubble {
         ellipse(this.x, this.y, this.width, this.height);
     }
 }
+// for (let b = 0, b < 5, b++) {
+//     bubbleBlow[b], this.x + 5;
+// }
+
+// other loop tests 
+// for (b = 0, b < 3; b++ ) {
+//     bubble this.x + 5, this.y +10;
+// }
+// for (let b = 0, b < 3; b++) {
+//     Bubble (this.x + 5, this.y +10);
+// }
