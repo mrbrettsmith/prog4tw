@@ -73,8 +73,8 @@ function draw() {
     gameState.waiting = false;
     fill('orange');
     textSize(36);
-    text('attempts ' + gameState.attempts, 340 ,300);
-    text('matches ' + gameState.numMatched, 340, 350);
+    text('Attempts ' + gameState.attempts, 340 ,640);
+    text('Matches ' + gameState.numMatched, 340, 690);
 }
 
 
