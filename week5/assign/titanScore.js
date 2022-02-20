@@ -4,6 +4,7 @@ const UP = 'up';
 let startingX = 340;
 let startingY = 60; 
 let cards = [];
+//creating the scoring & status of game
 const gameState = {
     totalPairs: 8,
     flippedCards: [],
@@ -56,9 +57,18 @@ function setup() {
 
 function mousePressed() {
     for (let m = 0; m < cards.length; m++) {
-        if (cards[m].didHit(mouseX,mouseY)) {
+        // Check to see how many have been flipped, then trigger flip
+        if (gameState.flippedCards.length < 2 && cards[m].didHit(mouseX,mouseY)) {
             console.log('liplop', cards[m]);
+            gameState.flippedCards.push(cards[m]);
         }   
+    }
+    if(gameState.flippedCards.length = 2) {
+        if (gameState.flippedCards[0].faceImage === gameState.flippedCards[1].faceImage) {
+            gameState.flippedCards[0].isMatch = true;
+            gameState.flippedCards[1].isMatch = true;
+        }
+        
     }
 }
 
@@ -69,12 +79,13 @@ class Card {
         this.width = 100;
         this.height = 100;
         this.cardFaceImg = cardFaceImg;
+        this.isMatch = false;
         this.show();
         this.face = DOWN;
     }
     show() { // whyare my upp&down reversed?
         noStroke();
-        if (this.face === DOWN) {
+        if (this.face === DOWN || this.isMatch) {
             fill('#72BAD4FF'); 
             rect(this.x, this.y, this.width, this.height,)
             image(this.cardFaceImg, this.x, this.y);
