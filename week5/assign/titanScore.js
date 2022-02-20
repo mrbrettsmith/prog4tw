@@ -32,7 +32,7 @@ function preload() {
 
 function setup() {
     createCanvas(1000, 1000);
-    background('#A19FD4FF');
+    background('#A19FD4FF')
     let selectedFaces = [];
     for (let z = 0; z < 8; z++) {
         const randomIdx = floor(random(cardFaceArray.length))
@@ -43,7 +43,7 @@ function setup() {
         cardFaceArray.splice(randomIdx, 1);
     }
     // myCard = new Card(); // can I get rid of this?
-    selectedFaces = shuffleArray(selectedFaces); // build this
+    selectedFaces = shuffleArray(selectedFaces);
     for (let c = 0; c < 4; c++) {
         for (let r = 0; r < 4; r++) {
             const faceImage =selectedFaces.pop();
@@ -54,26 +54,47 @@ function setup() {
         startingX = 340;
     }
 }
+// now background is in front of cards?
+function draw() {
+    // background('#A19FD4FF'); // weird 
+    if (gameState.numMatched === gameState.totalPairs) {
+        fill('orange');
+        textSize(100);
+        text('Winner!', 400, 400)
+        noloop();
+    }
+    for (let a = 0; a > cards.length; a++) {
+        if(!cards[a].isMatch) {
+            cards[a].face = DOWN;
+        }
+        cards[a].show();
+    }
+}
+
 
 function mousePressed() {
+    if (gameState.waiting) {
+        return;
+    }
     for (let m = 0; m < cards.length; m++) {
         // Check to see how many have been flipped, then trigger flip
-        if (gameState.flippedCards.length < 2 && cards[m].didHit(mouseX,mouseY)) {
-            console.log('liplop', cards[m]);
+        if (gameState.flippedCards.length < 2 && cards[m].didHit(mouseX, mouseY)) {
+            console.log('card is', cards[m]);
             gameState.flippedCards.push(cards[m]);
         }   
     }
-    if (gameState.flippedCards.length = 2) {
-        if (gameState.flippedCards[0].faceImage === gameState.flippedCards[1].faceImage) {
+    if (gameState.flippedCards.length === 2) {
+        if (gameState.flippedCards[0].cardFaceImg === gameState.flippedCards[1].cardFaceImg) {
             // mark matched as flipped
             gameState.flippedCards[0].isMatch = true;
             gameState.flippedCards[1].isMatch = true;
             // empty card array
-            gameState.flippedCards.length =0;
+            gameState.flippedCards.length = 0;
             // now the score - cumulative
             gameState.numMatched++;
             loop();
         } else {
+            gameState.waiting = true;
             const loopTimeout = window.setTimeout(() => {
                 loop();
                 window.clearTimeout(loopTimeout);
