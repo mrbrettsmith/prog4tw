@@ -1,24 +1,44 @@
 let myCard;
 const DOWN = 'down';
 const UP = 'up';
+let startingX = 340;
+let startingY = 60; 
+let cards = [];
+const gameState = {
+}
+
+
 function setup() {
     createCanvas(1000, 1000);
     background('#A19FD4FF');
     myCard = new Card();
-}
+    for (let c = 0; c < 4; c++) {
+        for (let r = 0; r < 4; r++) {
+            cards.push(new Card(startingX, startingY));
+            startingX += 140;
+        }
+        startingY += 140;
+        startingX = 340;
+    }
 
-// function mousePressed() {
-//     console.log(myCard.didHit(mouseX, mouseY));
-// }
+    // for (let c = 0; c < 4; c++) {     // c = column
+    //     for (let r = 0; r < 4; r++) { // r = row
+    //         new Card(startingX, startingY);
+    //         cards.push({ x: startingX, y: startingY, id: r});
+    //         startingX += 140;
+    //         noLoop()
+    //     }
+    // }
+}
 
 function mousePressed() {
     console.log(myCard.didHit(mouseX, mouseY));
 }
 
 class Card {
-    constructor() {
-        this.x = 100;
-        this.y = 100;
+    constructor(x, y) {
+        this.x = x;
+        this.y = y;
         this.width = 100;
         this.height = 100;
         this.show();
@@ -33,9 +53,6 @@ class Card {
             fill('#6FD46CFF'); 
             rect(this.x, this.y, this.width, this.height,);
         }
-        
-        
-        
     }
     didHit (mouseX, mouseY) {
         if (mouseX >= this.x && mouseX <= this.x + this.width 
