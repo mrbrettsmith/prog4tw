@@ -1,22 +1,16 @@
-// let rectX = 100;
-// let rectY = 100;
-// let startingX = 340;
-// let startingY = 60;
-// const rectWitdth = 100;
-// const rectHeight = 100;
-// let clickCount = 0;
-// let gameTiles = []
-
 let myCard;
-
 function setup() {
     createCanvas(1000, 1000);
     background('#A19FD4FF');
-    let myCard = new Card();
+    myCard = new Card();
 }
 
+// function mousePressed() {
+//     console.log(myCard.didHit(mouseX, mouseY));
+// }
+
 function mousePressed() {
-    console.log[myCard.thisHit(mouseX, MouseY)];
+    console.log(myCard.didHit(mouseX, mouseY));
 }
 
 class Card {
@@ -32,16 +26,26 @@ class Card {
         noStroke();
         rect(this.x, this.y, this.width, this.height,)
     }
-    thisHit (mouseX, mouseY){
-        if (mouseX >= this.x && mouseX <= this.x + this.width && mouseY >= this.y && mouseY <= this.y + this.height) {
-            return true;
-        } else {
-            return false;
+    didHit (mouseX, mouseY) {
+        if (mouseX >= this.x && mouseX <= this.x + this.width 
+            && mouseY >= this.y && mouseY <= this.y + this.height) {
+                return true;
+            } else {
+                return false;
         }
 
     }
 }
 
+
+// let rectX = 100;
+// let rectY = 100;
+// let startingX = 340;
+// let startingY = 60;
+// const rectWitdth = 100;
+// const rectHeight = 100;
+// let clickCount = 0;
+// let gameTiles = []
 
 
 // function drawTileFrame() {
