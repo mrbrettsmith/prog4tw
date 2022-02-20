@@ -1,15 +1,22 @@
-let rectX = 100;
-let rectY = 100;
-let startingX = 340;
-let startingY = 60;
-const rectWitdth = 100;
-const rectHeight = 100;
-let clickCount = 0;
-let gameTiles = []
+// let rectX = 100;
+// let rectY = 100;
+// let startingX = 340;
+// let startingY = 60;
+// const rectWitdth = 100;
+// const rectHeight = 100;
+// let clickCount = 0;
+// let gameTiles = []
+
+let myCard;
 
 function setup() {
     createCanvas(1000, 1000);
     background('#A19FD4FF');
+    let myCard = new Card();
+}
+
+function mousePressed() {
+    console.log[myCard.thisHit(mouseX, MouseY)];
 }
 
 class Card {
@@ -17,12 +24,21 @@ class Card {
         this.x = 100;
         this.y = 100;
         this.width = 100;
-        this.height = 100; 
-        
+        this.height = 100;
+        this.show();
     }
-    show(){
+    show() {
         fill('#6FD46CFF');
+        noStroke();
         rect(this.x, this.y, this.width, this.height,)
+    }
+    thisHit (mouseX, mouseY){
+        if (mouseX >= this.x && mouseX <= this.x + this.width && mouseY >= this.y && mouseY <= this.y + this.height) {
+            return true;
+        } else {
+            return false;
+        }
+
     }
 }
 
@@ -50,37 +66,37 @@ class Card {
 //         console.log('this is tile ', gameTiles[j].id)  }
 // }
 
-function letterFrame(originX,originY,background) {
-    translate(originX,originY);
-    noStroke();
-    fill(background);
-    rect(0, 0, 100, 100);
-}
+// function letterFrame(originX,originY,background) {
+//     translate(originX,originY);
+//     noStroke();
+//     fill(background);
+//     rect(0, 0, 100, 100);
+// }
 
-function tileImage(originX,originY) {
-    translate(originX,originY);
-    noStroke();
-    loadImage('image/gametile.png', img => {
-        image(img,0, 0);});
-}
-function draw() {
-    drawTileFrame();
-    letterFrame(60,60,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(140,-560,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(0,140,'#BDD44EFF');
-    letterFrame(140,0,'#BDD44EFF');
-    letterFrame(140,0,'#BDD44EFF');
-    letterFrame(140,0,'#BDD44EFF');
-    letterFrame(140,0,'#BDD44EFF');
-    tileImage(340,340);
-}
+// function tileImage(originX,originY) {
+//     translate(originX,originY);
+//     noStroke();
+//     loadImage('image/gametile.png', img => {
+//         image(img,0, 0);});
+// }
+// function draw() {
+//     drawTileFrame();
+//     letterFrame(60,60,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(140,-560,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(0,140,'#BDD44EFF');
+//     letterFrame(140,0,'#BDD44EFF');
+//     letterFrame(140,0,'#BDD44EFF');
+//     letterFrame(140,0,'#BDD44EFF');
+//     letterFrame(140,0,'#BDD44EFF');
+//     tileImage(340,340);
+// }
 
 
 // // Color Changer - Unsure how alpha channel works
