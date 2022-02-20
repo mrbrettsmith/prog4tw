@@ -5,9 +5,16 @@ let startingX = 340;
 let startingY = 60; 
 let cards = [];
 const gameState = {
+    totalPairs: 8,
+    flippedCards: [],
+    numMatched: 0,
+    attempts: 0,
+    waiting: false
 }
+
 let cardFaceArray = []
 let cardBack;
+
 function preload() {
     cardBack = loadImage('image/dice.png');
     cardFaceArray = [
@@ -34,7 +41,8 @@ function setup() {
         //remove used cardface
         cardFaceArray.splice(randomIdx, 1);
     }
-    myCard = new Card(); // can I get rid of this?
+    // myCard = new Card(); // can I get rid of this?
+    selectedFaces = shuffleArray(selectedFaces); // build this
     for (let c = 0; c < 4; c++) {
         for (let r = 0; r < 4; r++) {
             const faceImage =selectedFaces.pop();
@@ -93,6 +101,22 @@ class Card {
         }
         this.show();
     }
+}
+//Shuffle Array
+
+function shuffleArray(array) {
+    let counter = array.length;
+    while (counter > 0) {
+        //pick random??
+        const idx = Math.floor(Math.random() * counter);
+        // reduce when picked with the double minus (decrement)
+        counter--;
+        // swap the last element with it
+        const temp = array[counter];
+        array[counter] = array[idx];
+        array[idx] = temp;
+    }
+    return array;
 }
 
 
