@@ -6,6 +6,10 @@ let startingY = 60;
 let cards = [];
 const gameState = {
 }
+let cardBack;
+function preload() {
+    cardBack = loadImage('image/dice.png')
+}
 
 
 function setup() {
@@ -30,12 +34,6 @@ function mousePressed() {
     }
 }
 
-
-
-// function mousePressed() {
-//     console.log(myCard.didHit(mouseX, mouseY));
-// }
-
 class Card {
     constructor(x, y) {
         this.x = x;
@@ -50,9 +48,11 @@ class Card {
         if (this.face === DOWN) {
             fill('#72BAD4FF'); 
             rect(this.x, this.y, this.width, this.height,)
+            
         } else {
             fill('#6FD46CFF'); 
             rect(this.x, this.y, this.width, this.height,);
+            image(cardBack, this.x, this.y);
         }
     }
     didHit (mouseX, mouseY) {
