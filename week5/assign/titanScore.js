@@ -18,10 +18,9 @@ function preload() {
         loadImage('image/skull.png'),
         loadImage('image/stein.png'),
         loadImage('image/treasure.png'),
-        loadImage('image/wheat.png'),
+        loadImage('image/wheat.png')
     ]
 }
-
 
 function setup() {
     createCanvas(1000, 1000);
@@ -29,7 +28,7 @@ function setup() {
     myCard = new Card();
     for (let c = 0; c < 4; c++) {
         for (let r = 0; r < 4; r++) {
-            cards.push(new Card(startingX, startingY));
+            cards.push(new Card(startingX, startingY, cardFaceArray[0]));
             startingX += 140;
         }
         startingY += 140;
@@ -40,17 +39,18 @@ function setup() {
 function mousePressed() {
     for (let m = 0; m < cards.length; m++) {
         if (cards[m].didHit(mouseX,mouseY)) {
-            console.log('lipflop');
+            console.log('liplop', cards[m]);
         }   
     }
 }
 
 class Card {
-    constructor(x, y) {
+    constructor(x, y, cardFaceImg) {
         this.x = x;
         this.y = y;
         this.width = 100;
         this.height = 100;
+        this.cardFaceImg = cardFaceImg;
         this.show();
         this.face = DOWN;
     }
@@ -59,6 +59,7 @@ class Card {
         if (this.face === DOWN) {
             fill('#72BAD4FF'); 
             rect(this.x, this.y, this.width, this.height,)
+            image(this.cardFaceImg, this.x, this.y);
         } else {
             fill('#6FD46CFF'); 
             rect(this.x, this.y, this.width, this.height,);
