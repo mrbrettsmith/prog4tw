@@ -25,10 +25,20 @@ function preload() {
 function setup() {
     createCanvas(1000, 1000);
     background('#A19FD4FF');
-    myCard = new Card();
+    let selectedFaces = [];
+    for (let z = 0; z < 8; z++) {
+        const randomIdx = floor(random(cardFaceArray.length))
+        const face = cardFaceArray[randomIdx];
+        selectedFaces.push(face);
+        selectedFaces.push(face);
+        //remove used cardface
+        cardFaceArray.splice(randomIdx, 1);
+    }
+    myCard = new Card(); // can I get rid of this?
     for (let c = 0; c < 4; c++) {
         for (let r = 0; r < 4; r++) {
-            cards.push(new Card(startingX, startingY, cardFaceArray[0]));
+            const faceImage =selectedFaces.pop();
+            cards.push(new Card(startingX, startingY, faceImage));
             startingX += 140;
         }
         startingY += 140;
