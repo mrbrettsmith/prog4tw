@@ -32,7 +32,7 @@ function preload() {
 
 function setup() {
     createCanvas(1000, 1000);
-    background('#A19FD4FF')
+    // background('#A19FD4FF')
     let selectedFaces = [];
     for (let z = 0; z < 8; z++) {
         const randomIdx = floor(random(cardFaceArray.length))
@@ -56,7 +56,7 @@ function setup() {
 }
 // now background is in front of cards?
 function draw() {
-    // background('#A19FD4FF'); // weird 
+    background('#A19FD4FF'); // weird 
     if (gameState.numMatched === gameState.totalPairs) {
         fill('orange');
         textSize(100);
@@ -69,6 +69,13 @@ function draw() {
         }
         cards[a].show();
     }
+    noloop();
+    gameState.flippedCards.length = 0;
+    gameState.waiting = false;
+    fill('red');
+    textSize(36);
+    text('attempts ' + gameState.attempts, 100 ,300);
+    text('matches ' + gameState.numMatched, 100, 400)
 }
 
 
