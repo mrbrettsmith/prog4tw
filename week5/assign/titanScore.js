@@ -1,4 +1,3 @@
-
 const DOWN = 'down';
 const UP = 'up';
 let startingX = 340;
@@ -14,11 +13,11 @@ const gameState = {
     waiting: false,
 };
 // Image Info
-let cardFaceArray = []
+let cardfaceArray = []
 let cardBack;
 function preload() {
     cardBack = loadImage('image/dice.png');
-    cardFaceArray = [
+    cardfaceArray = [
         loadImage('image/cauldron.png'),
         loadImage('image/dagger.png'),
         loadImage('image/laurels.png'),
@@ -29,18 +28,19 @@ function preload() {
         loadImage('image/wheat.png')
     ]
 }
+
 // gameboard Set Up
 function setup() {
     createCanvas(1000, 1000);
-    background('#A19FD4FF') // Needs to be here?
+    background('#A19FD4FF'); // Needs to be here?
     let selectedFaces = [];
     for (let z = 0; z < 8; z++) {
-        const randomIdx = floor(random(cardFaceArray.length))
-        const face = cardFaceArray[randomIdx];
+        const randomIdx = floor(random(cardfaceArray.length));
+        const face = cardfaceArray[randomIdx];
         selectedFaces.push(face);
         selectedFaces.push(face);
         //remove used cardface
-        cardFaceArray.splice(randomIdx, 1);
+        cardfaceArray.splice(randomIdx, 1);
     }
     selectedFaces = shuffleArray(selectedFaces);
     for (let c = 0; c < 4; c++) {
@@ -53,21 +53,22 @@ function setup() {
         startingX = 340;
     }
 }
+
 function draw() {
     // background('#A19FD4FF'); // now background is in front of cards?
     if (gameState.numMatched === gameState.totalPairs) {
         fill('orange');
         textSize(100);
         text('Winner!', 400, 400);
-        noloop();
+        noLoop();
     }
-    for (let k = 0; k > cards.length; k++) {
+    for (let k = 0; k < cards.length, k++;) {
         if (!cards[k].isMatch) {
             cards[k].face = DOWN;
         }
         cards[k].show();
     }
-    noloop();
+    noLoop(); //noLoop not noloop! doh!
     gameState.flippedCards.length = 0;
     gameState.waiting = false;
     fill('orange');
