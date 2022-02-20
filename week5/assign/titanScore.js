@@ -63,12 +63,22 @@ function mousePressed() {
             gameState.flippedCards.push(cards[m]);
         }   
     }
-    if(gameState.flippedCards.length = 2) {
+    if (gameState.flippedCards.length = 2) {
         if (gameState.flippedCards[0].faceImage === gameState.flippedCards[1].faceImage) {
+            // mark matched as flipped
             gameState.flippedCards[0].isMatch = true;
             gameState.flippedCards[1].isMatch = true;
+            // empty card array
+            gameState.flippedCards.length =0;
+            // now the score - cumulative
+            gameState.numMatched++;
+            loop();
+        } else {
+            const loopTimeout = window.setTimeout(() => {
+                loop();
+                window.clearTimeout(loopTimeout);
+            }, 1000)
         }
-        
     }
 }
 
