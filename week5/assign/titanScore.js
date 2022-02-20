@@ -20,20 +20,21 @@ function setup() {
         startingY += 140;
         startingX = 340;
     }
-
-    // for (let c = 0; c < 4; c++) {     // c = column
-    //     for (let r = 0; r < 4; r++) { // r = row
-    //         new Card(startingX, startingY);
-    //         cards.push({ x: startingX, y: startingY, id: r});
-    //         startingX += 140;
-    //         noLoop()
-    //     }
-    // }
 }
 
 function mousePressed() {
-    console.log(myCard.didHit(mouseX, mouseY));
+    for (let m = 0; m < cards.length; m++) {
+        if (cards[m].didHit(mouseX,mouseY)) {
+            console.log('lipflop');
+        }   
+    }
 }
+
+
+
+// function mousePressed() {
+//     console.log(myCard.didHit(mouseX, mouseY));
+// }
 
 class Card {
     constructor(x, y) {
