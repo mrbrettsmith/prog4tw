@@ -6,9 +6,20 @@ let startingY = 60;
 let cards = [];
 const gameState = {
 }
+let cardFaceArray = []
 let cardBack;
 function preload() {
-    cardBack = loadImage('image/dice.png')
+    cardBack = loadImage('image/dice.png');
+    cardFaceArray = [
+        loadImage('image/cauldron.png'),
+        loadImage('image/dagger.png'),
+        loadImage('image/laurels.png'),
+        loadImage('image/rose.png'),
+        loadImage('image/skull.png'),
+        loadImage('image/stein.png'),
+        loadImage('image/treasure.png'),
+        loadImage('image/wheat.png'),
+    ]
 }
 
 
@@ -43,12 +54,11 @@ class Card {
         this.show();
         this.face = DOWN;
     }
-    show() {
+    show() { // whyare my upp&down reversed?
         noStroke();
         if (this.face === DOWN) {
             fill('#72BAD4FF'); 
             rect(this.x, this.y, this.width, this.height,)
-            
         } else {
             fill('#6FD46CFF'); 
             rect(this.x, this.y, this.width, this.height,);
