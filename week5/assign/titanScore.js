@@ -120,7 +120,6 @@ class Card {
         this.cardFaceImg = cardFaceImg;
         this.isMatch = false;
         this.show();
-        // this.face = DOWN;
     }
     show() {
         noStroke();
