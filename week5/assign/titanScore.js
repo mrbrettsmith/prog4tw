@@ -77,7 +77,7 @@ function draw() {
     text('Matches ' + gameState.numMatched, 340, 690);
 }
 
-
+// I rewrote this a few times - cant get the flip back to work.
 function mousePressed() {
     if (gameState.waiting) {
         return;
@@ -90,6 +90,7 @@ function mousePressed() {
         }   
     }
     if (gameState.flippedCards.length === 2) {
+        gameState.attempts++;
         if (gameState.flippedCards[0].cardFaceImg === gameState.flippedCards[1].cardFaceImg) {
             // mark matched as flipped
             gameState.flippedCards[0].isMatch = true;
@@ -127,7 +128,7 @@ class Card {
         if (this.face === UP || this.isMatch) {
             fill('#72BAD4FF'); 
             rect(this.x, this.y, this.width, this.height,)
-            image(this.cardFaceImg, this.x, this.y);
+            image(this.cardFaceImg, this.x, this.y, this.width, this.height);
         } else {
         // face down = game sprite
             fill('#6FD46CFF'); 
