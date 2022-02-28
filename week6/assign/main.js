@@ -12,11 +12,8 @@ const lv = new Vue({
         factNine: "Llamas make excellent therapy animals for both the elderly and children with special needs. You can even get them certified through some therapy animal programs.",
         factTen: "LLamas follow no laws!",
         secret: "Shhhhh! It is a secret!",
-        selected: 'A',
-        options: [
-            { text: 'No', value: 'A' },
-            { text: 'Yes', value: 'B' },
-          ]
+        
+        isHidden: true
 
         // options: [
         // vm.secret === 'yes',
