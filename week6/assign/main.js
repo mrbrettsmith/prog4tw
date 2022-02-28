@@ -11,5 +11,17 @@ const lv = new Vue({
         factEight: "Llamas and alpacas are like other farm animals: They need plenty of fenced outdoor space, along with a barn area to hang out in when it’s cold or rainy.",
         factNine: "Llamas make excellent therapy animals for both the elderly and children with special needs. You can even get them certified through some therapy animal programs.",
         factTen: "LLamas follow no laws!",
+        secret: "Shhhhh! It is a secret!",
+        selected: 'A',
+        options: [
+            { text: 'No', value: 'A' },
+            { text: 'Yes', value: 'B' },
+          ]
+
+        // options: [
+        // vm.secret === 'yes',
+        // vm.secret === 'no'
+        // ]
+
     }
 })

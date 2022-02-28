@@ -21,7 +21,24 @@
     <p>Subd. 7: {{factSeven}}</p>
     <p>Subd. 8: {{factEight}}</p>
     <p>Subd. 9: {{factNine}}</p>
-    <p>Subd. 10: {{factTen}}</p>
+    <h3>Would you like to know a secret?</h3>
+
+    <input type="checkbox" id="secret" value="yes" v-model="checked">
+    <label for="secret">Secret <span v-if"">Subd. 10: {{factTen}}</span></label>
+
+
+
+    <!-- <select v-model="selected">
+        <option v-for="option in options" v-bind:value="option.value">
+        {{ option.text }}
+        </option>
+    </select>
+    <span v-if="option.value==='B'">Subd. 10: {{factTen}}</span> -->
+    <!-- <span>Subd. 10: {{factTen}}</span> -->
+
+
+    <!-- <p v-if="secret==='yes'">Subd. 10: {{factTen}} <span v-else>"shhhhh"</span></p>
+    <p>Subd. 10: {{factTen}}</p> -->
 
 </div>
 
