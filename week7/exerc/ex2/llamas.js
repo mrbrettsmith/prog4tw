@@ -46,8 +46,8 @@ const llamaArray = [{
   name: "Llamabogini"
 }];
 
-let text = llamaArray
-let pun = text.includes("llama")
+// let text = llamaArray
+// let pun = text.includes("llama")
 
 Vue.createApp({
   data() {

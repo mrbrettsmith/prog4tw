@@ -25,7 +25,7 @@
         v-bind:class="{even: (index + 1) % 2 === 0,
         odd: (index+1) % 2 !== 0}">
           <div class="ranks">{{llama.rank}}</div>
-          <div class="names" v-bind:class="{punypuny: llama.name.includes('Llama', 'Llama')}">{{llama.name}}</div>
+          <div class="names" v-bind:class="{punypuny: llama.name.toLowerCase().includes('llama',)}">{{llama.name}}</div>
         </li>
       </ul>
   </div>
