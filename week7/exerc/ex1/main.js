@@ -1,17 +1,19 @@
 Vue.createApp({
-data() {
-    return {
-            
-        llamaSite: "https://en.wikipedia.org/wiki/Llama",
-        alpacaSite: "https://en.wikipedia.org/wiki/Alpaca"
-
+    data(){
+        return {
+            title: "Llama and Alpaca",
+            llamaSite: "https://en.wikipedia.org/wiki/Llama",
+            alpacaSite: "https://en.wikipedia.org/wiki/Alpaca"
+        }
     }
-}
-
-}).mount('#app')
+}).mount("#app")
 
 
+ // truth: {
+        //     color: "purple",
 
+        // },
+        // thisIs: "false",
 
 
 

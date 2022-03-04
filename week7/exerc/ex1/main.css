@@ -15,7 +15,7 @@ h1 {
 
 ul {
     background-color: rgb(176, 243, 210);
-    margin: 5em
+    margin: 2em
 }
 
 li {
@@ -23,11 +23,6 @@ li {
     font-size: medium;
     font-family: 'Courier New', Courier, monospace;
 }
-
 li.truth {
-    color: greenyellow;
-}
-
-li.false {
-    color: orangered;
+    color: purple;
 }

@@ -5,28 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>w7 Llama and Alpaca</title>
     
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/3.2.31/vue.cjs.js" integrity="sha512-2e2aXOh4/FgkCAUyurkjk0Uw4m1gPcExFwb1Ai4Ajjg97se/FEWfrLG1na4mq8cgOzouc8qLIqsh0EGksPGdqQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    
     <link rel="stylesheet" href="main.css">
-
+    <script src="https://unpkg.com/vue@3"></script>
 
 
 </head>
 
 <body>
-    <h1>Llama and Alpaca</h1>
-    <div id="app" v-cloak>
+    
+    <div id="app">
+        <h1>{{title}}</h1>
         <ul>
-            <li v-bind:class="{true: thisIsA==='truth'}">Furry</li>
-            <li v-bind:class="{true: thisIsA==='truth'}">Fuzzy</li>
-            <li v-bind:class="{true: thisIsA==='truth'}">spikey</li>
-            <li v-bind:class="{true: thisIsA==='truth'}">Wuzzy</li>
+            <li v-bind:style="{backround: 'yellow'}">Furry</li>
+            <li v-bind:style="truth">Fuzzy</li>
+            <li v-bind:class="">spikey</li>
+            <li v-bind:style="truth">Wuzzy</li>
 
         </ul>
 
         <a v-bind:href="llamaSite">More Llama Info</a>
     </div>
-
-
 
     <script src="main.js"></script>
 </body>
