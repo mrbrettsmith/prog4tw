@@ -46,12 +46,15 @@ const llamaArray = [{
   name: "Llamabogini"
 }];
 
+let text = llamaArray
+let pun = text.includes("llama")
+
 Vue.createApp({
   data() {
     return {
       llamas: llamaArray,
       // myNumbers: [2,5,5,6]
-
+      
     }
   }
 }).mount("#llama-list");
