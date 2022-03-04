@@ -20,8 +20,11 @@
     </div>
     <p>{{llamas[0]}}</p>
     <ul>
-        <li v-for="num in myNumbers">{{num}}</li>
-        <li v-for="llama in llamas">{{llama.name}}</li>
+        <!-- <li v-for="num in myNumbers">{{num}}</li> -->
+        <li v-for="llama in llamas">
+          <div>{{llama.name}}</div>
+          <div>{{llama.rank}}</div>
+        </li>
       </ul>
   </div>
 

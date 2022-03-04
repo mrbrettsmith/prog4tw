@@ -50,7 +50,7 @@ Vue.createApp({
   data() {
     return {
       llamas: llamaArray,
-      myNumbers: [2,5,5,6]
+      // myNumbers: [2,5,5,6]
 
     }
   }
