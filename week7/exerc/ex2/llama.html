@@ -18,14 +18,14 @@
       
 
     </div>
-    <p>{{llamas[0]}}</p>
+    <!-- <p>{{llamas[0]}}</p> -->
     <ul>
         <!-- <li v-for="num in myNumbers">{{num}}</li> -->
         <li v-for="(llama, index) in llamas" 
         v-bind:class="{even: (index + 1) % 2 === 0,
         odd: (index+1) % 2 !== 0}">
-          <div>{{llama.rank}}</div>
-          <div>{{llama.name}}</div>
+          <div class="ranks">{{llama.rank}}</div>
+          <div class="names">{{llama.name}}</div>
         </li>
       </ul>
   </div>

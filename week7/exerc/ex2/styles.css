@@ -25,8 +25,32 @@ html {
   background-color:mediumaquamarine;
 }
 
-.li {
+ul {
+  list-style: none;
+}
+
+li {
   font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  
+  margin-bottom: .25em;
+}
+
+div.names {
+  padding: 1em;
+  display: inline-block;
+  width: 65%;
+  text-align: center;
+  
+}
+div.ranks {
+  color: white;
+  font-weight: bolder;
+  padding: 1em;
+  border-right: 2px solid white;
+  display: inline-block;
+  width: 40%;
+  text-align: center;
 }
 
 .punypuny {
