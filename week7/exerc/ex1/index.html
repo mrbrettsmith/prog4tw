@@ -17,14 +17,15 @@
     <div id="app">
         <h1>{{title}}</h1>
         <ul>
-            <li v-bind:style="{backround: 'yellow'}">Furry</li>
+            <li v-bind:style="truth">Furry</li>
             <li v-bind:style="truth">Fuzzy</li>
-            <li v-bind:class="">spikey</li>
+            <li v-bind:class="{false: thisIs === 'false'}">spikey</li>
             <li v-bind:style="truth">Wuzzy</li>
 
         </ul>
 
         <a v-bind:href="llamaSite">More Llama Info</a>
+        <a v-bind:href="alpacaSite">More Llama Info</a>
     </div>
 
     <script src="main.js"></script>
