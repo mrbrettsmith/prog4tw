@@ -45,10 +45,13 @@ const llamaArray = [{
   rank: 15,
   name: "Llamabogini"
 }];
+
 Vue.createApp({
   data() {
     return {
-      llamas: llamaArray
+      llamas: llamaArray,
+      myNumbers: [2,5,5,6]
+
     }
   }
 }).mount("#llama-list");

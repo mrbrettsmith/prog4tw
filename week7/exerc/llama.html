@@ -15,9 +15,14 @@
         <span class="rank">Rank</span>
         <span class="name">Name</span>
       </div>
+      
 
     </div>
     <p>{{llamas[0]}}</p>
+    <ul>
+        <li v-for="num in myNumbers">{{num}}</li>
+        <li v-for="llama in llamas">{{llama.name}}</li>
+      </ul>
   </div>
 
   <script src="llamas.js"></script>
