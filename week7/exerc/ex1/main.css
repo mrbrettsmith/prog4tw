@@ -1,0 +1,33 @@
+[v-cloak] {
+    display: none;
+}
+
+body {
+    margin: 1em;
+    background-color: rgb(63, 62, 60);
+}
+
+h1 {
+    text-transform: capitalize;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: rgb(176, 243, 210);
+}
+
+ul {
+    background-color: rgb(176, 243, 210);
+    margin: 5em
+}
+
+li {
+    padding: .5em;
+    font-size: medium;
+    font-family: 'Courier New', Courier, monospace;
+}
+
+li.truth {
+    color: greenyellow;
+}
+
+li.false {
+    color: orangered;
+}

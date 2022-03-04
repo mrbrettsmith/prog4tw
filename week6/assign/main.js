@@ -13,7 +13,7 @@ const lv = new Vue({
         factTen: "LLamas follow no laws!",
         secret: "Shhhhh! It is a secret!",
         
-        isHidden: true
+        isHidden: true,
 
         // options: [
         // vm.secret === 'yes',
