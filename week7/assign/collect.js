@@ -1,6 +1,4 @@
-
-
-Vue.createApp({ 
+let mv = Vue.createApp({ 
     data(){
       return {
         rocks: [
@@ -33,7 +31,7 @@ Vue.createApp({
             description: "Smooth glossy white coral with with branching arms.",
         },
         {
-            name: "Crazy Horse fragment",
+            name: "Crazy Horse Fragment",
             place: "Crazy Horse, South Dakota",
             who: "Sophie Weil",
             dimensions: "6, 4, 4.5",
@@ -43,4 +41,4 @@ Vue.createApp({
         ]
       }
     }
-  }).mount("#app");
+  }).mount("#rockCollect");
