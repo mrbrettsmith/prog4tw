@@ -2,21 +2,40 @@ h1 {
     font-family: colt-soft, serif;
     font-weight: 400;
     font-style: normal;
+    margin-bottom: 0px;
+    color: aquamarine;
 }
 
-thead {
-font-family: bookmania, serif;
-font-weight: 700;
-font-style: normal;
+Header {
+    margin: 0em 2em;
+    text-align: center;
+    font-family: bookmania, serif;
+    font-weight: 300;
+    font-style: italic;
+    color:#ff0095;
+    padding:  0;
+    border: aquamarine 5px solid;
 }
 
 table {
-    margin: 2em;
-    border:none;
+    margin: 0em 2em;
+    /* border: none; */
+    padding: 10px 15px;
+    border-collapse: collapse;
     font-family: bookmania, serif;
+    vertical-align: middle;
+}
+thead {
+    font-family: bookmania, serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: aquamarine;
+}
 
-font-weight: 400;
-font-style: normal;
+
+th, td {
+    border: none;
+    padding: 10px 30px;
 }
 
 .gradOne {
