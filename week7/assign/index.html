@@ -4,12 +4,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Collection</title>
+    <link rel="stylesheet" href="https://use.typekit.net/rbx8lhv.css">
     <link rel="stylesheet" href="main.css">
     <script src="https://unpkg.com/vue@3"></script>
 
 </head>
 <body>
     <h1>Brett's Rock Collection</h1>
+    <p>Lava rocks are highlighted pink</p>
     <div id="rockCollect">
         <table>
             <thead>
@@ -21,7 +23,7 @@
             </thead>
             <tbody>
                 <tr v-for="(rock, idx) in rocks"
-                v-bind:class="{two: idx %2 !==0}">
+                v-bind:class="{gradTwo: idx %2 !==0, gradOne: idx %2 ===0, lava: rock.name.toLowerCase().includes('lava',)}">
                     <td>{{rock.name}}</td>
                     <td>{{rock.place}}</td>
                     <td>{{rock.who}}</td>
