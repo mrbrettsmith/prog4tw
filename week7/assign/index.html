@@ -20,7 +20,8 @@
                 <th>Description</th>
             </thead>
             <tbody>
-                <tr v-for="rock in rocks">
+                <tr v-for="(rock, idx) in rocks"
+                v-bind:class="{two: idx %2 !==0}">
                     <td>{{rock.name}}</td>
                     <td>{{rock.place}}</td>
                     <td>{{rock.who}}</td>
