@@ -1,10 +1,17 @@
 Vue.createApp({
     data() {
         return {
-            firstName: "",
+            firstName: '',
             lastName: '',
             street: '',
-            state: 'Mn',
+            city: '',
+            state: 'MN',
+            availableStates: [    
+            {name: 'Minnesota', value:'MN'},
+            {name: 'Wisconsin', value:'WI'},
+            {name: 'South Dakota', value:'SD'},
+            {name: 'North Dakota', value:'ND'},
+            ],
             selectedColors: [],
             colors: [
                 {name: 'Molten Green', value: 'green'},

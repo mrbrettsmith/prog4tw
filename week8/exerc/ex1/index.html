@@ -22,16 +22,19 @@
                     <input id="lastName" v-model="lastName">
                 </div>
                 <div>
-                    <label  for="street">Street Address</label>
-                    <input id="" v-model="">
+                    <label for="street">Street Address</label>
+                    <input id="street" v-model="street">
                 </div>
                 <div>
-                    <label>City</label>
-                    <input>
+                    <label for="city">City</label>
+                    <input id="city" v-model="city">
                 </div>
                 <div>
                     <label>State</label>
-                    <select name="" id="">
+                    <select name="" id="" v-model="state">
+                        <option v-for="state in availableStates" v-bind:value="state.value">
+                            {{state.name}}
+                        </option>
 
                     </select>
                 </div>
@@ -56,7 +59,7 @@
                 <div class="alpaca-status">
                     <label>Alpaca Status</label>
                     <textarea name="" id="" cols="30" rows="10"
-                    v-model=""status></textarea>
+                    v-model="status"></textarea>
                 </div>
             </fieldset>
             <div class="output">
