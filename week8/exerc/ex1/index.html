@@ -4,7 +4,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Llama Fan Form</title>
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/vue@3"></script>
 </head>
 
@@ -12,18 +12,19 @@
     <div id="app" v-cloak>
         <form>
             <fieldset>
-                <legentd>Register Here</legentd>
+                <legentd>Upper Midwest Llama Buddies Registration Form</legentd>
                 <div>
-                    <label>First Name</label>
-                    <input>
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" v-model="firstName">
                 </div>
                 <div>
-                    <label>Last Name</label>
-                    <input>
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" v-model="lastName">
                 </div>
                 <div>
-                    <label>Street Address</label>
-                    <input>/div>
+                    <label  for="street">Street Address</label>
+                    <input id="" v-model="">
+                </div>
                 <div>
                     <label>City</label>
                     <input>
@@ -34,21 +35,36 @@
 
                     </select>
                 </div>
-                <div>
+                <div class="alpaca-color">
                     <p>Favorite Alpaca Colors</p>
+                    <div>
+                        <label for=""> Color
+                            <input
+                            type="checkbox"
+                            name="" id="">
+                        </label>
+                    </div>
                 </div>
-                <div>
+                <div class="alpaca-status">
                     <label>Alpaca Status</label>
-                    <textarea name="" id="" cols="30" rows="10"></textarea>
+                    <textarea name="" id="" cols="30" rows="10"
+                    v-model=""status></textarea>
                 </div>
             </fieldset>
-
+            <div class="output">
+                <h3>Please Review</h3>
+                First Name: {{firstName}}<br>
+                Last Name: {{lastName}}<br>
+                Adress: {{street}}, {{city}}, {{state}}<br>
+                Alpaca Color: {{alpaca-color}}<br>
+                Status: {{alpaca-status}}<br>
+            </div>
         </form>
 
 
 
 
     </div>
-    
+    <script src="main.js"></script>
 </body>
 </html>
