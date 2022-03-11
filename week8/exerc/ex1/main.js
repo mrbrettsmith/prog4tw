@@ -5,6 +5,7 @@ Vue.createApp({
             lastName: '',
             street: '',
             state: 'Mn',
+            selectedColors: [],
             colors: [
                 {name: 'Molten Green', value: 'green'},
                 {name: 'Neon Neon', value: 'neon'},
