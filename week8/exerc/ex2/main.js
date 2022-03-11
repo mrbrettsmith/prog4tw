@@ -26,6 +26,7 @@ let vm = Vue.createApp({
                     window.alert('unexpected operator :(')
                     break;
             }
+            vm.firstNum = vm.secondNum = null;
         }
     },
 }).mount("#app")
