@@ -34,7 +34,31 @@
                 </tr>
             </tbody>
         </table>
-
+        <form v-on:submit="addRock">
+            <fieldset> 
+                <legend>Add a new rock to the database</legend>
+                <div>
+                    <label for="name">Name</label>
+                    <input id="name "type="text" v-model="newRockObj.name">
+                </div>
+                <div>
+                    <label for="place">Place</label>
+                    <input id="place "type="text" v-model="newRockObj.place">
+                </div>
+                <div>
+                    <label for="who">Who found it?</label>
+                    <input id="who "type="text" v-model="newRockObj.who">
+                </div>
+                <div>
+                    <label for="dimensions">Dimensions in inches (w, h, d)</label>
+                    <input id="dimensions "type="text" v-model="newRockObj.dimensions">
+                </div>
+                <div>
+                    <label for="description">Description of rock</label>
+                    <input id="description "type="text" v-model="newRockObj.description">
+                </div>
+            </fieldset>
+        </form>
 
 
     </div>
