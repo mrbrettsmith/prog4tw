@@ -14,7 +14,7 @@ let vm = Vue.createApp({
             who: "",
             dimensions: "",
             description: ""
-          },
+        },
 
         rocks: [
         {
@@ -69,6 +69,11 @@ let vm = Vue.createApp({
                 dimensions: "",
                 description: ""
             };
+        },
+        deleteItem: item => {
+            vm.rocks = vm.rocks.filter(rock => { 
+                return rock !== item;
+            })
         }
     }
   }).mount("#rockCollect");

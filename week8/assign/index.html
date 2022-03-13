@@ -22,6 +22,7 @@
                 <th>Who found the Rock</th>
                 <th>Dimensions <div>(w", h", d")</div></th>
                 <th>Description</th>
+                <th></th>
             </thead>
             <tbody>
                 <tr v-for="(rock, idx) in rocks"
@@ -31,6 +32,7 @@
                     <td>{{rock.who}}</td>
                     <td>{{rock.dimensions}}</td>
                     <td>{{rock.description}}</td>
+                    <td><button type="button" v-on:click="deleteItem(rock)">Remove Rock</button></td>
                 </tr>
             </tbody>
         </table>
