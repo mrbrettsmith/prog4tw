@@ -5,9 +5,17 @@
 
 
 
-let mv = Vue.createApp({ 
+let vm = Vue.createApp({ 
     data(){
       return {
+        newRockObj: {
+            name: "",
+            place: "",
+            who: "",
+            dimensions: "",
+            description: ""
+          },
+
         rocks: [
         {
             name: "Ledge Lump",
@@ -46,5 +54,21 @@ let mv = Vue.createApp({
         },
         ]
       }
+    },
+    methods: {
+        addRock: () => {
+            console.log('submitted');
+            vm.rocks = vm.rocks.concat(vm.newRockObj);
+            vm.resetForm();
+        },
+        resetForm: () => {
+            vm.newRockObj = {
+                name: "",
+                place: "",
+                who: "",
+                dimensions: "",
+                description: ""
+            };
+        }
     }
   }).mount("#rockCollect");

@@ -34,7 +34,7 @@
                 </tr>
             </tbody>
         </table>
-        <form v-on:submit="addRock">
+        <form v-on:submit.prevent="addRock">
             <fieldset> 
                 <legend>Add a new rock to the database</legend>
                 <div>
@@ -57,6 +57,7 @@
                     <label for="description">Description of rock</label>
                     <input id="description "type="text" v-model="newRockObj.description">
                 </div>
+                <button type="submit"> Submit Rock</button>
             </fieldset>
         </form>
 
