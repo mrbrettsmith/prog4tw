@@ -1,0 +1,62 @@
+h1 {
+    font-family: colt-soft, serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom: 0px;
+    color: aquamarine;
+}
+
+Header {
+    margin: 0em 2em;
+    text-align: center;
+    font-family: bookmania, serif;
+    font-weight: 300;
+    font-style: italic;
+    color:#ff0095;
+    padding:  0;
+    border: aquamarine 5px solid;
+}
+
+table {
+    margin: 0em 2em;
+    /* border: none; */
+    padding: 10px 15px;
+    border-collapse: collapse;
+    font-family: bookmania, serif;
+    vertical-align: middle;
+}
+thead {
+    font-family: bookmania, serif;
+    font-weight: 700;
+    font-style: normal;
+    background-color: aquamarine;
+}
+
+
+th, td {
+    border: none;
+    padding: 10px 30px;
+}
+
+.gradOne {
+    color:rgb(49, 49, 30);
+    background: linear-gradient(45deg, #e2c78e, #a19467 );
+}
+
+.gradTwo {
+    color:rgb(49, 49, 30);
+    background: linear-gradient(45deg,#a19467, #e2c78e);
+    
+}
+.lava {
+    color:rgb(215, 236, 236);
+    background: linear-gradient(45deg,#e68964, #ff0095);
+}
+
+
+/* Found text gradient - how can I encorporate this ? */
+/* .lavaText {
+    background: linear-gradient(to right, darkblue, darkorchid);
+    color: transparent;
+    background-clip: text;
+  } */
