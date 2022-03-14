@@ -42,23 +42,26 @@
                 <div class="form-container">
                 <div>
                     <label for="name">Name</label>
-                    <input id="name "type="text" v-model="newRockObj.name">
+                    <input id="name "type="text" v-model="newRockObj.name"
+                    placeholder="name the rock">
                 </div>
                 <div>
                     <label for="place">Place</label>
-                    <input id="place "type="text" v-model="newRockObj.place">
+                    <input id="place "type="text" v-model="newRockObj.place"
+                    placeholder="where it was found">
                 </div>
                 <div>
                     <label for="who">Who found it?</label>
-                    <input id="who "type="text" v-model="newRockObj.who">
+                    <input id="who "type="text" v-model="newRockObj.who" placeholder="who gifted the rock">
                 </div>
                 <div>
-                    <label for="dimensions">Dimensions (w", h", d")</label>
-                    <input id="dimensions "type="text" v-model="newRockObj.dimensions">
+                    <label for="dimensions">Dimensions</label>
+                    <input id="dimensions" type="text" v-model="newRockObj.dimensions" placeholder="w, h, d, in inches">
                 </div>
                 <div class="new-rock-description">
-                    <label for="description">Description of rock</label>
-                    <input id="description "type="text" v-model="newRockObj.description">
+                    <label for="description">Description</label>
+                    <!-- <input id="description "type="text" v-model="newRockObj.description" placeholder="describe characteristics"> -->
+                    <textarea id="description" rows="1" cols="30" type="text" v-model="newRockObj.description" placeholder="describe characteristics"> </textarea>
                 </div>
                 <button type="submit" class="new-rock-button"> Submit Rock</button>
                 </div>

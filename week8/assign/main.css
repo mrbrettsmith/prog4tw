@@ -66,8 +66,16 @@ form {
     margin: 0em 2em;
     padding: 10px 15px;
     border-collapse: collapse;
-    
 }
+
+form textarea {
+    min-width: 100%;
+    max-width: 100%;
+    max-height: auto;
+    resize: none;
+    box-sizing: border-box;
+    border: none;
+  }
 
 input {
     /* box-sizing: border-box; */
@@ -80,6 +88,8 @@ form legend {
     font-weight: 400;
     font-style: normal;
     margin-bottom: 0px;
+    text-align: center;
+    color:#ff0095;
 }
 
 .form-container {
@@ -92,7 +102,7 @@ form legend {
 }
 
 .form-container div {
-    color: #e68964;
+    color:#ff0095;
     max-width: 100%;
 }
 
