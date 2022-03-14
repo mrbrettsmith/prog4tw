@@ -24,14 +24,15 @@ table {
     border-collapse: collapse;
     font-family: bookmania, serif;
     vertical-align: middle;
+    line-height: 1.35rem;
 }
+
 thead {
     font-family: bookmania, serif;
     font-weight: 700;
     font-style: normal;
     background-color: aquamarine;
 }
-
 
 th, td {
     border: none;
@@ -67,6 +68,11 @@ form {
     border-collapse: collapse;
 }
 
+input {
+    width: 100%;
+    border: none;
+}
+
 form legend {
     font-family: colt-soft, serif;
     font-weight: 400;
@@ -76,17 +82,30 @@ form legend {
 
 .form-container {
     display: grid;
-    grid-template-columns: repeat(5, 20%);
+    grid-template-columns:  2fr 2fr 2fr 5fr 1fr;
+    grid-template-rows: 150px;
+    max-width: 100%;
+    min-width: 0;
+    grid-gap: 1rem;
 }
 
 .form-container div {
     color: #e68964;
+    max-width: 100%;
 }
 
-.new-rock {
-    grid-column: 5;
+.new-rock-description {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    grid-row-start: 2;
+    
+}
+.new-rock-button {
+    grid-column: 5/-1;
     grid-row: 1/3;
 }
+
+
 /* Found text gradient - how can I encorporate this ? */
 /* .lavaText {
     background: linear-gradient(to right, darkblue, darkorchid);

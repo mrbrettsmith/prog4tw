@@ -36,7 +36,7 @@ let vm = Vue.createApp({
             place: "Snow Canyon State Park, Utah",
             who: "Molly Raben",
             dimensions: "7.5, 4, 4",
-            description: "Black lava rock with dusty red mottlin over a pitted surface. Gathered from the area 'The Conqueror' was filmed. Used for an art exhibition at the White Page Gallery in Minneapolis",
+            description: "Black lava rock with dusty red mottling over a pitted surface. Gathered from the area 'The Conqueror' was filmed. Used for an art exhibition at the White Page Gallery in Minneapolis",
         },
         {
             name: "Weird Y Coral",
