@@ -55,7 +55,27 @@ th, td {
 }
 
 button {
-   background: none;
+    background: none;
+    color: aquamarine;
+    text-decoration: none;
+    border: none;
+    border-radius: 10px;
+    padding: 5px;
+    font-family: bookmania, serif;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1em;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: aquamarine;
+    color:black;
+}
+
+.new-rock-button:hover {
+    background-color: white;
+    color:black;
 }
 
 form {
@@ -64,8 +84,13 @@ form {
     font-style: normal;
     background-color: aquamarine;
     margin: 0em 2em;
-    padding: 10px 15px;
+    padding: 1.5em 15px 1em;
     border-collapse: collapse;
+}
+
+form button {
+    color: #ff0095;
+    max-width: 100%;
 }
 
 form textarea {
