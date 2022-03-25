@@ -5,13 +5,13 @@ console.log(props.animal);
 
 <template>
     <div>
-        <h3>Common Name</h3>
-        <p>Binomial Name</p>
-        <p>Order</p>
-        <p>Family</p>
-        <p>Genus</p>
-        <p>Species</p>
-        <img src="HOLD" alt="commonName">
+        <h3>{{props.animal.commonName}}</h3>
+        <p>Binomial Name: {{props.animal.binomialName}}</p>
+        <p>Order: {{props.animal.order}}</p>
+        <p>Family: {{props.animal.family}}</p>
+        <p>Genus: {{props.animal.genus}}</p>
+        <p>Species: {{props.animal.species}}</p>
+        <img v-bind:src="props.animal.image" v-bind:alt="props.animal.commonName">
     </div>
 
 </template>

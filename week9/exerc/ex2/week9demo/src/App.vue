@@ -23,8 +23,13 @@ const camelids = [
 </script>
 
 <template>
-<h1>Camailid Componant Page</h1>
-<CamalidRow v-bind:animal="camelids[0]" />
+<!-- html here -->
+<h1>Camelid Componant Page</h1>
+<CamalidRow
+  v-for="critter in camelids"
+  v-bind:key="critter.commonName"
+  v-bind:animal="critter"
+/>
 
 </template>
 
