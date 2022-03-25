@@ -1,4 +1,5 @@
 <script setup>
+import CamalidRow from './components/CamalidRow.vue';
 const camelids = [
   {
     commonName: "Lama",
@@ -22,17 +23,8 @@ const camelids = [
 </script>
 
 <template>
-<!-- html here -->
 <h1>Camailid Componant Page</h1>
-<div v-for="beast in camelids" v-bind:key="beast.binomialName">
-  <h3>Common Name</h3>
-  <p>Binomial Name</p>
-  <p>Order</p>
-  <p>Family</p>
-  <p>Genus</p>
-  <p>Species</p>
-  <img src="HOLD" alt="commonName">
-</div>
+<CamalidRow v-bind:animal="camelids[0]" />
 
 </template>
 
