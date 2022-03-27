@@ -1,15 +1,61 @@
 <script setup>
+import { reactive } from "vue";
 
-import { reactive } from 'vue';
+const rocks = [
+  {
+    name: "Ledge Lump",
+    place: "'The Ledges', Alfred, New York",
+    who: "Erin Smith",
+    dimensions: "4.5, 4, 1.75",
+    description:
+      "Smooth, flat bottom with a pitted fossil haunted top. Collected from the rocky ledges my sister 3D scanned for ceramic printing.",
+  },
+  {
+    name: "Alamo Pebble",
+    place: "The Alamo, San Antonio, Texas",
+    who: "Beth Checkola",
+    dimensions: "1.5, 1.5, 1",
+    description:
+      "Small, egg-shaped rock. Pale color. Taken from an interior wall of the Alamo",
+  },
+  {
+    name: "Snow Canyon Lava",
+    place: "Snow Canyon State Park, Utah",
+    who: "Molly Raben",
+    dimensions: "7.5, 4, 4",
+    description:
+      "Black lava rock with dusty red mottling over a pitted surface. Gathered from the area 'The Conqueror' was filmed. Used for an art exhibition at the White Page Gallery in Minneapolis",
+  },
+  {
+    name: "Weird Y Coral",
+    place: "Hawaii",
+    who: "Matt Miller",
+    dimensions: "1, 2, .5",
+    description: "Smooth glossy white coral with with branching arms.",
+  },
+  {
+    name: "Crazy Horse Fragment",
+    place: "Crazy Horse, South Dakota",
+    who: "Sophie Weil",
+    dimensions: "6, 4, 4.5",
+    description: "Blast trailing from the monumental sculpture",
+  },
+];
 
-const rocks = [];
-const newRockObj = {}
+const newRockObj = {
+  name: "",
+  place: "",
+  who: "",
+  dimensions: "",
+  description: "",
+};
+
 // const state = reactive({rocks: rocks, newRockObj: newRockObj}) what the below is doing, yo!
-const state = reactive({rocks, newRockObj})
+const state = reactive({ rocks, newRockObj });
 </script>
 
 <template>
-  <div class="collection-wrattoer">
+  <div class="collection-wrapper">
     <header>
       <h1>Brett's Rock Collection</h1>
       <p>Lava rocks are highlighted pink</p>
@@ -19,9 +65,12 @@ const state = reactive({rocks, newRockObj})
         <th>Name</th>
         <th>Place</th>
         <th>Who found the Rock</th>
-        <th>Dimensions <div>(w", h", d")</div></th>
+        <th>
+          Dimensions
+          <div>(w", h", d")</div>
+        </th>
         <th>Description</th>
-        <!-- <th>Image</th> -->
+        <th></th>    <!-- Image -->
       </thead>
       <tbody>
         <tr
@@ -33,11 +82,11 @@ const state = reactive({rocks, newRockObj})
             lava: rock.name.toLowerCase().includes('lava'),
           }"
         >
-          <td>{{rock.name}}</td>
-          <td>{{rock.place}}</td>
-          <td>{{rock.who}}</td>
-          <td>{{rock.dimensions}}</td>
-          <td>{{rock.description}}</td>
+          <td>{{ rock.name }}</td>
+          <td>{{ rock.place }}</td>
+          <td>{{ rock.who }}</td>
+          <td>{{ rock.dimensions }}</td>
+          <td>{{ rock.description }}</td>
           <td>
             <button type="button" v-on:click="deleteItem(rock)">
               Remove Rock
@@ -47,7 +96,7 @@ const state = reactive({rocks, newRockObj})
       </tbody>
     </table>
     <form v-on:submit.prevent="addRock">
-      <fieldset> 
+      <fieldset>
         <legend>Add a new rock to the database</legend>
         <div class="form-container">
           <div>
@@ -56,7 +105,8 @@ const state = reactive({rocks, newRockObj})
               id="name "
               type="text"
               v-model="newRockObj.name"
-              placeholder="name the rock">
+              placeholder="name the rock"
+            />
           </div>
           <div>
             <label for="place">Place</label>
@@ -106,5 +156,146 @@ const state = reactive({rocks, newRockObj})
 </template>
 
 <style>
+h1 {
+  font-family: colt-soft, serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 0px;
+  color: aquamarine;
+}
 
+Header {
+  margin: 0em 2em;
+  text-align: center;
+  font-family: bookmania, serif;
+  font-weight: 300;
+  font-style: italic;
+  color: #ff0095;
+  padding: 0;
+  border: aquamarine 5px solid;
+}
+
+table {
+  margin: 0em 2em;
+  /* border: none; */
+  padding: 10px 15px;
+  border-collapse: collapse;
+  font-family: bookmania, serif;
+  vertical-align: middle;
+  line-height: 1.35rem;
+}
+
+thead {
+  font-family: bookmania, serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: aquamarine;
+}
+
+th,
+td {
+  border: none;
+  padding: 10px 30px;
+}
+
+.gradOne {
+  color: rgb(49, 49, 30);
+  background: linear-gradient(45deg, #e2c78e, #a19467);
+}
+
+.gradTwo {
+  color: rgb(49, 49, 30);
+  background: linear-gradient(45deg, #a19467, #e2c78e);
+}
+.lava {
+  color: rgb(215, 236, 236);
+  background: linear-gradient(45deg, #e68964, #ff0095);
+}
+
+button {
+  background: none;
+  color: aquamarine;
+  text-decoration: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px;
+  font-family: bookmania, serif;
+  font-weight: 300;
+  font-style: italic;
+  line-height: 1em;
+  transition-duration: 0.4s;
+}
+
+button:hover {
+  background-color: aquamarine;
+  color: black;
+}
+
+.new-rock-button:hover {
+  background-color: white;
+  color: black;
+}
+
+form {
+  font-family: bookmania, serif;
+  font-weight: 700;
+  font-style: normal;
+  background-color: aquamarine;
+  margin: 0em 2em;
+  padding: 1.5em 15px 1em;
+  border-collapse: collapse;
+}
+
+form button {
+  color: #ff0095;
+  max-width: 100%;
+}
+
+form textarea {
+  min-width: 100%;
+  max-width: 100%;
+  max-height: auto;
+  resize: none;
+  box-sizing: border-box;
+  border: none;
+}
+
+input {
+  /* box-sizing: border-box; */
+  width: 100%;
+  border: none;
+}
+
+form legend {
+  font-family: colt-soft, serif;
+  font-weight: 400;
+  font-style: normal;
+  margin-bottom: 0px;
+  text-align: center;
+  color: #ff0095;
+}
+
+.form-container {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: 4rem 4rem;
+  grid-gap: 1rem;
+  min-width: 0;
+  grid-gap: 1rem;
+}
+
+.form-container div {
+  color: #ff0095;
+  max-width: 100%;
+}
+
+.new-rock-description {
+  grid-column: 1 / 5;
+  grid-row: 2 / 3;
+}
+
+.new-rock-button {
+  grid-column: 5 / 6;
+  grid-row: 1 / 3;
+}
 </style>
