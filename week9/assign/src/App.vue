@@ -1,5 +1,11 @@
 <script setup>
 
+import { reactive } from 'vue';
+
+const rocks = [];
+const newRockObj = {}
+// const state = reactive({rocks: rocks, newRockObj: newRockObj}) what the below is doing, yo!
+const state = reactive({rocks, newRockObj})
 </script>
 
 <template>
@@ -19,7 +25,7 @@
       </thead>
       <tbody>
         <tr
-          v-for="(rock, idx) in rocks"
+          v-for="(rock, idx) in state.rocks"
           v-bind:key="idx"
           v-bind:class="{
             gradTwo: idx % 2 !== 0,
