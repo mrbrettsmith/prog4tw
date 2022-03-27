@@ -1,5 +1,7 @@
 <script setup>
 import { reactive } from "vue";
+import TableRow from "./components/tableRow.vue" 
+// 'componant.vue' must be capitalized!! 
 
 const rocks = [
   {
@@ -70,10 +72,12 @@ const state = reactive({ rocks, newRockObj });
           <div>(w", h", d")</div>
         </th>
         <th>Description</th>
-        <th></th>    <!-- Image -->
+        <th></th> <!-- Image -->
       </thead>
       <tbody>
-        <tr
+        <TableRow v-for="(rock, idx) in state.rocks" v-bind:key="idx" v-bind:rock="rock" />
+        <!-- Moved to tableRow.vue -->
+        <!-- <tr
           v-for="(rock, idx) in state.rocks"
           v-bind:key="idx"
           v-bind:class="{
@@ -92,7 +96,7 @@ const state = reactive({ rocks, newRockObj });
               Remove Rock
             </button>
           </td>
-        </tr>
+        </tr> -->
       </tbody>
     </table>
     <form v-on:submit.prevent="addRock">
