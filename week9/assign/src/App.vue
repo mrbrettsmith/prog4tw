@@ -1,7 +1,7 @@
 <script setup>
 import { reactive } from "vue";
-import TableRow from "./components/tableRow.vue" 
-// 'componant.vue' must be capitalized!! 
+import TableRow from "./components/tableRow.vue";
+// 'componant.vue' must be capitalized!!
 
 const rocks = [
   {
@@ -53,11 +53,18 @@ const newRockObj = {
 };
 // const state = reactive({rocks: rocks, newRockObj: newRockObj}) what the below is doing, yo!
 const state = reactive({ rocks, newRockObj });
-function addRock(){
-            console.log('submitted');
-            state.rocks = state.rocks.concat(state.newRockObj);
-            this.resetForm();
-        }
+
+// This function works with this concat formation without adding all of the descriptors??! I am going to leave it!
+function addRock() {
+  console.log("submitted");
+  state.rocks = state.rocks.concat(state.newRockObj);
+  state.newRockObj.name = "";
+  state.newRockObj.place = "";
+  state.newRockObj.who = "";
+  state.newRockObj.dimensions = "";
+  state.newRockObj.description = "";
+};
+
 </script>
 
 <template>
@@ -76,10 +83,15 @@ function addRock(){
           <div>(w", h", d")</div>
         </th>
         <th>Description</th>
-        <th></th> <!-- Image -->
+        <th></th>
+        <!-- Image -->
       </thead>
       <tbody>
-        <TableRow v-for="(rock, idx) in state.rocks" v-bind:key="idx" v-bind:rock="rock" />
+        <TableRow
+          v-for="(rock, idx) in state.rocks"
+          v-bind:key="idx"
+          v-bind:rock="rock"
+        />
         <!-- Moved to tableRow.vue -->
         <!-- <tr
           v-for="(rock, idx) in state.rocks"
