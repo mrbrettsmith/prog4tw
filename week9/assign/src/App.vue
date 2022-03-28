@@ -63,8 +63,19 @@ function addRock() {
   state.newRockObj.who = "";
   state.newRockObj.dimensions = "";
   state.newRockObj.description = "";
-};
+}
+// function willDeleteRock(itemToDelete) {
+//   state.rocks = state.rocks.filter((itemToCheck) => {
+//     return itemToDelete.name !== itemToCheck.name;
+//   });
+// }
 
+function handleDelete(itemToDelete) {
+  console.log(itemToDelete.name)
+  state.rocks = state.rocks.filter((itemToCheck) => {
+    return itemToDelete !== itemToCheck;
+  });
+}
 </script>
 
 <template>
@@ -88,9 +99,11 @@ function addRock() {
       </thead>
       <tbody>
         <TableRow
-          v-for="(rock, idx) in state.rocks"
-          v-bind:key="idx"
+          v-for="(rock, index) in state.rocks"
+          v-bind:key="index"
           v-bind:rock="rock"
+          v-bind:index="index"
+          v-on:delete-item="handleDelete"
         />
         <!-- Moved to tableRow.vue -->
         <!-- <tr
