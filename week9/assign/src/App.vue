@@ -51,9 +51,13 @@ const newRockObj = {
   dimensions: "",
   description: "",
 };
-
 // const state = reactive({rocks: rocks, newRockObj: newRockObj}) what the below is doing, yo!
 const state = reactive({ rocks, newRockObj });
+function addRock(){
+            console.log('submitted');
+            state.rocks = state.rocks.concat(state.newRockObj);
+            this.resetForm();
+        }
 </script>
 
 <template>
