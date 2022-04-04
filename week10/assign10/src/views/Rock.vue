@@ -15,3 +15,17 @@
         <p>{{ rock.description }}</p>
     </div>
 </template>
+<style scoped>
+@import url("https://use.typekit.net/rbx8lhv.css");
+
+.rock-detail {
+    margin: 0em 2em;
+    padding: 10px 15px;
+    border-collapse: collapse;
+    font-family: bookmania, serif;
+    vertical-align: middle;
+    line-height: 1.35rem;
+}
+
+
+</style>
