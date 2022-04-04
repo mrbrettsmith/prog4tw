@@ -41,6 +41,21 @@
         "dimensions": "6, 4, 4.5",
         "description": "Blast trailing from the monumental sculpture",
         "photo": "src/data/img/horse.jpg"
+      },
+      {
+        "name": "Uranium Glass",
+        "place": "Ebay",
+        "who": "Brett Smith",
+        "dimensions": "1, 1, 1",
+        "description": "Glass marble tinted with uranium. Green Hue that flouresces",
+        "photo": "src/data/img/uranium.jpg"
+      },
+      {
+        "name": "Croix's Quartz",
+        "place": "Mexico",
+        "who": "Croix Clayton",
+        "dimensions": "3, 3.5, 2.5",
+        "description": "Translucent quartz crystal pyramid rooted in a rocky base",
+        "photo": "src/data/img/quartz.jpg"
       }
-    
 ]

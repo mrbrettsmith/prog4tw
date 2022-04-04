@@ -18,6 +18,7 @@ body {
 }
 h1 {
   font-family: colt-soft, serif;
+  letter-spacing: 2px;
   font-weight: 400;
   font-style: normal;
   margin-bottom: 0px;
@@ -32,4 +33,11 @@ h1 {
 a {
   text-decoration: none;
 }
+.header:hover {
+  background-color: aquamarine;
+}
+.header:hover a h1 {
+    color: white;
+}
+
 </style>

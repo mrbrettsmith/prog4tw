@@ -9,7 +9,7 @@ console.log("Rock Collection", RockCollection);
     <div class="rock-list-name" 
     v-for="(rock, index) in RockCollection" :key="index">
       <RouterLink :to="'/rock/' + rock.name"> <img :src="rock.photo" :alt="rock.name" />
-      {{rock.name}} 
+      <div class="rock-list-name-tag">{{rock.name}} </div>
       </RouterLink>
     </div>
   </div>
@@ -39,6 +39,9 @@ console.log("Rock Collection", RockCollection);
   max-width: 300px;
 }
 
+.rock-list-name-tag {
+  margin-top: 8px;
+}
 .rock-list-name img{
 max-width: 300px;
 }
@@ -49,6 +52,13 @@ max-width: 300px;
 }
 .rock-list-name a:visited {
   color: inherit;
+}
+
+.rock-list-name:hover {
+  background-color: aquamarine;
+}
+.rock-list-name:hover a {
+    color: white;
 }
 
 </style>
