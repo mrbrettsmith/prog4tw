@@ -6,7 +6,7 @@
         "dimensions": "4.5, 4, 1.75",
         "description":
           "Smooth, flat bottom with a pitted fossil haunted top. Collected from the rocky ledges my sister 3D scanned for ceramic printing.",
-        "photo": "../img/ledge.jpg"
+        "photo": "https://bsmith.studio.mcad.edu/prog4tw/week10/assign/img/ledge.jpg"
       },
       {
         "name": "Alamo Pebble",
@@ -15,7 +15,7 @@
         "dimensions": "1.5, 1.5, 1",
         "description":
           "Small, egg-shaped rock. Pale color. Taken from an interior wall of the Alamo",
-          "photo": "../img/alamo.jpg"
+          "photo": "https://bsmith.studio.mcad.edu/prog4tw/week10/assign/img/alamo.jpg"
       },
       {
         "name": "Snow Canyon Lava",
@@ -24,7 +24,8 @@
         "dimensions": "7.5, 4, 4",
         "description":
           "Black lava rock with dusty red mottling over a pitted surface. Gathered from the area 'The Conqueror' was filmed. Used for an art exhibition at the White Page Gallery in Minneapolis",
-          "photo": "../img/snow.jpg"
+          "photo": "https://bsmith.studio.mcad.edu/prog4tw/week10/assign/img/snow.jpg"
+
       },
       {
         "name": "Weird Y Coral",
@@ -32,7 +33,7 @@
         "who": "Matt Miller",
         "dimensions": "1, 2, .5",
         "description": "Smooth glossy white coral with with branching arms.",
-        "photo": "../img/coral.jpg"
+        "photo": "https://bsmith.studio.mcad.edu/prog4tw/week10/assign/img/coral.jpg"
       },
       {
         "name": "Crazy Horse Fragment",
@@ -40,7 +41,7 @@
         "who": "Sophie Weil",
         "dimensions": "6, 4, 4.5",
         "description": "Blast trailing from the monumental sculpture",
-        "photo": "../img/horse.jpg"
+        "photo": "https://bsmith.studio.mcad.edu/prog4tw/week10/assign/img/horse.jpg"
       },
       {
         "name": "Uranium Glass",
@@ -48,7 +49,7 @@
         "who": "Brett Smith",
         "dimensions": "1, 1, 1",
         "description": "Glass marble tinted with uranium. Green Hue that flouresces",
-        "photo": "../img/uranium.jpg"
+        "photo": "https://bsmith.studio.mcad.edu/prog4tw/week10/assign/img/uranium.jpg"
       },
       {
         "name": "Croix's Quartz",
@@ -56,6 +57,6 @@
         "who": "Croix Clayton",
         "dimensions": "3, 3.5, 2.5",
         "description": "Translucent quartz crystal pyramid rooted in a rocky base",
-        "photo": "../img/quartz.jpg"
+        "photo": "https://bsmith.studio.mcad.edu/prog4tw/week10/assign/img/quartz.jpg"
       }
 ]
