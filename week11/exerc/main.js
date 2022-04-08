@@ -10,7 +10,6 @@ function setup() {
 function draw() {
     for (let l = 0; l < 7; l++) {
         grow[l].bloom();
-       
     }
   }
 
@@ -26,11 +25,10 @@ class Leaf{
     // }
 
     bloom() {
-        triangle(30, 75, 58, 20, 86, 75);
-        // stroke("pink");
-        // strokeWeight(7);
-        // noFill();
-        // triangle(this.x -25, this.y, this.x +25, this.y, this.x + random(-25, +25), this.y +100);
+        stroke("green");
+        strokeWeight(3);
+        noFill();
+        triangle(this.x -25, this.y, this.x +25, this.y, this.x + random(-25, +25), this.y +100);
     }
 }
  
