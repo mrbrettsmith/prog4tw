@@ -1,36 +1,58 @@
-let makeLeaf = [];
-// let point1 = {
-//     a: mouseX, 
-//     b: mouseY
-// }
 
-// let point2 = 
-// let point3 =
+let holePunch = [];
 
 function setup() {
     createCanvas(windowWidth, windowHeight, WEBGL);
     background(100, random(255), 255);
-    makeLeaf = new leaf();
-    mousePressed 
+    for (let i = 0; i < 100; i++) {
+        holePunch[i] = new Hole();
+        
     }
-
-function leaf() {
-    stroke("pink");
-    strokeWeight(3)
-    noFill()
-    triangle(mouseX, mouseY, 200, 100, 150,200)
 }
-
+    
 function draw() {
-    triangle(mouseX, mouseY, 200, 100, 150,200)
-    // for (let i = 0; i < 7; i++) {
-    //     makeLeaf[i];
-    // }
+    stroke(mouseX, mousey, 100,)
+    for (let i = 0; i < 15; i++) {
+        
+        
+    }
 }
 
-function mousePressed() {
-    makeLeaf;
-}
+
+
+// let makeLeaf = [];
+// // let point1 = {
+// //     a: mouseX, 
+// //     b: mouseY
+// // }
+
+// // let point2 = 
+// // let point3 =
+
+// function setup() {
+//     createCanvas(windowWidth, windowHeight, WEBGL);
+//     background(100, random(255), 255);
+//     makeLeaf = new Sprout();
+//     for (let i = 0; i < 10; i++) {
+//         makeLeaf[i].leaf();
+        
+//     }
+//     }
+
+// class Sprout {
+//     leaf() {
+//         stroke("pink");
+//         strokeWeight(3)
+//         noFill()
+//         triangle(100, 100, 200, 100, 150,200)
+//     }
+// }
+
+// function draw() {
+// }
+
+
+
 
 // class Grow {
 //     leaf() {
