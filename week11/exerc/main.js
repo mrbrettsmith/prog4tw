@@ -22,7 +22,7 @@ function draw() {
             for (let i = 0; i < PI; i++) {
                 this.x = 10;
                 this.y = 10;
-                this.thick = 1;
+                this.thick = 2;
                 strokeWeight( this.thick + 1);
                 stroke(mouseX + 5, this.color + 10, 100,);
                 noFill();
