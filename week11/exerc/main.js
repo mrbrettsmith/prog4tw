@@ -1,20 +1,35 @@
 
-let holePunch = [];
-
 function setup() {
-    createCanvas(windowWidth, windowHeight, WEBGL);
+    createCanvas(windowWidth, windowHeight, 
+    WEBGL);
     background(100, random(255), 255);
-    for (let i = 0; i < 100; i++) {
-        holePunch[i] = new Hole();
-        
     }
-}
+
     
 function draw() {
-    stroke(mouseX, mousey, 100,)
-    for (let i = 0; i < 15; i++) {
+    
+    
+    for (let g = 0; g < 6; g++) {
+        this.angle = 360;
+        this.color = 100;
+        rotate(this.angle + 10)
+        translate(50,10);
         
-        
+        for (let w = 0; w < PI; w++) {
+            rotate(this.angle + 5);
+            translate(100,5);
+
+            for (let i = 0; i < PI; i++) {
+                this.x = 10;
+                this.y = 10;
+                this.thick = 1;
+                strokeWeight( this.thick + 1);
+                stroke(mouseX + 5, this.color + 10, 100,);
+                noFill();
+                triangle(this.x, this.y + 10, 200, 100, 150, 200);
+                translate(5, 1);
+            }
+        }
     }
 }
 
