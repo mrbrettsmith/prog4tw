@@ -8,8 +8,11 @@ function setup() {
 function draw() {
     
     for (let i = 0; i < 10; i++) {
-        line(50 + (i * 3), 50, 300 + (i *6), 500);
-        stroke(100 + (i * 5), 150 + (i * 5), 100+ (i * 5));
+        console.log(i);
+        startX = 50
+        line(startX + (i * 3), 50, startX + (i *6), 500);
+        stroke(100 + (i * 5), 150, 100+ (i * 5));
+        rotate(HALF_PI);
     }
 }
 
