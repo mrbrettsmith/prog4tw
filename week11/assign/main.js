@@ -1,4 +1,4 @@
-var colors = [1,1,1]
+var colors = [100,1,50]
 
 
 function setup() {
@@ -15,13 +15,17 @@ function draw() {
     //     stroke(100 + (i * 5), 150, 100+ (i * 5));
     // };
     for (let c = 0; c < 255; c++) {
+        stroke( (c * 20), 245, 66);
         for (let x = 0; x < 1000; x += 50) {
+            
+        
             for (let y = 0; y < 800; y += 50) {
+                
                 line(x + 5, y, x + 50, y + 50);
-                line(x + 30 , y, x - 30, y + 50);         
+                line(x + 30 , y, x - 30, y + 50); 
+                       
             };
-        };
-        stroke(colors[1] + (c+ 50), colors[2] + 100, colors[3] +50)    
+        };    
     };
 
     noLoop()
