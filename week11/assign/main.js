@@ -1,3 +1,4 @@
+var colors = [1,1,1]
 
 
 function setup() {
@@ -6,14 +7,24 @@ function setup() {
 }
 
 function draw() {
-    for (let i = 0; i < 10; i++) {
-        console.log(i);
-        startX = 50
-        startY = 50
-        line(startX + (i * 3), startY - (i), startX + (i * 6), startY + (50 - i));
-        stroke(100 + (i * 5), 150, 100+ (i * 5));
-        
-    }
+    // for (let i = 0; i < 10; i++) {
+    //     console.log(i);
+    //     startX = 50
+    //     startY = 50
+    //     line(startX + (i * 3), startY - (i), startX + (i * 6), startY + (50 - i));
+    //     stroke(100 + (i * 5), 150, 100+ (i * 5));
+    // };
+    for (let c = 0; c < 255; c++) {
+        for (let x = 0; x < 1000; x += 50) {
+            for (let y = 0; y < 800; y += 50) {
+                line(x + 5, y, x + 50, y + 50);
+                line(x + 30 , y, x - 30, y + 50);         
+            };
+        };
+        stroke(colors[1] + (c+ 50), colors[2] + 100, colors[3] +50)    
+    };
+
+    noLoop()
 }
 
 
