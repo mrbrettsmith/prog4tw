@@ -24,7 +24,11 @@ function Star(begin, end) {
 }
 
 function draw() {
-    shoot.show();
+    for (let i = 0; i < 10 ; i++) {
+        console.log(shoot[]);
+        
+    }
+    // shoot.show();
     // for (let s = 0; s < 5; s++) {
     //     for (let s = 0; s < 5; s++) {
     //         starMan(+10 , +5);
