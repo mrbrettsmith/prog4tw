@@ -19,9 +19,9 @@ function draw() {
         for (let x = 0; x < 1000; x += 50) {
             // stroke(1 + (x * .5), 245, 66);
             for (let y = 0; y < 800; y += 50) {
-                stroke( x, 1 + (y * .5), 66);
+                stroke( x * .25, 1 + y * .25, 66);
                 line(x + 5, y, x + 50, y + 50);
-                line(x + 30 , y, x - 30, y + 50); 
+                line(x + 30 + (x * .5), y, x - 30, y + 50); 
                        
             };
         };    
