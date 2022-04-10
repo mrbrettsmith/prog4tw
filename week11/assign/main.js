@@ -17,8 +17,7 @@ function draw() {
     for (let c = 0; c < 255; c++) {
         stroke( (c * 20), 245, 66);
         for (let x = 0; x < 1000; x += 50) {
-            
-        
+            stroke(1 + (x * .5), 245, 66);
             for (let y = 0; y < 800; y += 50) {
                 
                 line(x + 5, y, x + 50, y + 50);
