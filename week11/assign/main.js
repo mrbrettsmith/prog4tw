@@ -6,13 +6,13 @@ function setup() {
 }
 
 function draw() {
-    
     for (let i = 0; i < 10; i++) {
         console.log(i);
         startX = 50
-        line(startX + (i * 3), 50, startX + (i *6), 500);
+        startY = 50
+        line(startX + (i * 3), startY - (i), startX + (i * 6), startY + (50 - i));
         stroke(100 + (i * 5), 150, 100+ (i * 5));
-        rotate(HALF_PI);
+        
     }
 }
 
