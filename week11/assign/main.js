@@ -2,9 +2,12 @@
 
 function setup() {
     createCanvas(1000, 1000)
-    var tail = createVector(60, 60);
-    var head = createVector(70, 70);
+    // var tail = createVector(60, 60);
+    // var head = createVector(70, 70);
     shoot = new Star(tail, head);
+    for (let i = 0; i < 5; i++) {
+        shoot[i] = new Star(tail, head);
+    }
 }
 
 // function starMan( originX, originY) {
@@ -24,9 +27,9 @@ function Star(begin, end) {
 }
 
 function draw() {
+
     for (let i = 0; i < 10 ; i++) {
-        console.log(shoot[]);
-        
+        shoot[i].show();        
     }
     // shoot.show();
     // for (let s = 0; s < 5; s++) {
