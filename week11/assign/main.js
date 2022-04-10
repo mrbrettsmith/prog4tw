@@ -7,15 +7,9 @@ function setup() {
 }
 
 function draw() {
-    // for (let i = 0; i < 10; i++) {
-    //     console.log(i);
-    //     startX = 50
-    //     startY = 50
-    //     line(startX + (i * 3), startY - (i), startX + (i * 6), startY + (50 - i));
-    //     stroke(100 + (i * 5), 150, 100+ (i * 5));
-    // };
+  
     for (let c = 0; c < 255; c++) {
-    
+        var flex = [c / 2, c / 3, c / 4];
         for (let x = 0; x < 1000; x += 50) {
             // stroke(1 + (x * .5), 245, 66);
             for (let y = 0; y < 800; y += 50) {
