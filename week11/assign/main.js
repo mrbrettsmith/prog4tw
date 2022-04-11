@@ -1,4 +1,3 @@
-var colors = [100,1,50]
 
 
 function setup() {
@@ -9,21 +8,31 @@ function setup() {
 function draw() {
   
     for (let c = 0; c < 255; c++) {
-        var flex = [c / 2, c / 3, c / 4];
+        
         for (let x = 0; x < 1000; x += 50) {
             // stroke(1 + (x * .5), 245, 66);
+            
             for (let y = 0; y < 800; y += 50) {
                 stroke( x * .25, 1 + y * .25, 66);
-                line(x + 5, y, x + 50, y + 50);
+                // division reverses first line 
+                line(x / 2, y, x + 50, shrinkY + 50);
                 line(x + 30 + (x * .5), y, x - 30, y + 50); 
-                       
+                var shrinkY = y * random(.01,- .01);       
             };
         };    
     };
-
     noLoop()
 }
 
+
+function swerve() {
+   
+    flex = flex + 50;
+    // if (flex == capsule.length);
+    // flex = flex - 1;
+    // if (flex == 0)
+    // flex = flex +1;
+}
 
 // I just dont get it! 
 
