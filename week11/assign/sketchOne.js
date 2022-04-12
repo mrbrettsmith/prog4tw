@@ -1,25 +1,26 @@
 
 function setup() {
     createCanvas(1000, 1000)
-    
+    background("black")
 }
 function draw() {
   
     for (let c = 0; c < 255; c++) {
         
-        for (let x = 0; x < width; x += 100) {
-            // stroke(1 + (x * .5), 245, 66);
-            
-            for (let y = 0; y < width; y += 100) {
+        for (let x = 0; x < width; x += 80) {
+            for (let y = 0; y < height; y += 80) {
                 stroke( x * .25, 1 + y * .25, 66);
-                strokeWeight(2 + (y / 185));
+                strokeWeight(2 + (y / 200));
                 // division reverses first line 
-
-                if (x > 0 && x < 700 && y > 0 && y < 1000) {
+                if (x > 0 && x < 700 && y > 0 && y < 900) {
                 line(x / 2, y, x + 50, y + 50);
-                line(x + 30 + (x * .5), y + (y * .1), x - 30, y - (y * .2)); }
-                // var shrinkY = y * random(-.1,.1);       
-            };
+                line(x + 30 + (x * .5), y + (y * .1), x - 30, y - (y * .2)); 
+                stroke( x * .35, 1 + y * .25, 66);
+                line(x +50, y +40, x + 75, y +85);
+                line(x +60, y +45, x + 80, y +80);
+                line(x +70, y +50, x + 85, y +75);}
+                var shrinkY = y * .5;       
+            }; 
         };    
     };
 
