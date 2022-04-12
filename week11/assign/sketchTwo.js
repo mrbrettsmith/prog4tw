@@ -3,11 +3,17 @@ let makeDot = [];
 function setup(){
     createCanvas(1000, 1000);
     r = 5;
-    // makeDot[d] = new Dot(this.x, this.y, this.r);
+    // Second loop for column?
     for (let d = 0; d < 49; d++) {
-        let x = 10 + 20 * d;
-        let y = 10 + 20 * d;
-        makeDot[d] = new Dot (x, y, r);
+        for (let d = 0; d < 49; d++) {
+            let x = 10 + 20 * d;
+            let y = 10 + 20 * d;
+            makeDot[d] = new Dot (x, y, r);
+            
+        }
+        // let x = 10 + 20 * d;
+        // let y = 10 + 20 * d;
+        // makeDot[d] = new Dot (x, y, r);
        
         
         // makeDot[this.x, this.y, this.r].show();
@@ -16,9 +22,7 @@ function setup(){
     
 function draw(){
     for (let d = 0; d < makeDot.length; d++) {
-        
         makeDot[d].show();
-        
     }
 
     // for (let d = 0; d < 49; d++) {
@@ -30,15 +34,16 @@ function draw(){
 }
 
 function mouseOver() {
-        let d = dist(mouseX, mouseY, this.x, this.y);
-        if (d < this.r) {
-             r = r + random(1.5, 5);}
+    Dot.swell();
+        // let hov = dist(mouseX, mouseY, this.x, this.y);
+        // if (hov < this.r) {
+        //      r = r + random(1.5, 5);}
     }
 
     
 
 class Dot {
-    constructor(x,y){
+    constructor(x,y,r){
         this.x = x;
         this.y = y;
         this.r = r;
@@ -46,6 +51,14 @@ class Dot {
     show() {
         ellipse(this.x , this.y, this.r * 2);
     }
+
+    swell() {
+        let hov = dist(mouseX, mouseY, this.x, this.y);
+        if (hov < this.r) {
+            console.log(d);
+        }    
+        }
+        
 }
     // function swell() {
     //     diamater = diamater + random(1.5, 5);
