@@ -1,59 +1,40 @@
 
-
 function setup() {
-    createCanvas(800, 2400)
+    createCanvas(1000, 1000)
     
 }
-
 function draw() {
   
     for (let c = 0; c < 255; c++) {
         
-        for (let x = 0; x < 800; x += 50) {
+        for (let x = 0; x < width; x += 100) {
             // stroke(1 + (x * .5), 245, 66);
             
-            for (let y = 0; y < 800; y += 50) {
+            for (let y = 0; y < width; y += 100) {
                 stroke( x * .25, 1 + y * .25, 66);
+                strokeWeight(2 + (y / 185));
                 // division reverses first line 
-                line(x / 2, y, x + 50, shrinkY + 50);
-                line(x + 30 + (x * .5), y, x - 30, shrinkY + 50); 
-                var shrinkY = y * random(-1,1);       
+
+                if (x > 0 && x < 700 && y > 0 && y < 1000) {
+                line(x / 2, y, x + 50, y + 50);
+                line(x + 30 + (x * .5), y + (y * .1), x - 30, y - (y * .2)); }
+                // var shrinkY = y * random(-.1,.1);       
             };
         };    
     };
-
-    y = y + 1000;
-    
-    for (let c = 0; c < 255; c++) {
-        
-        for (let x = 0; x < 800; x += 50) {
-            // stroke(1 + (x * .5), 245, 66);
-            
-            for (let y = 0; y < 800; y += 50) {
-                stroke( x * .25, 1 + y * .25, 66);
-                // division reverses first line 
-                line(x / 2, y, x + 50, shrinkY + 50);
-                line(x + 30 + (x * .5), y, x - 30, shrinkY + 50); 
-                var shrinkY = y * random(-1,1);       
-            };
-        };    
-    };
-
-
-
 
     noLoop()
 }
 
 
-function swerve() {
+// function swerve() {
    
-    flex = flex + 50;
+//     flex = flex + 50;
     // if (flex == capsule.length);
     // flex = flex - 1;
     // if (flex == 0)
     // flex = flex +1;
-}
+// }
 
 // I just dont get it! 
 
