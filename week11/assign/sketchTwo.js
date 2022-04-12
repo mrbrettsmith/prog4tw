@@ -33,8 +33,9 @@ function draw(){
     // }
 }
 
-function mouseOver() {
-    Dot.swell();
+// function mouseOver() {
+function mousePressed() {
+    makeDot.swell();
         // let hov = dist(mouseX, mouseY, this.x, this.y);
         // if (hov < this.r) {
         //      r = r + random(1.5, 5);}
@@ -56,6 +57,7 @@ class Dot {
         let hov = dist(mouseX, mouseY, this.x, this.y);
         if (hov < this.r) {
             console.log(d);
+            r = r + random(1.5, 5);
         }    
         }
         
