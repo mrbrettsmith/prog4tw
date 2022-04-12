@@ -1,13 +1,15 @@
 function setup(){
-createCanvas(1000, 1000)
+createCanvas(1000, 1000);
+r = 5;
+makeDot = new Dot(this.x, this.y, this.r);
 }
     
 function draw(){
-    r = 10;
-    makeDot = new Dot;
+    
+    
     for (let x = 0; x < 49; x++) {
         for (let y = 0; y < 49; y++) {
-            makedot[x];
+            makeDot[this.x, this.y, this.r];
         }
     }
 }
