@@ -10,7 +10,7 @@ function setup() {
 // Code modified from https://editor.p5js.org/enickles/sketches/SJN3lJaAQ - I am not sure why my squares never rotated around their centers! and I dont know why 'size' loop is working here:
 
 function draw() {
-    background("blue");
+    background(50, 11, 66);
     let size = 15;
 
     for (let r = size; r <= width - size; r += size * 2) {
@@ -19,9 +19,38 @@ function draw() {
         rectMode(CENTER);
         translate(r, d);
         // Spin faster towards side
-        rotate(frameCount * (0.03) + (.5 * d + r));
-        rect(0, 0, size, size);
+        rotate(frameCount * (0.08) + (.5 * d + r));
+        noStroke();
+        fill(170, 8, 207);
+        rect(0, 0, size + 4, size + 4);
         pop();
+      }
+      for (let r = size; r <= width - size; r += size * 2) {
+        for (let d = size; d <= height - size; d += size * 2) {
+          push();
+          rectMode(CENTER);
+          translate(r, d);
+          // Spin faster towards side
+          rotate(frameCount * (0.08) + (.25 * d + r));
+          noStroke();
+          fill(206, 69, 214);
+          rect(0, 0, size - 2, size - 2);
+          pop();
+        }
+      }
+      for (let r = size; r <= width - size; r += size * 2) {
+        for (let d = size; d <= height - size; d += size * 2) {
+          push();
+          rectMode(CENTER);
+          translate(r, d);
+          let c = cos(angle);
+          // Spin faster towards side
+          rotate(c * (1) + (.10 * d + r));
+          noStroke();
+          fill(224, 112, 194);
+          rect(0, 0, size - 8, size - 8);
+          pop();
+        }
       }
     }
             
