@@ -1,21 +1,22 @@
 let makeDot = [];
-
+let startX = 20;
+let startY = 20
 function setup(){
     createCanvas(1000, 1000);
     r = 5;
-    // Second loop for column?
-    for (let d = 0; d < 49; d++) {
-        for (let d = 0; d < 49; d++) {
-            let x = 10 + 20 * d;
-            let y = 10 + 20 * d;
-            makeDot[d] = new Dot (x, y, r);
-            
+    // nested loop for column?
+    for (let col = 0; col < 49; col++) {
+        let y = 10 + 20 * col;
+        for (let row = 0; row < 49; row++) {
+            let x = 10 + 20 * row;
+            makeDot[row] = new Dot (x, y, r);
         }
+        
+
+
         // let x = 10 + 20 * d;
         // let y = 10 + 20 * d;
         // makeDot[d] = new Dot (x, y, r);
-       
-        
         // makeDot[this.x, this.y, this.r].show();
     };
 }
@@ -53,13 +54,13 @@ class Dot {
         ellipse(this.x , this.y, this.r * 2);
     }
 
-    swell() {
+    swell (mouseX, mouseY) {
         let hov = dist(mouseX, mouseY, this.x, this.y);
         if (hov < this.r) {
             console.log(d);
             r = r + random(1.5, 5);
         }    
-        }
+    }
         
 }
     // function swell() {
