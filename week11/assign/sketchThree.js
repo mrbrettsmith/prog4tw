@@ -6,18 +6,20 @@ function setup() {
     rectMode(CENTER);
     // makeCube = new Cube();
 }
-// Code modified from https://editor.p5js.org/enickles/sketches/SJN3lJaAQ - I am not sure why my squares never rotated around their centers!
+
+// Code modified from https://editor.p5js.org/enickles/sketches/SJN3lJaAQ - I am not sure why my squares never rotated around their centers! and I dont know why 'size' loop is working here:
 
 function draw() {
     background("blue");
-    let size = width * 0.0625;
+    let size = 15;
 
-    for (let o1 = size; o1 <= width - size; o1 += size * 2) {
-      for (let o2 = size; o2 <= height - size; o2 += size * 2) {
+    for (let r = size; r <= width - size; r += size * 2) {
+      for (let d = size; d <= height - size; d += size * 2) {
         push();
         rectMode(CENTER);
-        translate(o1, o2);
-        rotate(frameCount * 0.03);
+        translate(r, d);
+        // Spin faster towards side
+        rotate(frameCount * (0.03) + (.5 * d + r));
         rect(0, 0, size, size);
         pop();
       }
@@ -69,15 +71,15 @@ function draw() {
     
 }
 
-class Cube {
+// class Cube {
 
-    show() {
-        noStroke;
-        fill("pink");
-        rectMode(CENTER);
-        // rect(15, 15, 7, 7)
-        rect(15 + r * 15 , 15 + d * 15, 7, 7)
+//     show() {
+//         noStroke;
+//         fill("pink");
+//         rectMode(CENTER);
+//         // rect(15, 15, 7, 7)
+//         rect(15 + r * 15 , 15 + d * 15, 7, 7)
         
-    }
+//     }
 
-}
+// }
