@@ -3,58 +3,99 @@ let dots = [];
 function setup(){
     createCanvas(1000, 1000)
     background('black')
-    for (let i = 0; i < width; i++) {
-        dots[i];
-    }
+
     size = 15
+    
     for (let r = size; r <= width - size; r += size * 2) {
         for (let d = size; d <= height - size; d += size * 2) {
-            push();
+            // laying out the new position change for every instance in the loop
             translate(r, d);
-            noStroke();
-            fill(170, 8, 207);
-            this.x = r;
-            this.y = d;
-            this.rad = size;
-            ellipse(this.x , this.y, this.rad );
-            // Grow Function
-            function mouseClicked() {
-                for (let i = 0; i < i.length; i++) {
-                    let hov = dist(mouseX, mouseY, this.x, this.y);
-                        
-                    if (hov < this.rad) {
-                        console.log("THIS IS ", i);
-                        rad = rad + random(1.5, 5);
-                    }    
+            
+            // Defining objects in grid x,y,rad and creating function to be called
+            const newDot = {
+                x:r,
+                y:d,
+                rad:size,
+                show: function(){
+                    noStroke();
+                    fill(170, 8, 207);
+                    ellipse(this.x , this.y, this.rad );
                 }
-
             }
-            
-            
+
+            // No longer needed as universal
+            // this.x = r;
+            // this.y = d;
+            // this.rad = size;
+
+            // ellipse(newDot.x , newDot.y, newDot.rad );
+
+            // Adding a newDot to each instance of the loop 
+            dots.push(newDot);        
             pop();
         }
     }    
+    console.log(dots)
 }
 
 function draw() {
+    // activating the draw fungion for each item in the array? 
     for (let i = 0; i < dots.length; i++) {
-        dots[i].show;
+        dots[i].show();
+        
     }
 }
 
 
+function changePink() {
+    fill(250, 90, 194);
+}
 
-// function mouseClicked() {
-//         let hov = dist(mouseX, mouseY, this.x, this.y);
+// Make it return to base size 
+function dotShrink() {
+    dots.forEach( dot =>{
+        if (rad < dot.rad) {
+            dot.rad = dot.rad - .1;
+            dot.show();
+        }
+    })
+}
+
+
+function mouseClicked() {
+    // console.log("click")
+    dots.forEach(dot=>{
+        let hov = dist(mouseX, mouseY, dot.x, dot.y);
+        // console.log(hov)
+        if (hov < dot.rad) {
+            console.log("THIS IS ", dot);
+            dot.rad = dot.rad + random(1.5, 5);
+            dot.show();
+        }
+
+        // else {
+        //     dot.rad = 15;
+        //     dot.show();
+        // }
+    })
+}
+
+// Try to change color on hover  
+function mouseOver() {
+    dots.forEach(dot=>{
+        let hov = dist(mouseX, mouseY, dot.x, dot.y);
+        if (hov < dot.rad) {
+            console.log("hovering over ", dot);
+            
+            dot.show();
+        }
         
-//         }
-//         for (let i = 0; i < dots.length; i++) {
-//         dots[i] = dots[i];
-//         if (hov < this.rad) {
-//             console.log("THIS IS ", i);
-//             rad = rad + random(1.5, 5);
-//     }
-// }
+        
+    })
+}
+
+
+
 
 
 
