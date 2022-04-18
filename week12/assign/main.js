@@ -7,7 +7,11 @@ let sliderRate1;
 let sliderRate2;
 let sliderRate3;
 let sliderRate4;
-let sliderVolume2;
+var amp1;
+var amp2;
+var amp3;
+var amp4;
+
 
 
 function preload() {
@@ -21,40 +25,78 @@ function preload() {
 
 function setup(){
 
+  createCanvas(windowWidth, 800);
+  
+  // sounds //
   bog1.loop();
-
   bog2.loop();
   bog3.loop();
   bog4.loop();
   
-  
+  // Rate Slider1 //
   sliderRate1 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate1.position(50,75);
 
+  // Rate Slider2 //
   sliderRate2 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate2.position(50,225);
 
+  // Rate Slider3 //
   sliderRate3 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate3.position(50,375);
 
+  // Rate Slider4 //
   sliderRate4 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate4.position(50, 525);
 
+  // Color Pulse 1 //
+  amp1 = new p5.Amplitude();
+  amp1.setInput(bog1);
+
+  // Color Pulse 2 //
+  amp2 = new p5.Amplitude();
+  amp2.setInput(bog2);
+
+  // Color Pulse 3 //
+  amp3 = new p5.Amplitude();
+  amp3.setInput(bog3);
+
+  // Color Pulse 4 //
+  amp4 = new p5.Amplitude();
+  amp4.setInput(bog4);
 }
 
 
 function draw() {
-//   button1 = createButton('bog1');
-//   button1.mousePressed(togglePlay1);
+  background("black")
+  noStroke();
 
-  // bog1.rate(sliderRate1.value());
-
-  bog1.rate(sliderRate1.value());
-
-  bog2.rate(sliderRate2.value());
+  // Sound 1 //
   
+  fill (71, 102, 42, amp1.getLevel() * 500);
+  rect(0, 0, windowWidth, 150)
+  bog1.rate(sliderRate1.value());
+  // fill (bog1.rate() * 10, 102, 42);
+  // amp1.getLevel() * 1000
+
+  // Sound 2 //
+
+  fill (100, 107, 41, amp2.getLevel() * 500);
+  rect(0, 150, windowWidth, 150)
+  bog2.rate(sliderRate2.value());
+
+  
+  // Sound 3 //
+
+  fill (107, 104, 41, amp3.getLevel() * 500);
+  rect(0, 300, windowWidth, 150)
   bog3.rate(sliderRate3.value());
 
-  bog4.rate(sliderRate4.value());
+  // Sound 4 //
 
-  // bog3.rate(sliderRate3.value());
-  // bog4.rate(sliderRate4.value());
+  fill (107, 92, 41, amp4.getLevel() * 500);
+  rect(0, 450, windowWidth, 150)
+  bog4.rate(sliderRate4.value());
 
 
 }
@@ -62,11 +104,11 @@ function draw() {
 
 
 
+  // Button Breaks slider for rate - wont modify, but base rate reads //
 
 
   // button1 = createButton('bog1');
   // button1.mousePressed(togglePlay1);
-
 
   // sliderRate = createSlider(0, 3, 3, 0.1);
   // bog1.setVolume(volume, [rampTime], [timeFromNow])(sliderRate.value());
@@ -82,19 +124,6 @@ function draw() {
 //     button.html('play');
 //   }
 // }
-
-  // button2 = createButton(bog2);
-  // button2.mousePressed(togglePlay2);
-  // bog2.setVolume(slider.value());
-
-
-  // button3 = createButton(bog3);
-  // button3.mousePressed(togglePlay3);
-  // bog3.setVolume(slider.value());
-
-  // button4 = createButton(bog4);
-  // button4.mousePressed(togglePlay4);
-  // bog4.setVolume(slider.value());
 
 
 
