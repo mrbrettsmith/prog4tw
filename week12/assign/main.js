@@ -16,9 +16,8 @@ var pulse2;
 var pulse3;
 var pulse4;
 
-function preload() {
-  
 
+function preload() {
   bog1 = loadSound('sound/808kick.mp3');
   bog2 = loadSound('sound/darkhousenote.mp3');
   bog3 = loadSound('sound/frogBass.mp3');
@@ -38,18 +37,28 @@ function setup(){
   // Rate Slider1 //
   sliderRate1 = createSlider(-1, 1.2, 0, 0.01);
   sliderRate1.position(50,75);
+  // sliderRate1.parent("sliders");
+
+
+  // styling 2//
+  // sliderRate1.style('-webkit-appearance', 'none');
+  // sliderRate1.style('background-color', 'black');sliderRate1.style('outline', '2px, solid, white');
+  
 
   // Rate Slider2 //
   sliderRate2 = createSlider(-0.3, 0.3, 0, 0.01);
   sliderRate2.position(50,225);
+  
 
   // Rate Slider3 //
   sliderRate3 = createSlider(-0.5, 0.5, 0, 0.01);
   sliderRate3.position(50,375);
+  
 
   // Rate Slider4 //
   sliderRate4 = createSlider(-0.3, 0.3, 0, 0.01);
   sliderRate4.position(50, 525);
+  
 
   // Color Pulse 1 //
   amp1 = new p5.Amplitude();
@@ -75,11 +84,14 @@ function draw() {
   background("black")
   noStroke();
 
+  // instructions//
+
+  text('SWAMP CALLER - use the slidets to sing like a bog', 100, 25,)
   // Sound 1 //
   
   
   pulse1 = amp1.getLevel() * 300;
-  console.log(pulse1)
+  // console.log(pulse1)
   fill (71, 102, 42, pulse1)
   // fill (71, 102, 42, amp1.getLevel() * 500);
   rect(0, 0, windowWidth, 150)
