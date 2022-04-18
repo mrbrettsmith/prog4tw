@@ -2,7 +2,7 @@ let bog1;
 let bog2;
 let bog3;
 let bog4;
-let button;
+let resetButton;
 let sliderRate1;
 let sliderRate2;
 let sliderRate3;
@@ -25,9 +25,20 @@ function preload() {
 }
 
 function setup(){
-
   createCanvas(windowWidth, 800);
-  
+
+
+  // reset button // 
+  // and to activate on chrome to avoid autoplay shutoff //
+  resetButton = createButton('Play / Reset');
+  resetButton.position(340,32);
+  resetButton.style('border', '2px solid white');
+  resetButton.style('font-size', '12px')
+  resetButton.style('font-family', 'sans-serif')
+  resetButton.style('color', '#ffffff')
+  resetButton.style('background-color','transparent');
+  resetButton.mouseClicked(resetRate);
+
   // sounds //
   bog1.loop();
   bog2.loop();
@@ -37,6 +48,7 @@ function setup(){
   // Rate Slider1 //
   sliderRate1 = createSlider(-1, 1.2, 0, 0.01);
   sliderRate1.position(50,75);
+
   // sliderRate1.parent("sliders");
 
 
@@ -80,15 +92,34 @@ function setup(){
 }
 
 
+function resetRate() {
+
+  if (sliderRate1.value() != 0) {
+      sliderRate1.value(0) ; }
+
+  if (sliderRate2.value() != 0) {
+      sliderRate2.value(0) ; }
+
+  if (sliderRate3.value() != 0) {
+      sliderRate3.value(0) ;}
+
+  if (sliderRate4.value() != 0) {
+      sliderRate4.value(0) ;
+  }
+
+
+}
+
+
 function draw() {
+  
   background("black")
-  noStroke();
 
   // instructions//
-
-  text('SWAMP CALLER - use the slidets to sing like a bog', 100, 25,)
+  fill('white')
+  text('SWAMP CALLER - use the sliders to sing like a bog', 49, 45,)
   // Sound 1 //
-  
+  noStroke();
   
   pulse1 = amp1.getLevel() * 300;
   // console.log(pulse1)
