@@ -7,35 +7,37 @@ let sliderRate1;
 let sliderRate2;
 let sliderRate3;
 let sliderRate4;
-let sliderVolume;
-
-  // bog1 = loadSound('sound/808kick.mp3');
-  // bog2 = loadSound('sound/darkhousenote.mp3');
-  // bog3 = loadSound('sound/frogBass.mp3');
-  // bog4 = loadSound('sound/loopmellophone.mp3');
+let sliderVolume2;
 
 
-function setup(){
-  bog1 = loadSound('sound/808kick.mp3', loaded);
-  bog2 = loadSound('sound/darkhousenote.mp3', loaded);
-  bog3 = loadSound('sound/frogBass.mp3', loaded);
-  bog4 = loadSound('sound/loopmellophone.mp3', loaded);
+function preload() {
+  
 
-  // sliderRate1 = createSlider(0, 3, 1, 0.01);
-  sliderRate2 = createSlider(-1, 1.5, 0, 0.01);
-  sliderRate3 = createSlider(-1, 1.5, 0, 0.01);
-  sliderRate4 = createSlider(-1, 1.5, 0, 0.01);
+  bog1 = loadSound('sound/808kick.mp3');
+  bog2 = loadSound('sound/darkhousenote.mp3');
+  bog3 = loadSound('sound/frogBass.mp3');
+  bog4 = loadSound('sound/loopmellophone.mp3');
 }
 
+function setup(){
 
-function loaded() {
-  // bog1.loop();
+  bog1.loop();
+
   bog2.loop();
   bog3.loop();
   bog4.loop();
   
   
+  sliderRate1 = createSlider(-1, 1.5, 0, 0.01);
+
+  sliderRate2 = createSlider(-1, 1.5, 0, 0.01);
+
+  sliderRate3 = createSlider(-1, 1.5, 0, 0.01);
+
+  sliderRate4 = createSlider(-1, 1.5, 0, 0.01);
+
 }
+
 
 function draw() {
 //   button1 = createButton('bog1');
@@ -43,14 +45,24 @@ function draw() {
 
   // bog1.rate(sliderRate1.value());
 
+  bog1.rate(sliderRate1.value());
+
   bog2.rate(sliderRate2.value());
+  
   bog3.rate(sliderRate3.value());
+
   bog4.rate(sliderRate4.value());
 
-
+  // bog3.rate(sliderRate3.value());
+  // bog4.rate(sliderRate4.value());
 
 
 }
+
+
+
+
+
 
   // button1 = createButton('bog1');
   // button1.mousePressed(togglePlay1);
@@ -71,54 +83,6 @@ function draw() {
 //   }
 // }
 
-// function togglePlay2() {
-//   if(!bog2.isPlaying()) {
-//     bog2.loop();
-//     button.html('pause');
-//   } else {
-//     bog2.pause();
-//     button.html('play');
-//   }
-// }
-
-// function togglePlay3() {
-//   if(!bog3.isPlaying()) {
-//     bog3.loop();
-//     button.html('pause');
-//   } else {
-//     bog3.pause();
-//     button.html('play');
-//   }
-// }
-
-// function togglePlay4() {
-//   if(!bog4.isPlaying()) {
-//     bog4.loop();
-//     button.html('pause');
-//   } else {
-//     bog4.pause();
-//     button.html('play');
-//   }
-// }
-
-
-// function draw() {
-//   button1 = createButton('bog1');
-//   button1.mousePressed(togglePlay1);
-
-
-//   sliderRate = createSlider(0, 3, 3, 0.1);
-//   bog1.setVolume(volume, [rampTime], [timeFromNow])(sliderRate.value());
-//   noLoop()
-
-// }
-
-  // bog1 = loadSound('sound/808kick.mp3');
-  // bog2 = loadSound('sound/darkhousenote.mp3');
-  // bog3 = loadSound('sound/frogBass.mp3');
-  // bog4 = loadSound('sound/loopmellophone.mp3');
-
-
   // button2 = createButton(bog2);
   // button2.mousePressed(togglePlay2);
   // bog2.setVolume(slider.value());
@@ -132,8 +96,24 @@ function draw() {
   // button4.mousePressed(togglePlay4);
   // bog4.setVolume(slider.value());
 
- 
-// Preload Practice//
+
+
+
+ // Loaded Test //
+//setup
+// bog1 = loadSound('sound/808kick.mp3', loaded);
+// bog2 = loadSound('sound/darkhousenote.mp3', loaded);
+// bog3 = loadSound('sound/frogBass.mp3', loaded);
+// bog4 = loadSound('sound/loopmellophone.mp3', loaded);
+
+// function loaded() {
+//   bog1.loop();
+//   bog2.loop();
+//   bog3.loop();
+//   bog4.loop();
+// }
+
+//// -  OR with button- ////
 
 // function loaded() {
 //   button1 = createButton(bog1);
