@@ -11,8 +11,10 @@ var amp1;
 var amp2;
 var amp3;
 var amp4;
-
-
+var pulse1;
+var pulse2;
+var pulse3;
+var pulse4;
 
 function preload() {
   
@@ -34,24 +36,25 @@ function setup(){
   bog4.loop();
   
   // Rate Slider1 //
-  sliderRate1 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate1 = createSlider(-1, 1.2, 0, 0.01);
   sliderRate1.position(50,75);
 
   // Rate Slider2 //
-  sliderRate2 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate2 = createSlider(-0.3, 0.3, 0, 0.01);
   sliderRate2.position(50,225);
 
   // Rate Slider3 //
-  sliderRate3 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate3 = createSlider(-0.5, 0.5, 0, 0.01);
   sliderRate3.position(50,375);
 
   // Rate Slider4 //
-  sliderRate4 = createSlider(-1, 1.5, 0, 0.01);
+  sliderRate4 = createSlider(-0.3, 0.3, 0, 0.01);
   sliderRate4.position(50, 525);
 
   // Color Pulse 1 //
   amp1 = new p5.Amplitude();
   amp1.setInput(bog1);
+  
 
   // Color Pulse 2 //
   amp2 = new p5.Amplitude();
@@ -64,6 +67,7 @@ function setup(){
   // Color Pulse 4 //
   amp4 = new p5.Amplitude();
   amp4.setInput(bog4);
+  
 }
 
 
@@ -73,7 +77,11 @@ function draw() {
 
   // Sound 1 //
   
-  fill (71, 102, 42, amp1.getLevel() * 500);
+  
+  pulse1 = amp1.getLevel() * 300;
+  console.log(pulse1)
+  fill (71, 102, 42, pulse1)
+  // fill (71, 102, 42, amp1.getLevel() * 500);
   rect(0, 0, windowWidth, 150)
   bog1.rate(sliderRate1.value());
   // fill (bog1.rate() * 10, 102, 42);
@@ -81,20 +89,23 @@ function draw() {
 
   // Sound 2 //
 
-  fill (100, 107, 41, amp2.getLevel() * 500);
+  pulse2 = amp2.getLevel() * 500;
+  fill (100, 107, 41, pulse2);
   rect(0, 150, windowWidth, 150)
   bog2.rate(sliderRate2.value());
 
   
   // Sound 3 //
 
-  fill (107, 104, 41, amp3.getLevel() * 500);
+  pulse3 = amp3.getLevel() * 500;
+  fill (107, 104, 41, pulse3);
   rect(0, 300, windowWidth, 150)
   bog3.rate(sliderRate3.value());
 
   // Sound 4 //
 
-  fill (107, 92, 41, amp4.getLevel() * 500);
+  pulse4 = amp4.getLevel() * 500;
+  fill (107, 92, 41, pulse4);
   rect(0, 450, windowWidth, 150)
   bog4.rate(sliderRate4.value());
 
