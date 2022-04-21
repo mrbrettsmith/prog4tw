@@ -3,6 +3,10 @@ let bog2;
 let bog3;
 let bog4;
 let resetButton;
+let button1;
+let button2;
+let button3;
+let button4;
 let sliderRate1;
 let sliderRate2;
 let sliderRate3;
@@ -30,7 +34,7 @@ function setup(){
 
   // reset button // 
   // and to activate on chrome to avoid autoplay shutoff //
-  resetButton = createButton('Play / Reset');
+  resetButton = createButton('Reset');
   resetButton.position(340,32);
   resetButton.style('border', '2px solid white');
   resetButton.style('font-size', '12px')
@@ -47,7 +51,7 @@ function setup(){
   
   // Rate Slider1 //
   sliderRate1 = createSlider(-1, 1.2, 0, 0.01);
-  sliderRate1.position(50,75);
+  sliderRate1.position(110,75);
 
   // sliderRate1.parent("sliders");
 
@@ -59,17 +63,17 @@ function setup(){
 
   // Rate Slider2 //
   sliderRate2 = createSlider(-0.3, 0.3, 0, 0.01);
-  sliderRate2.position(50,225);
+  sliderRate2.position(110,225);
   
 
   // Rate Slider3 //
   sliderRate3 = createSlider(-0.5, 0.5, 0, 0.01);
-  sliderRate3.position(50,375);
+  sliderRate3.position(110,375);
   
 
   // Rate Slider4 //
   sliderRate4 = createSlider(-0.3, 0.3, 0, 0.01);
-  sliderRate4.position(50, 525);
+  sliderRate4.position(110, 525);
   
 
   // Color Pulse 1 //
@@ -89,7 +93,90 @@ function setup(){
   amp4 = new p5.Amplitude();
   amp4.setInput(bog4);
   
+   // Play Button 1 //
+  button1 = createButton('Start 1');
+  button1.mousePressed(togglePlay1);
+  button1.position(50 ,73);
+  button1.style('border', '2px solid white');
+  button1.style('font-size', '12px')
+  button1.style('font-family', 'sans-serif')
+  button1.style('color', '#ffffff')
+  button1.style('background-color','transparent')
+
+  // Play Button 1 //
+  button2 = createButton('Start 2');
+  button2.mousePressed(togglePlay2);
+  button2.position(50 ,223);
+  button2.style('border', '2px solid white');
+  button2.style('font-size', '12px')
+  button2.style('font-family', 'sans-serif')
+  button2.style('color', '#ffffff')
+  button2.style('background-color','transparent')
+
+  // Play Button 1 //
+  button3 = createButton('Start 3');
+  button3.mousePressed(togglePlay3);
+  button3.position(50 ,373);
+  button3.style('border', '2px solid white');
+  button3.style('font-size', '12px')
+  button3.style('font-family', 'sans-serif')
+  button3.style('color', '#ffffff')
+  button3.style('background-color','transparent')
+
+  // Play Button 1 //
+  button4 = createButton('Start 4');
+  button4.mousePressed(togglePlay4);
+  button4.position(50 ,523);
+  button4.style('border', '2px solid white');
+  button4.style('font-size', '12px')
+  button4.style('font-family', 'sans-serif')
+  button4.style('color', '#ffffff')
+  button4.style('background-color','transparent')
 }
+
+  // Button Functions //
+
+function togglePlay1() {
+  if (bog1.isPlaying()) {
+    bog1.stop();
+    button1.html('Play');
+  } else {
+    bog1.loop(0,1,1,0);
+    button1.html('Pause');
+  }
+}
+
+function togglePlay2() {
+  if (bog2.isPlaying()) {
+    bog2.stop();
+    button2.html('Play');
+  } else {
+    bog2.loop(0,1,1,0);
+    button2.html('Pause');
+  }
+}
+
+function togglePlay3() {
+  if (bog3.isPlaying()) {
+    bog3.stop();
+    button3.html('Play');
+  } else {
+    bog3.loop(0,1,1,0);
+    button3.html('Pause');
+  }
+}
+
+function togglePlay4() {
+  if (bog4.isPlaying()) {
+    bog4.stop();
+    button4.html('Play');
+  } else {
+    bog4.loop(0,1,1,0);
+    button4.html('Pause');
+  }
+}
+
+
 
 
 function resetRate() {
