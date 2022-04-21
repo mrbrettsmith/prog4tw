@@ -11,8 +11,8 @@ function setup(){
 function draw(){
 clear();
 var mySignVal = sin(position);
-console.log(mySignVal);
-ellipse(mySignVal*50, height/2, mySignVal * 20, 50);
+// console.log(mySignVal);
+ellipse(mySignVal*50 + 300, height/2 + (mySignVal *  100), mySignVal * 20, 50);
 
 position = position + inc;
 }
