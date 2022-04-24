@@ -1,11 +1,11 @@
 var solarFlare = [];
-
+wiggle = 0.0;
 
 function setup() {
     createCanvas(600, 600)
 
     for (var i = 0; i < 10; i++) {
-        solarFlare[i] = new Ion(random(width), random(height));
+        solarFlare[i] = new Ion(random(5,50), random(200,400));
 
     }
 }
@@ -20,7 +20,7 @@ function draw() {
         for (var j = 0; j < solarFlare.length; j++) {
             if (i != j && solarFlare[i].intersects(solarFlare[j])) {
             solarFlare[i].glowColor();
-            solarFlare[i].pulse();
+            // solarFlare[i].pulse();
             solarFlare[j].glowColor();
             
             }
@@ -39,10 +39,10 @@ class Ion {
     }
 
     move() {
-        // let m = sin(wiggle);
-        this.x = this.x + random(-4, 4);
-        this.y = this.y + random(-4, 4);
-        // wiggle += .01;
+        let m = sin(wiggle);
+        this.x = this.x + 1 + random(-4, 4);
+        this.y = this.y + m + random(-4, 4);
+        wiggle += .01;
     }
 
     show() {
