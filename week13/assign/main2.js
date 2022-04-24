@@ -4,7 +4,7 @@ wiggle = 0.0;
 function setup() {
     createCanvas(600, 600)
 
-    for (var i = 0; i < 10; i++) {
+    for (let i = 0; i < solarFlare.length; i++) {
         solarFlare[i] = new Ion(random(5,50), random(200,400));
 
     }
@@ -12,6 +12,9 @@ function setup() {
 
 function draw() {
     background('white');
+
+    f = new Ion();
+    solarFlare.push(f);
 
     for (var i = 0; i < solarFlare.length; i++) {
         solarFlare[i].move();

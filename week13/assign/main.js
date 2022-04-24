@@ -5,21 +5,26 @@ wiggle = 0.0;
 
 function setup() {
     createCanvas(600, 600)
-
+    // for (var i = 0; i < 10; i++) 
     // to make an ion push fountain (a):
-    // for (let i = 0; i < solarFlare.length; i++)
-    for (var i = 0; i < 10; i++) {
+    
+    for (let i = 0; i < solarFlare.length; i++){
         solarFlare[i] = new Ion();
-
-        
     }
+    // for (let i = 0; i < solarFlare.length; i++) {
+    //     solarFlare[i] = new Ion(random(5,50), random(200,400));
+    // }
+
+    
 }
+
+
 
 function draw() {
     background('white');
     // to make an ion push fountain (b):
-    // f = new Ion();
-    // solarFlare.push();
+    f = new Ion(random(5,50), random(250,350));
+    solarFlare.push(f);
     for (var i = 0; i < solarFlare.length; i++) {
         solarFlare[i].move();
         solarFlare[i].show();
@@ -28,7 +33,7 @@ function draw() {
             if (i != j && solarFlare[i].intersects(solarFlare[j])) {
             solarFlare[i].glowColor();
             // solarFlare[j].glowColor();
-            // solarFlare[i].pulse();
+            solarFlare[i].pulse();
             }
             
         }
@@ -41,11 +46,10 @@ function draw() {
 
 class Ion {
 
-    constructor() {
-        this.x = 20;
-        this.y = 300;
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
         this.rad = 5;
-        // this.intersects = function(other);
         this.col = color(76, 237, 62);
     }
 
@@ -60,6 +64,9 @@ class Ion {
         noStroke();
         fill(this.col);
         circle(this.x , this.y, this.rad * 2);
+        if (this.rad > 5) {
+            this.rad = this.rad - .5;
+        }
     }
 
     intersects = function(other) {
@@ -76,6 +83,8 @@ class Ion {
     }
 
     pulse() {
-        this.rad = this.rad + 5;
+        if (this.rad < 10) {
+            this.rad = this.rad + 1;
+        } 
     }
 }
