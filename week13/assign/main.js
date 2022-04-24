@@ -5,24 +5,18 @@ wiggle = 0.0;
 
 function setup() {
     createCanvas(600, 600)
-    solarFlare = new Ion();
-    for (let i = 0; i < 10; i++) {
-        solarFlare[i] = new Ion;
-    }
 }
 
 function draw() {
     background('white');
-    for (let i = 0; i < 10; i++) {
+    f = new Ion();
+    solarFlare.push(f);
+    for (let i = 0; i < solarFlare.length; i++) {
         solarFlare[i].move();
         solarFlare[i].show();
     }
 
-    
-    push();
-    let newFlare = new Ion();
-    newFlare;
-    pop();
+
 }    
 
 class Ion {
