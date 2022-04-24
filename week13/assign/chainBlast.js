@@ -1,25 +1,18 @@
 var solarFlare = [];
-grow = 0.0;
-animate = 0.0;
-wiggle = 0.0;
+
 
 function setup() {
     createCanvas(600, 600)
 
-    // to make an ion push fountain (a):
-    // for (let i = 0; i < solarFlare.length; i++)
     for (var i = 0; i < 10; i++) {
-        solarFlare[i] = new Ion();
+        solarFlare[i] = new Ion(random(width), random(height));
 
-        
     }
 }
 
 function draw() {
     background('white');
-    // to make an ion push fountain (b):
-    // f = new Ion();
-    // solarFlare.push();
+
     for (var i = 0; i < solarFlare.length; i++) {
         solarFlare[i].move();
         solarFlare[i].show();
@@ -27,33 +20,29 @@ function draw() {
         for (var j = 0; j < solarFlare.length; j++) {
             if (i != j && solarFlare[i].intersects(solarFlare[j])) {
             solarFlare[i].glowColor();
-            // solarFlare[j].glowColor();
-            // solarFlare[i].pulse();
-            }
+            solarFlare[i].pulse();
+            solarFlare[j].glowColor();
             
-        }
-        
-
-    }
+            }
     
-
-}    
+        }
+    }
+}
 
 class Ion {
 
-    constructor() {
-        this.x = 20;
-        this.y = 300;
+    constructor(x,y) {
+        this.x = x;
+        this.y = y;
         this.rad = 5;
-        // this.intersects = function(other);
         this.col = color(76, 237, 62);
     }
 
     move() {
-        let m = sin(wiggle);
-        this.x = this.x + 3;
-        this.y = this.y + m + random(-4, 4);
-        wiggle += .01;
+        // let m = sin(wiggle);
+        this.x = this.x + random(-4, 4);
+        this.y = this.y + random(-4, 4);
+        // wiggle += .01;
     }
 
     show() {
