@@ -31,7 +31,7 @@ function draw() {
 
     // Ion Particles //
     f = new Ion(random(5,50), random(250,350));
-    // solarFlare.push(f);
+    solarFlare.push(f);
 
     for (var i = solarFlare.length - 1; i >= 0; i--) {
         solarFlare[i].move();
@@ -121,20 +121,20 @@ class Ion {
 
 class Mag {
     constructor() {
-        this.x = .10;
-        this.y = .05;
+        this.x = 400;
+        this.y = 300;
         this.radA = 100;
         this.col = color('red');
-        this.e = sin(wiggleA)
+        // this.e = sin(wiggleA)
     }
 
     move() {
-        translate(550, height/2)
-        rotate(wiggleA)
-        let e = sin(wiggleA);
-        this.x = this.x + e;
-        this.y = this.y + e ;
-        wiggleA += -1 * random(.01, .05);
+        // translate(550, height/2)
+        // rotate(wiggleA)
+        // let e = sin(wiggleA);
+        // this.x = this.x + e;
+        // this.y = this.y + e ;
+        // wiggleA += -1 * random(.01, .05);
     }
 
     show() {
