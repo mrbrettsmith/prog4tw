@@ -106,7 +106,7 @@ class Ion {
 
 class Mag {
     constructor() {
-        this.x = 150;
+        this.x = 75;
         this.y = 450;
         this.radA = 50;
         this.col = color(76, 237, 62, 5);
