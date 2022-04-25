@@ -26,23 +26,34 @@ function draw() {
     f = new Ion(random(5,50), random(250,350));
     solarFlare.push(f);
     
-    for (var i = 0; i < solarFlare.length; i++) {
+    push()
+    earth1.move();
+    earth1.show();
+    pop()
+
+    for (var i = solarFlare.length - 1; i >= 0; i--) {
         solarFlare[i].move();
         solarFlare[i].show();
-
-        for (var j = 0; j < solarFlare.length; j++) {
-            if (i != j && solarFlare[i].intersects(solarFlare[j])) {
+        if (solarFlare[i].intersects(earth1.rad)) {
             solarFlare[i].glowColor();
+        }
+        if (solarFlare[i].finished()){
+                solarFlare.splice(i,1);
+        }
+
+            // particle hits particle //
+
+            // if (i != j && solarFlare[i].intersects(solarFlare[j])) {
+            // solarFlare[i].glowColor();
             // solarFlare[j].glowColor();
             // solarFlare[i].pulse();
-            }
-        }
+            // }
+        // }
     }
 
 
 
-    earth1.move();
-    earth1.show();
+    
 
     // magSphere[] = magSphere[];
     // // Atmoshpere //
@@ -60,6 +71,10 @@ class Ion {
         this.y = y;
         this.rad = 5;
         this.col = color(76, 237, 62);
+    }
+
+    finished() {
+        return this.x > width;
     }
 
     move() {
