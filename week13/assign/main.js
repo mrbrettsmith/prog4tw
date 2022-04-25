@@ -1,80 +1,94 @@
+let earth1;
 var solarFlare = [];
 var magSphere = [];
-wiggle = 0.0;
+wiggleP = 0.0;
+wiggleA = 0.0;
 grow = 0.0;
 
 function setup() {
     createCanvas(600, 600)
-    
+
     for (let i = 0; i < solarFlare.length; i++){
         solarFlare[i] = new Ion();
     };
-
-    for (let s = 0; s < 5; s++) {
-        magSphere[s] = new Mag();
-    }
     
+    // earth array (broken) //
+        earth1 = new Mag();
+  
 }
-
-
 
 function draw() {
     background('white');
 
-
-    // Particles //
-    // to make an ion push fountain (b):
-    f = new Ion(random(5,50), random(250,350));
-    // solarFlare.push(f);
+    // Earth's Magnetosphere //
     
-    for (var i = 0; i < solarFlare.length; i++) {
+    push()
+    earth1.move();
+    earth1.show();
+    pop()
+
+    // Ion Particles //
+    f = new Ion(random(5,50), random(250,350));
+    solarFlare.push(f);
+
+    for (var i = solarFlare.length - 1; i >= 0; i--) {
         solarFlare[i].move();
         solarFlare[i].show();
+        // if (solarFlare[i].intersects(earth1.rad)) {
+        //     solarFlare[i].glowColor();
+        // }
+        if (solarFlare[i].finished()){
+                solarFlare.splice(i,1);
+        }
 
-        for (var j = 0; j < solarFlare.length; j++) {
-            if (i != j && solarFlare[i].intersects(solarFlare[j])) {
+        if (solarFlare[i].intersects(earth1)) {
             solarFlare[i].glowColor();
-            // solarFlare[j].glowColor();
             solarFlare[i].pulse();
-            }
         }
     }
-
-    // Atmoshpere //
-    for (let s = 0; s < 5; s++) {
-        magSphere[s].move();
-        magSphere[s].show();
-    }
+    // Ion Particles Fade //
+    if (this.rad > 5) {
+        this.rad = this.rad + 1;
+    } 
 }    
+
 
 class Ion {
 
     constructor(x,y) {
         this.x = x;
         this.y = y;
-        this.rad = 5;
-        this.col = color(76, 237, 62);
+        this.radP = 5;
+        this.amp = 10;
+        this.col = color(76, 237, 62, this.amp);
+    }
+
+    finished() {
+        return this.x > width;
     }
 
     move() {
-        let m = sin(wiggle);
+        let m = sin(wiggleP);
         this.x = this.x + random(-1, 2);
         this.y = this.y + m + random(-4, 4);
-        wiggle += .01;
+        wiggleP += .01;
     }
 
     show() {
         noStroke();
         fill(this.col);
-        circle(this.x , this.y, this.rad * 2);
-        if (this.rad > 5) {
-            this.rad = this.rad - .5;
+        circle(this.x , this.y, this.radP * 2);
+        if (this.radP > 5) {
+            this.radP = this.radP - .05;
+        }
+        if (this.amp > 5) {
+            this.amp = this.amp - .2;
         }
     }
 
     intersects = function(other) {
         var d = dist(this.x, this.y, other.x, other.y);
-        if (d < this.rad + other.rad){
+        if (d < this.radP + other.radA){
             return true;
         } else {
             return false;
@@ -82,35 +96,42 @@ class Ion {
     }
 
     glowColor() {
-        this.col = color(random(255),random(255),random(255));
+        // this.col = color(random(255),random(255),random(255));
+        this.col = color(76, 237, 62, 50);
     }
 
     pulse() {
-        if (this.rad < 10) {
-            this.rad = this.rad + 1;
+        // this.radP = this.radP + 1.5;
+
+        if (this.radP < 10) {
+            this.radP = this.radP +3;
         } 
+
     }
 }
 
 class Mag {
-
     constructor() {
-        this.x = 700;
-        this.y = 300;
-        this.rad = 100;
-        this.col = color(82, 148, 191, 100);
+        this.x = 200;
+        this.y = 600;
+        this.radA = 25;
+        this.col = color('red');
+        // this.e = sin(wiggleA)
     }
 
+    // Move is Breaking the intersection //
     move() {
-        let m = sin(wiggle);
-        this.x = this.x ;
-        this.y = this.y + m;
-        wiggle += .01;
+        // translate(550, height/2)
+        // rotate(wiggleA)
+        let e = sin(wiggleA) * 7.;
+        this.x = this.x + random(-1,1);
+        this.y = this.y + e ;
+        wiggleA += -1 * random(.01, .05);
     }
 
     show() {
         noStroke();
         fill(this.col);
-        circle(this.x , this.y, this.rad * 2);
+        circle(this.x , this.y, this.radA * 2);
     } 
 }

@@ -13,6 +13,8 @@ function setup() {
     };
     
 
+    // earth array //
+
 
     // for (let s = 0; s < magSphere.length; s++) {
         earth1 = new Mag();
@@ -25,7 +27,7 @@ function draw() {
     // Earth's Magnetosphere //
     
     push()
-    earth1.move();
+    // earth1.move();
     earth1.show();
     pop()
 
@@ -128,14 +130,15 @@ class Mag {
         // this.e = sin(wiggleA)
     }
 
-    move() {
+    // Move is Breaking the intersection //
+    // move() {
         // translate(550, height/2)
         // rotate(wiggleA)
         // let e = sin(wiggleA);
         // this.x = this.x + e;
         // this.y = this.y + e ;
         // wiggleA += -1 * random(.01, .05);
-    }
+    // }
 
     show() {
         noStroke();
