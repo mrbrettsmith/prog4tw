@@ -22,23 +22,29 @@ function setup() {
 function draw() {
     background('white');
 
-    // Particles //
-    f = new Ion(random(5,50), random(250,350));
-    solarFlare.push(f);
+    // Earth's Magnetosphere //
     
     push()
     earth1.move();
     earth1.show();
     pop()
 
+    // Ion Particles //
+    f = new Ion(random(5,50), random(250,350));
+    // solarFlare.push(f);
+
     for (var i = solarFlare.length - 1; i >= 0; i--) {
         solarFlare[i].move();
         solarFlare[i].show();
-        if (solarFlare[i].intersects(earth1.rad)) {
-            solarFlare[i].glowColor();
-        }
+        // if (solarFlare[i].intersects(earth1.rad)) {
+        //     solarFlare[i].glowColor();
+        // }
         if (solarFlare[i].finished()){
                 solarFlare.splice(i,1);
+        }
+
+        if (solarFlare[i].intersects(earth1)) {
+            solarFlare[i].glowColor();
         }
 
             // particle hits particle //
@@ -69,7 +75,7 @@ class Ion {
     constructor(x,y) {
         this.x = x;
         this.y = y;
-        this.rad = 5;
+        this.radP = 5;
         this.col = color(76, 237, 62);
     }
 
@@ -87,15 +93,15 @@ class Ion {
     show() {
         noStroke();
         fill(this.col);
-        circle(this.x , this.y, this.rad * 2);
-        if (this.rad > 5) {
-            this.rad = this.rad - .5;
+        circle(this.x , this.y, this.radP * 2);
+        if (this.radP > 5) {
+            this.radP = this.radP - .5;
         }
     }
 
     intersects = function(other) {
         var d = dist(this.x, this.y, other.x, other.y);
-        if (d < this.rad + other.rad){
+        if (d < this.radP + other.radA){
             return true;
         } else {
             return false;
@@ -117,7 +123,7 @@ class Mag {
     constructor() {
         this.x = .10;
         this.y = .05;
-        this.rad = 100;
+        this.radA = 100;
         this.col = color('red');
         this.e = sin(wiggleA)
     }
@@ -134,6 +140,6 @@ class Mag {
     show() {
         noStroke();
         fill(this.col);
-        circle(this.x , this.y, this.rad * 2);
+        circle(this.x , this.y, this.radA * 2);
     } 
 }
