@@ -1,31 +1,30 @@
+let earth1;
 var solarFlare = [];
 var magSphere = [];
-wiggle = 0.0;
+wiggleP = 0.0;
+wiggleA = 0.0;
 grow = 0.0;
 
 function setup() {
     createCanvas(600, 600)
-    
+
     for (let i = 0; i < solarFlare.length; i++){
         solarFlare[i] = new Ion();
     };
-
-    for (let s = 0; s < 5; s++) {
-        magSphere[s] = new Mag();
-    }
     
+
+
+    // for (let s = 0; s < magSphere.length; s++) {
+        earth1 = new Mag();
+    // }
 }
-
-
 
 function draw() {
     background('white');
 
-
     // Particles //
-    // to make an ion push fountain (b):
     f = new Ion(random(5,50), random(250,350));
-    // solarFlare.push(f);
+    solarFlare.push(f);
     
     for (var i = 0; i < solarFlare.length; i++) {
         solarFlare[i].move();
@@ -35,17 +34,24 @@ function draw() {
             if (i != j && solarFlare[i].intersects(solarFlare[j])) {
             solarFlare[i].glowColor();
             // solarFlare[j].glowColor();
-            solarFlare[i].pulse();
+            // solarFlare[i].pulse();
             }
         }
     }
 
-    // Atmoshpere //
-    for (let s = 0; s < 5; s++) {
-        magSphere[s].move();
-        magSphere[s].show();
-    }
+
+
+    earth1.move();
+    earth1.show();
+
+    // magSphere[] = magSphere[];
+    // // Atmoshpere //
+    // for (let s = 0; s < 5; s++) {
+    //     magSphere[s].move();
+    //     magSphere[s].show();
+    // }
 }    
+
 
 class Ion {
 
@@ -57,10 +63,10 @@ class Ion {
     }
 
     move() {
-        let m = sin(wiggle);
+        let m = sin(wiggleP);
         this.x = this.x + random(-1, 2);
         this.y = this.y + m + random(-4, 4);
-        wiggle += .01;
+        wiggleP += .01;
     }
 
     show() {
@@ -93,19 +99,21 @@ class Ion {
 }
 
 class Mag {
-
     constructor() {
-        this.x = 700;
-        this.y = 300;
+        this.x = .10;
+        this.y = .05;
         this.rad = 100;
-        this.col = color(82, 148, 191, 100);
+        this.col = color('red');
+        this.e = sin(wiggleA)
     }
 
     move() {
-        let m = sin(wiggle);
-        this.x = this.x ;
-        this.y = this.y + m;
-        wiggle += .01;
+        translate(550, height/2)
+        rotate(wiggleA)
+        let e = sin(wiggleA);
+        this.x = this.x + e;
+        this.y = this.y + e ;
+        wiggleA += -1 * random(.01, .05);
     }
 
     show() {
