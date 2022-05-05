@@ -56,14 +56,16 @@ function draw() {
      }
 }    
 
-function intersection(other) {
-    var d = dist(this.x, this.y, other.x, other.y);
-    if (d < this.radP + other.radA){
-        return true;
-     } else {
-        return false;
-     }
-}
+
+// trying to make a function to make arrays read eachother //
+// function intersection(other) {
+//     var d = dist(this.x, this.y, other.x, other.y);
+//     if (d < this.radP + other.radA){
+//         return true;
+//      } else {
+//         return false;
+//      }
+// }
 
 
 class Ion {
