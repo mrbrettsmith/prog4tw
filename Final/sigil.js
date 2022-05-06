@@ -1,5 +1,6 @@
 function Sigil(x,y,terminator) {
 
+
     // defining path elements - which can be vector? //
     
     this.beginX = x;
@@ -62,19 +63,20 @@ function Sigil(x,y,terminator) {
         pct += step;
         if (pct < 1.0) {
 
-            this.goX = this.beginX + pct * this.distX;
+            this.goX = round(this.beginX + pct * this.distX);
             
-            this.goY = this.beginY + pct * this.distY;
-    
+            this.goY = round(this.beginY + pct * this.distY);
+        } else if (this.goX = this.endX, this.goY = this.endY) {
+            makeBranch.push(new Branch(this.endX,this.endY));
+            
         }
-
-        // path tester //
-        // stroke('orange');
-        // line(this.beginX, this.beginY, this.endX, this.endY)
-
-        // Visualising all spots in object history  
         
-        for (var i = 0; i < this.history.length; i++) {
+        for (let i = 0; i < makeBranch.length; i++) {
+                makeBranch[i].show();
+        }
+    
+
+        for (var i = 1; i < this.history.length; i++) {
 
             var position = this.history[i];
             fill("red");
@@ -82,8 +84,13 @@ function Sigil(x,y,terminator) {
         
         }
         endShape();
-    }
-    
 
+
+    }
 }
 
+        // path tester //
+        // stroke('orange');
+        // line(this.beginX, this.beginY, this.endX, this.endY)
+
+        // Visualising all spots in object history  
