@@ -17,11 +17,20 @@ function Branch(x,y) {
     let step = 0.01;
     let pct = 0.0;
 
-      // animate as update //
+
+    // storing draw path //
+    this.history = [];
+    
+    let goX;
+    let goY;
+
+
+    // animate as update //
 
     this.animate = function() {
         this.distX = this.endX - this.beginX;
         this.distY = this.endY - this.beginY;
+        this.rotate(90)
     }
 
 
@@ -29,7 +38,10 @@ function Branch(x,y) {
     this.show = function() {
         noStroke();
         fill("blue");
-        rect(this.goX, this.goY, 40, 40);
+        rect(this.goX, this.goY, 10, 10);
+
+        var v = createVector(this.goX, this.goY)
+        this.history.push(v);
 
         beginShape();
         pct += step;
@@ -39,6 +51,17 @@ function Branch(x,y) {
             
             this.goY = round(this.beginY + pct * this.distY);
         }
+
+
+        // turn history on when pop is working //
+
+        // for (var i = 1; i < this.history.length; i++) {
+
+        //     var position = this.history[i];
+        //     fill("blue");
+        //     rect(position.x, position.y, 10, 10); 
+        
+        // }
         endShape();
     }
      
