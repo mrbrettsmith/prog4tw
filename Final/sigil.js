@@ -70,9 +70,10 @@ function Sigil(x,y,terminator) {
             makeBranch.push(new Branch(this.endX,this.endY));
             
         }
-        
+
         for (let i = 0; i < makeBranch.length; i++) {
-                makeBranch[i].show();
+            makeBranch[i].animate();
+            makeBranch[i].show();
         }
     
 
