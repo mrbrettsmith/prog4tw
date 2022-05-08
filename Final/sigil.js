@@ -68,11 +68,10 @@ function Sigil(x,y,terminator) {
             this.goY = round(this.beginY + pct * this.distY);
         } else if (this.goX = this.endX, this.goY = this.endY) {
             makeBranch.push(new Branch(this.endX,this.endY));
-            
         }
 
         for (let i = 0; i < makeBranch.length; i++) {
-            makeBranch[i].animate();
+            // makeBranch[i].animate();
             makeBranch[i].show();
         }
     

@@ -1,60 +1,38 @@
 function Branch(x,y) {
     rectMode(CENTER)
     
+
+    
+
+
     // this works //
     angleMode(DEGREES);
 
-    this.radX = 50;
-    this.radY = 50;
+    radX = 40;
+    radY = 40;
+    angle = 0;
 
-    // can starting angle work as start spot? Max angle as end?
-
-    var angle = 0;
-    // Need max angle //
-
-    this.centX = x;
-    this.centY = y;
 
     this.show = function(){
         noStroke();
+        
+        push()
+        translate( x  ,y + radY);
+        rotate(angle);
         fill('blue')
+        
+        
+        // stroke('orange');
+        // line(x,y, 10, 10);
+        
 
-        this.sunX = this.centX + cos(angle) * this.radX;
-        this.sunY = this.centY + sin(angle) * this.radY;
-    
-        // Center on preivious end point //
-        
-        for (let spin = 0; spin < 5; spin++) {
-            // draws elipse
-            ellipse(this.sunX,this.sunY,5,5);
-            if (angle <= 270) {
-               angle = angle + 1; 
-            }
-            
-        }
-        
-        stroke('orange');
-        line(this.centX,this.centY, this.sunX, this.sunY);
-    
         // draw from top //
-        // rect(0,-40,10,10);
+        rect(0,-40,10,10);
         
+        //positive is clockwise, negative is counter 
+        angle = angle - 1;
 
-
-
-        // rotate loop that works //
-        // for (let spinAmount = 0; spinAmount <180; spinAmount++) {
-            
-        //     // Rotate 1 Degree eatch loop //
-        //     rotate(1);
-        //     push()
-        //     rect(0,-40,10,10);
-
-        //     //positive is clockwise, negative is counter 
-        //     angle = angle - 1;
-        //     pop()
-        // }
-        
+        pop()
     }
 
 
