@@ -1,19 +1,36 @@
 function Branch(x,y) {
     rectMode(CENTER)
-    
-    // this works //
     angleMode(DEGREES);
+
+    this.beginX = x;
+    this.beginY = y;
 
     this.radX = 50;
     this.radY = 50;
 
-    // can starting angle work as start spot? Max angle as end?
 
-    var angle = 0;
-    // Need max angle //
+    // Defines tarting point for arc. Angle 0 is + on x axis //
+    var angle = 45;
+    
+    // Defines Center Point //
+    this.centX = this.beginX + this.radX;
+    this.centY = this.beginY;
 
-    this.centX = x;
-    this.centY = y;
+    // for percentage of distance traveled //
+    let step = 0.01;
+    let pct = 0.0;
+
+
+    // storing draw path //
+    this.history = [];
+
+    this.animate = function() {
+        
+
+        this.distX = this.endX - this.beginX;
+        this.distY = this.endY - this.beginY;
+    
+    }
 
     this.show = function(){
         noStroke();
@@ -22,12 +39,14 @@ function Branch(x,y) {
         this.sunX = this.centX + cos(angle) * this.radX;
         this.sunY = this.centY + sin(angle) * this.radY;
     
-        // Center on preivious end point //
+        // Center on preivious end point + radius(X or Y)//
         
         for (let spin = 0; spin < 5; spin++) {
-            // draws elipse
-            ellipse(this.sunX,this.sunY,5,5);
-            if (angle <= 270) {
+            
+            rect(this.sunX,this.sunY,10,10);
+            // Defines ending point of arc //
+            // angle + is clockwise / - is counter //
+            if (angle <= 180) {
                angle = angle + 1; 
             }
             
@@ -39,27 +58,7 @@ function Branch(x,y) {
         // draw from top //
         // rect(0,-40,10,10);
         
-
-
-
-        // rotate loop that works //
-        // for (let spinAmount = 0; spinAmount <180; spinAmount++) {
-            
-        //     // Rotate 1 Degree eatch loop //
-        //     rotate(1);
-        //     push()
-        //     rect(0,-40,10,10);
-
-        //     //positive is clockwise, negative is counter 
-        //     angle = angle - 1;
-        //     pop()
-        // }
-        
     }
-
-
-
-
 
     // // for percentage of distance traveled //
     // let step = 0.01;
