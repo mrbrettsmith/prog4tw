@@ -16,6 +16,7 @@ test = 0;
 
 function setup() {
     createCanvas(600, 600);
+    rectMode(CENTER)
 }
 
 function draw() {
@@ -27,13 +28,10 @@ function draw() {
         sigilArray1[i].show();
     } 
     
-
     for (let y = 0; y < 100; y++) {
         fill('yellow');
         ellipse(10+ test, 300, 30, 30);
     }
-
-    
 
     for (let y = 0; y < sigilArray2.length; y++) {
         sigilArray2[y].animate();
@@ -44,34 +42,24 @@ function draw() {
     test = test + 1;
 
     
- 
-
 }
 
 
 
 
 function mousePressed(){
-
-    
     if (clickTally === 0){
-
         var terminator = round(random(-100, 100),0);
-
         let makeSigils1 = new Sigil2(mouseX,mouseY,terminator);
         sigilArray1.push(makeSigils1);
     }
     if (clickTally === 1){
         var terminator = round(random(-100, 100),0);
-
         let makeSigils2 = new Sigil3(transferX,transferY,terminator);
         sigilArray2.push(makeSigils2);
-
-
     }
 
     clickTally = clickTally + 1;
-
     console.log('clickTally', clickTally) 
 }
 
@@ -80,8 +68,6 @@ function mousePressed(){
 
 
 function Sigil2(x,y,terminator) {
-
-
     // defining path elements - which can be vector? //
     
     this.beginX = x;
@@ -100,28 +86,18 @@ function Sigil2(x,y,terminator) {
     // storing draw path //
     this.history = [];
     
-
-
-    // let v0 = createVector(x,y);
-    // let v1 = (x, y + 100 + terminator)
-
-
-    rectMode(CENTER)
-    
     // animate as update //
 
     this.animate = function() {
         this.distX = this.endX - this.beginX;
         this.distY = this.endY - this.beginY;
-
- 
     }
 
-    this.finished = function() {
-        pct >= 1.;
-        return true;
-        
-    }
+    // I wanted this to trigger the next draw feature, but had problems with it not refreshing in the draw loop //
+    // this.finished = function() {
+    //     pct >= 1.;
+    //     return true;
+    // }
 
     this.show = function() {
         noStroke();
@@ -139,16 +115,20 @@ function Sigil2(x,y,terminator) {
             
             this.goY = round(this.beginY + pct * this.distY);
         } 
-        // else if (this.goX = this.endX, this.goY = this.endY) {
-        //     let makeSigils2 = new Sigil3(this.endX,this.endY,terminator);
-        //     sigilArray2.push(makeSigils2);
-        // }
-        endShape();
-    }
 
+        // Drawing History //
+        for (var i = 1; i < this.history.length; i++) {
+
+            var position = this.history[i];
+            fill("red");
+            rect(position.x, position.y, 10, 10); 
+        }
+        endShape();
+
+
+    }
     transferX = this.endX;
     transferY = this.endY;
-
 }
 
 
@@ -194,7 +174,6 @@ function Sigil3(x,y,terminator) {
     }
 
     this.show = function() {
-        
         noStroke();
         fill("red");
         rect(this.goX, this.goY, 10, 10);
@@ -209,23 +188,19 @@ function Sigil3(x,y,terminator) {
             this.goX = round(this.beginX + pct * this.distX);
             
             this.goY = round(this.beginY + pct * this.distY);
-        } else if (this.goX = this.endX, this.goY = this.endY) {
-            // makeSigils3.push(new Sigil4(this.endX,this.endY,terminator));
-        }
+        } 
 
-        // for (let i = 0; i < makeBranch.length; i++) {
-        //     makeBranch[i].animate();
-        //     makeBranch[i].show();
-        // }
-    
         // Drawing History //
-        // for (var i = 1; i < this.history.length; i++) {
+        for (var i = 1; i < this.history.length; i++) {
 
-        //     var position = this.history[i];
-        //     fill("red");
-        //     rect(position.x, position.y, 10, 10); 
-        // }
-
+            var position = this.history[i];
+            fill("red");
+            rect(position.x, position.y, 10, 10); 
+        }
         endShape();
+
+
     }
+    transferX = this.endX;
+    transferY = this.endY;
 }
