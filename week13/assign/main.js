@@ -8,9 +8,9 @@ grow = 0.0;
 function setup() {
     createCanvas(600, 600)
 
-    for (let i = 0; i < solarFlare.length; i++){
-        solarFlare[i] = new Ion();
-    };
+    // for (let i = 0; i < solarFlare.length; i++){
+    //     solarFlare[i] = new Ion();
+    // };
     
     // earth array (broken) //
         earth1 = new Mag();

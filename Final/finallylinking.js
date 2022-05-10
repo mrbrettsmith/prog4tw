@@ -1,4 +1,4 @@
-function Sigil(x,y,terminator) {
+function Sigil3(x,y,terminator) {
 
 
     // defining path elements - which can be vector? //
@@ -6,8 +6,8 @@ function Sigil(x,y,terminator) {
     this.beginX = x;
     this.beginY = y;
 
-    this.endX = x;
-    this.endY = y+ 150 + terminator;
+    this.endX = x + 150 + terminator;
+    this.endY = y + 150 + terminator;
 
     this.terminator = terminator;
 
@@ -34,15 +34,6 @@ function Sigil(x,y,terminator) {
 
         this.distX = this.endX - this.beginX;
         this.distY = this.endY - this.beginY;
-
-        // DO I NEED MORE VECTOR PERAMETORS - HEADING() // ???
-
-        // var v = createVector(this.goX, this.goY)
-
-
-
-        console.log('Main end Y', this.endY)
-    
     }
 
     this.show = function() {
@@ -61,13 +52,13 @@ function Sigil(x,y,terminator) {
             
             this.goY = round(this.beginY + pct * this.distY);
         } else if (this.goX = this.endX, this.goY = this.endY) {
-            makeBranch.push(new Branch(this.endX,this.endY));
+            // makeBranch.push(new Branch(this.endX,this.endY));
         }
 
-        for (let i = 0; i < makeBranch.length; i++) {
-            makeBranch[i].animate();
-            makeBranch[i].show();
-        }
+        // for (let i = 0; i < makeBranch.length; i++) {
+        //     makeBranch[i].animate();
+        //     makeBranch[i].show();
+        // }
     
         // Drawing History //
         // for (var i = 1; i < this.history.length; i++) {
@@ -78,13 +69,5 @@ function Sigil(x,y,terminator) {
         // }
 
         endShape();
-
-
     }
 }
-
-        // path tester //
-        // stroke('orange');
-        // line(this.beginX, this.beginY, this.endX, this.endY)
-
-        // Visualising all spots in object history  
