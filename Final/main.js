@@ -1,8 +1,13 @@
-var makeSigils1 = [];
-var makeSigils2 = [];
+var drawArray = [];
+var sigilArray1 = [];
+var sigilArray2 = [];
 var makeSigils3 = [];
 var terminator;
 
+var transferX;
+var transferY;
+
+let clickTally = 0
 // test //
 let yellow;
 test = 0;
@@ -11,63 +16,63 @@ test = 0;
 
 function setup() {
     createCanvas(600, 600);
-    
-  makeSigils2 = new Sigil3;
 }
 
 function draw() {
     background('grey');
 
-
-    for (let i = 0; i < makeSigils1.length; i++) {        
-        makeSigils1[i].animate();
-        makeSigils1[i].show();
-
-        if (makeSigils1[i].finished()){
-                makeSigils1.splice(i,1);
-            
-                // Return and make next sigil here? Return is working!)
-        }
-    }
     
-    
+    for (let i = 0; i < sigilArray1.length; i++) {        
+        sigilArray1[i].animate();
+        sigilArray1[i].show();
+    } 
     
 
-    // test //
-    
-    fill('yellow')
-    ellipse(100 + test, 100, 30, 30)
-    // test = test+ 1
-
-    for (let s = 0; s < s.length; s++) {
-        fill('yellow')
-        ellipse(100 + test, 100, 30, 30)
-        test = test+ 1;
-        
-    }
-    // test //
-
-    for (let f = 0; f < makeSigils2.length; f++) {
-        makeSigils2[f].animate();
-        makeSigils2[f].show();
-
-        if (makeSigils2[f].finished()){
-            makeSigils2.splice(f,1);
+    for (let y = 0; y < 100; y++) {
+        fill('yellow');
+        ellipse(10+ test, 300, 30, 30);
     }
 
-    }
     
+
+    for (let y = 0; y < sigilArray2.length; y++) {
+        sigilArray2[y].animate();
+        sigilArray2[y].show();
+    }
+
+
+    test = test + 1;
+
+    
+ 
+
 }
 
-// clean up terminator vs randoTerminus
-
-// mousclick makes pos and neg sigil? two seperate JS docs?
 
 
 
 function mousePressed(){
-    var terminator = round(random(-100, 100),0);
-    makeSigils1.push(new Sigil2(mouseX,mouseY,terminator));
+
+    
+    if (clickTally === 0){
+
+        var terminator = round(random(-100, 100),0);
+
+        let makeSigils1 = new Sigil2(mouseX,mouseY,terminator);
+        sigilArray1.push(makeSigils1);
+    }
+    if (clickTally === 1){
+        var terminator = round(random(-100, 100),0);
+
+        let makeSigils2 = new Sigil3(transferX,transferY,terminator);
+        sigilArray2.push(makeSigils2);
+
+
+    }
+
+    clickTally = clickTally + 1;
+
+    console.log('clickTally', clickTally) 
 }
 
 
@@ -109,11 +114,13 @@ function Sigil2(x,y,terminator) {
         this.distX = this.endX - this.beginX;
         this.distY = this.endY - this.beginY;
 
-        console.log('Main end Y', this.endY)
+ 
     }
 
     this.finished = function() {
-        return pct === 1.0;
+        pct >= 1.;
+        return true;
+        
     }
 
     this.show = function() {
@@ -132,11 +139,15 @@ function Sigil2(x,y,terminator) {
             
             this.goY = round(this.beginY + pct * this.distY);
         } 
-        else if (this.goX = this.endX, this.goY = this.endY) {
-            makeSigils2(this.endX,this.endY,terminator);
-        }
+        // else if (this.goX = this.endX, this.goY = this.endY) {
+        //     let makeSigils2 = new Sigil3(this.endX,this.endY,terminator);
+        //     sigilArray2.push(makeSigils2);
+        // }
         endShape();
     }
+
+    transferX = this.endX;
+    transferY = this.endY;
 
 }
 
@@ -144,7 +155,7 @@ function Sigil2(x,y,terminator) {
 
 
 function Sigil3(x,y,terminator) {
-
+    
     this.beginX = x;
     this.beginY = y;
 
@@ -183,6 +194,7 @@ function Sigil3(x,y,terminator) {
     }
 
     this.show = function() {
+        
         noStroke();
         fill("red");
         rect(this.goX, this.goY, 10, 10);
@@ -217,4 +229,3 @@ function Sigil3(x,y,terminator) {
         endShape();
     }
 }
-
