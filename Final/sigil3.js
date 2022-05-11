@@ -1,10 +1,12 @@
 function Sigil3(x,y,terminator) {
     
+    // Straight Line E //
+
     this.beginX = x;
     this.beginY = y;
 
     this.endX = x + 150 + terminator;
-    this.endY = y + 150 + terminator;
+    this.endY = y;
 
     this.terminator = terminator;
 

@@ -1,27 +1,14 @@
 function Sigil4(x,y,terminator) {
-
-    // Draws an Arc to the Left //
-
-
-
-    rectMode(CENTER)
-    angleMode(DEGREES);
+    
+    // Straight Line W //
 
     this.beginX = x;
     this.beginY = y;
 
-    this.radX = 50;
-    this.radY = 50;
+    this.endX = x - (150 + terminator);
+    this.endY = y;
 
-
-    // Defines tarting point for arc. Angle 0 is + on x axis //
-    var angle = 0;
-    var endAngle = 180 + terminator;
-
-    console.log('End Angle', endAngle)
-    // Defines Center Point //
-    this.centX = this.beginX - this.radX;
-    this.centY = this.beginY;
+    this.terminator = terminator;
 
     // for percentage of distance traveled //
     let step = 0.01;
@@ -30,49 +17,56 @@ function Sigil4(x,y,terminator) {
 
     // storing draw path //
     this.history = [];
+    
+
+
+    // let v0 = createVector(x,y);
+    // let v1 = (x, y + 100 + terminator)
+
+
+    rectMode(CENTER)
+    
+    // animate as update //
 
     this.animate = function() {
-        this.moveX = this.centX + cos(angle) * this.radX;
-        this.moveY = this.centY + sin(angle) * this.radY;
+        
+
+        this.distX = this.endX - this.beginX;
+        this.distY = this.endY - this.beginY;
     }
 
-    this.show = function(){
+    this.finished = function() {
+        return pct === 1.0;
+    }
+
+    this.show = function() {
         noStroke();
-        fill('red')
-        rect(this.moveX,this.moveY,10,10);
+        fill("red");
+        rect(this.goX, this.goY, 10, 10);
+        
+        var v = createVector(this.goX, this.goY)
+        this.history.push(v);
+        
+        beginShape();
+        pct += step;
+        if (pct < 1.0) {
 
-        // Center on preivious end point + radius(X or Y)//
-       
+            this.goX = round(this.beginX + pct * this.distX);
+            
+            this.goY = round(this.beginY + pct * this.distY);
+        } 
 
-
-            // Defines ending point of arc //
-            // angle + is clockwise / - is counter //
-
-            var v = createVector(this.moveX, this.moveY)
-            this.history.push(v);
-
-            if (angle < endAngle) {
-               angle = angle + 1; 
-            } else if (angle > endAngle) {
-                angle = 0;
-                
-            }
-    
         // Drawing History //
-        // Memory Leak Here //
         for (var i = 1; i < this.history.length; i++) {
+
             var position = this.history[i];
             fill("red");
-            ellipse(position.x, position.y, 10, 10)
+            ellipse(position.x, position.y, 11, 11) 
         }
-        transferX = this.moveX;
-        transferY = this.moveY;
+        endShape();
 
-        // stroke('orange');
-        // line(this.centX,this.centY, this.moveX, this.moveY);
-    
-        // draw from top //
-        // rect(0,-40,10,10);
-        
+
     }
+    transferX = this.endX;
+    transferY = this.endY;
 }

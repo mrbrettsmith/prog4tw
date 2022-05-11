@@ -1,5 +1,5 @@
-function Sigil1(x,y,terminator) {
-    // defining path elements - which can be vector? //
+function Sigil1(x,y,terminator,colorInput) {
+    // Straight Line S //
     
     this.beginX = x;
     this.beginY = y;
@@ -8,6 +8,7 @@ function Sigil1(x,y,terminator) {
     this.endY = y+ 150 + terminator;
 
     this.terminator = terminator;
+    color = colorInput
 
     // for percentage of distance traveled //
     let step = 0.01;

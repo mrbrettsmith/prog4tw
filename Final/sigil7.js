@@ -1,14 +1,14 @@
-function Sigil2(x,y,terminator,colorInput) {
-    // Straight Line N //
+function Sigil7(x,y,terminator) {
     
+    // Straight Line NE //
+
     this.beginX = x;
     this.beginY = y;
 
-    this.endX = x ;
+    this.endX = x + (150 + terminator);
     this.endY = y - (150 + terminator);
 
     this.terminator = terminator;
-    color = colorInput
 
     // for percentage of distance traveled //
     let step = 0.01;
@@ -18,18 +18,26 @@ function Sigil2(x,y,terminator,colorInput) {
     // storing draw path //
     this.history = [];
     
+
+
+    // let v0 = createVector(x,y);
+    // let v1 = (x, y + 100 + terminator)
+
+
+    rectMode(CENTER)
+    
     // animate as update //
 
     this.animate = function() {
+        
+
         this.distX = this.endX - this.beginX;
         this.distY = this.endY - this.beginY;
     }
 
-    // I wanted this to trigger the next draw feature, but had problems with it not refreshing in the draw loop //
-    // this.finished = function() {
-    //     pct >= 1.;
-    //     return true;
-    // }
+    this.finished = function() {
+        return pct === 1.0;
+    }
 
     this.show = function() {
         noStroke();
@@ -42,7 +50,9 @@ function Sigil2(x,y,terminator,colorInput) {
         beginShape();
         pct += step;
         if (pct < 1.0) {
+
             this.goX = round(this.beginX + pct * this.distX);
+            
             this.goY = round(this.beginY + pct * this.distY);
         } 
 
@@ -51,7 +61,7 @@ function Sigil2(x,y,terminator,colorInput) {
 
             var position = this.history[i];
             fill("red");
-            rect(position.x, position.y, 10, 10); 
+            ellipse(position.x, position.y, 11, 11) 
         }
         endShape();
 
