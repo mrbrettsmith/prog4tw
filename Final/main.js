@@ -7,7 +7,8 @@ var sigilArray5 = [];
 var sigilArray6 = [];
 var terminator;
 
-var randomArrayGenerator = [];
+
+
 
 var transferX;
 var transferY;
@@ -19,9 +20,11 @@ test = 0;
 // test //
 
 
+
 function setup() {
     createCanvas(600, 600);
     rectMode(CENTER)
+    randomSigil = floor(random(0,5));
 }
 
 function draw() {
@@ -58,101 +61,109 @@ function draw() {
 
 
 function mousePressed(){
+    let allSigils = [Sigil1, Sigil2, Sigil3, Sigil4];
+    var chosenSig = random(allSigils);
+    var terminator = round(random(-100, 100),0);
+    let makeSigils1;
+    
+
+
     if (clickTally === 0){
         var terminator = round(random(-100, 100),0);
-        let makeSigils1 = new Sigil1(mouseX,mouseY,terminator);
+        let makeSigils1 = new chosenSig(mouseX,mouseY,terminator);
         sigilArray1.push(makeSigils1);
     }
-    if (clickTally === 1){
+    if (clickTally !== 0){
         var terminator = round(random(-100, 100),0);
-        let makeSigils2 = new Sigil3(transferX,transferY,terminator);
-        sigilArray2.push(makeSigils2);
+        let makeSigils1 = new chosenSig(transferX,transferY,terminator);
+        sigilArray1.push(makeSigils1);
     }
-    if (clickTally === 2){
-        var terminator = round(random(-100, 100),0);
-        let makeSigils3 = new Sigil4(transferX,transferY,terminator);
-        sigilArray3.push(makeSigils3);
-    }
-    if (clickTally === 3){
-        var terminator = round(random(-100, 100),0);
-        let makeSigils2 = new Sigil1(transferX,transferY,terminator);
-        sigilArray2.push(makeSigils2);
-    }
-    if (clickTally === 4){
-        var terminator = round(random(-100, 100),0);
-        let makeSigils2 = new Sigil3(transferX,transferY,terminator);
-        sigilArray2.push(makeSigils2);
-    }
+    // if (clickTally === 2){
+    //     var terminator = round(random(-100, 100),0);
+    //     let makeSigils3 = new chosenSig(transferX,transferY,terminator);
+    //     sigilArray3.push(makeSigils3);
+    // }
+    // if (clickTally === 3){
+    //     var terminator = round(random(-100, 100),0);
+    //     let makeSigils2 = new chosenSig(transferX,transferY,terminator);
+    //     sigilArray2.push(makeSigils2);
+    // }
+    // if (clickTally === 4){
+    //     var terminator = round(random(-100, 100),0);
+    //     let makeSigils2 = new Sigil3(transferX,transferY,terminator);
+    //     sigilArray2.push(makeSigils2);
+    // }
 
     clickTally = clickTally + 1;
     console.log('clickTally', clickTally) 
+    console.log ( 'random sigil', chosenSig)
 }
 
 
 
 
 
-function Sigil2(x,y,terminator) {
-    // defining path elements - which can be vector? //
+// function Sigil2(x,y,terminator) {
+//     // defining path elements - which can be vector? //
     
-    this.beginX = x;
-    this.beginY = y;
+//     this.beginX = x;
+//     this.beginY = y;
 
-    this.endX = x;
-    this.endY = y+ 150 + terminator;
+//     this.endX = x;
+//     this.endY = y+ 150 + terminator;
 
-    this.terminator = terminator;
+//     this.terminator = terminator;
 
-    // for percentage of distance traveled //
-    let step = 0.01;
-    let pct = 0.0;
+//     // for percentage of distance traveled //
+//     let step = 0.01;
+//     let pct = 0.0;
 
 
-    // storing draw path //
-    this.history = [];
+//     // storing draw path //
+//     this.history = [];
     
-    // animate as update //
+//     // animate as update //
 
-    this.animate = function() {
-        this.distX = this.endX - this.beginX;
-        this.distY = this.endY - this.beginY;
-    }
+//     this.animate = function() {
+//         this.distX = this.endX - this.beginX;
+//         this.distY = this.endY - this.beginY;
+//     }
 
-    // I wanted this to trigger the next draw feature, but had problems with it not refreshing in the draw loop //
-    // this.finished = function() {
-    //     pct >= 1.;
-    //     return true;
-    // }
+//     // I wanted this to trigger the next draw feature, but had problems with it not refreshing in the draw loop //
+//     // this.finished = function() {
+//     //     pct >= 1.;
+//     //     return true;
+//     // }
 
-    this.show = function() {
-        noStroke();
-        fill("red");
-        rect(this.goX, this.goY, 10, 10);
+//     this.show = function() {
+//         noStroke();
+//         fill("red");
+//         rect(this.goX, this.goY, 10, 10);
         
-        var v = createVector(this.goX, this.goY)
-        this.history.push(v);
+//         var v = createVector(this.goX, this.goY)
+//         this.history.push(v);
         
-        beginShape();
-        pct += step;
-        if (pct < 1.0) {
-            this.goX = round(this.beginX + pct * this.distX);
-            this.goY = round(this.beginY + pct * this.distY);
-        } 
+//         beginShape();
+//         pct += step;
+//         if (pct < 1.0) {
+//             this.goX = round(this.beginX + pct * this.distX);
+//             this.goY = round(this.beginY + pct * this.distY);
+//         } 
 
-        // Drawing History //
-        for (var i = 1; i < this.history.length; i++) {
+//         // Drawing History //
+//         for (var i = 1; i < this.history.length; i++) {
 
-            var position = this.history[i];
-            fill("red");
-            rect(position.x, position.y, 10, 10); 
-        }
-        endShape();
+//             var position = this.history[i];
+//             fill("red");
+//             rect(position.x, position.y, 10, 10); 
+//         }
+//         endShape();
 
 
-    }
-    transferX = this.endX;
-    transferY = this.endY;
-}
+//     }
+//     transferX = this.endX;
+//     transferY = this.endY;
+// }
 
 
 

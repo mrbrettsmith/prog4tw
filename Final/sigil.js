@@ -1,4 +1,4 @@
-function Sigil1(x,y,terminator) {
+function Sigil(x,y,terminator) {
     // defining path elements - which can be vector? //
     
     this.beginX = x;
