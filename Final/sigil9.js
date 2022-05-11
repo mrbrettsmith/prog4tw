@@ -16,7 +16,7 @@ function Sigil9(x,y,terminator) {
 
     // Defines tarting point for arc. Angle 0 is + on x axis //
     var angle = 0;
-    var endAngle = 180 + terminator;
+    var endAngle = 180 ;
 
     console.log('End Angle', endAngle)
     // Defines Center Point //

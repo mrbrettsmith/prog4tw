@@ -29,10 +29,10 @@ function draw() {
 
 
 function mousePressed(){
-    let allSigils = [Sigil1, Sigil2, Sigil3, Sigil4, Sigil5, Sigil6, Sigil7, Sigil11, Sigil12, Sigil16];
+    let allSigils = [Sigil1, Sigil2, Sigil3, Sigil4, Sigil5, Sigil6, Sigil7, Sigil11, Sigil12, Sigil13, Sigil14, Sigil16];
 
     // additional shapes //
-    // Sigil12, Sigil13, Sigil14, Sigil15,
+    // Sigil12, 
 
     var chosenSig = random(allSigils);
     let chosenColor;
@@ -44,10 +44,10 @@ function mousePressed(){
     if (clickTally === 0){
         var terminator = round(random(-100, 100),0);
         chosenColor = color(random(1, 255),random(1, 255),random(1, 255));
-        let makeSigils1 = new chosenSig(mouseX,mouseY,terminator,chosenColor);
+        let makeSigils1 = new chosenSig(width/2,height/2,terminator,chosenColor);
         sigilArray1.push(makeSigils1);
     } else if (clickTally !== 0){
-        var terminator = round(random(-100, 100),0);
+        var terminator = round(random(-50, 50),0);
         let makeSigils1 = new chosenSig(transferX, transferY, terminator, chosenColor);
         sigilArray1.push(makeSigils1);
     } 
