@@ -1,6 +1,4 @@
-function Sigil(x,y,terminator) {
-
-
+function Sigil1(x,y,terminator) {
     // defining path elements - which can be vector? //
     
     this.beginX = x;
@@ -19,40 +17,25 @@ function Sigil(x,y,terminator) {
     // storing draw path //
     this.history = [];
     
-
-
-    // let v0 = createVector(x,y);
-    // let v1 = (x, y + 100 + terminator)
-
-
-    rectMode(CENTER)
-    
     // animate as update //
 
     this.animate = function() {
-        
-
         this.distX = this.endX - this.beginX;
         this.distY = this.endY - this.beginY;
-
-        // DO I NEED MORE VECTOR PERAMETORS - HEADING() // ???
-
-        // var v = createVector(this.goX, this.goY)
-
-
-
-        console.log('Main end Y', this.endY)
-    
     }
+
+    // I wanted this to trigger the next draw feature, but had problems with it not refreshing in the draw loop //
+    // this.finished = function() {
+    //     pct >= 1.;
+    //     return true;
+    // }
 
     this.show = function() {
         noStroke();
         fill("red");
         rect(this.goX, this.goY, 10, 10);
-        
         var v = createVector(this.goX, this.goY)
         this.history.push(v);
-        
         beginShape();
         pct += step;
         if (pct < 1.0) {
@@ -60,31 +43,17 @@ function Sigil(x,y,terminator) {
             this.goX = round(this.beginX + pct * this.distX);
             
             this.goY = round(this.beginY + pct * this.distY);
-        } else if (this.goX = this.endX, this.goY = this.endY) {
-            makeBranch.push(new Branch(this.endX,this.endY));
-        }
+        } 
 
-        for (let i = 0; i < makeBranch.length; i++) {
-            makeBranch[i].animate();
-            makeBranch[i].show();
-        }
-    
         // Drawing History //
-        // for (var i = 1; i < this.history.length; i++) {
+        for (var i = 1; i < this.history.length; i++) {
 
-        //     var position = this.history[i];
-        //     fill("red");
-        //     rect(position.x, position.y, 10, 10); 
-        // }
-
+            var position = this.history[i];
+            fill("red");
+            rect(position.x, position.y, 10, 10); 
+        }
         endShape();
-
-
     }
+    transferX = this.endX;
+    transferY = this.endY;
 }
-
-        // path tester //
-        // stroke('orange');
-        // line(this.beginX, this.beginY, this.endX, this.endY)
-
-        // Visualising all spots in object history  

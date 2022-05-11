@@ -1,17 +1,12 @@
-function Branch(x,y) {
-
-    // defining path elements - which can be vector? //
+function Sigil3(x,y,terminator) {
     
     this.beginX = x;
     this.beginY = y;
 
-    this.endX = x+ 150 + random(10, 100);
-    this.endY = y;
+    this.endX = x + 150 + terminator;
+    this.endY = y + 150 + terminator;
 
-    let distX;
-    let distY;
-
-
+    this.terminator = terminator;
 
     // for percentage of distance traveled //
     let step = 0.01;
@@ -21,34 +16,35 @@ function Branch(x,y) {
     // storing draw path //
     this.history = [];
     
-    let goX;
-    let goY;
 
 
+    // let v0 = createVector(x,y);
+    // let v1 = (x, y + 100 + terminator)
+
+
+    rectMode(CENTER)
+    
     // animate as update //
 
     this.animate = function() {
         
-        // not working //
-        rotate(atan2(this.endY - this.beginY, this.endX - this.beginX));
-
 
         this.distX = this.endX - this.beginX;
         this.distY = this.endY - this.beginY;
-        
-
     }
 
-
+    this.finished = function() {
+        return pct === 1.0;
+    }
 
     this.show = function() {
         noStroke();
-        fill("blue");
+        fill("red");
         rect(this.goX, this.goY, 10, 10);
-
+        
         var v = createVector(this.goX, this.goY)
         this.history.push(v);
-
+        
         beginShape();
         pct += step;
         if (pct < 1.0) {
@@ -56,26 +52,19 @@ function Branch(x,y) {
             this.goX = round(this.beginX + pct * this.distX);
             
             this.goY = round(this.beginY + pct * this.distY);
+        } 
+
+        // Drawing History //
+        for (var i = 1; i < this.history.length; i++) {
+
+            var position = this.history[i];
+            fill("red");
+            ellipse(position.x, position.y, 11, 11) 
         }
-
-
-        // turn history on when pop is working //
-
-        // for (var i = 1; i < this.history.length; i++) {
-
-        //     var position = this.history[i];
-        //     fill("blue");
-        //     rect(position.x, position.y, 10, 10); 
-        
-        // }
         endShape();
+
+
     }
-     
-
-
-
+    transferX = this.endX;
+    transferY = this.endY;
 }
-
-
-
-    

@@ -71,8 +71,8 @@ function Loop(x,y) {
   
             }
         }
-        
-                // path tester //
+    }    
+}                // path tester //
                 // stroke('orange');
                 // line(this.beginX, this.beginY, this.endX, this.endY)
         
